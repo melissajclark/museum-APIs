@@ -6,9 +6,9 @@ var gulp = require('gulp'),
     newer = require('gulp-newer');
 
 gulp.task('styles', function(){
-  return gulp.src(['scss/*.scss',
-                   'scss/**/*.scss'], 
-            {base: 'scss/'} )
+  return gulp.src(['assets/scss/*.scss',
+                   'assets/scss/**/*.scss'], 
+            {base: 'assets/scss/'} )
       .pipe(plumber())
         .pipe(sass({ style: 'compressed' }))
         .pipe(gulp.dest(''))
@@ -25,8 +25,8 @@ gulp.task('watch', function() {
       }
   
       // Watch .scss files
-      gulp.watch('scss/*.scss', ['styles']);
-      gulp.watch('scss/**/*.scss', ['styles']);
+      gulp.watch('assets/scss/*.scss', ['styles']);
+      gulp.watch('assets/scss/**/*.scss', ['styles']);
   
     });
 
