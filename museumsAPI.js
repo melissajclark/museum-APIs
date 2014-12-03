@@ -84,14 +84,14 @@ artApp.displayPieces = function(pieces) {
 				// var artMakerDied = artPiece.principalMakers[0].dateOfDeath;
 				var artTitle = artPiece.title;
 				var artMaker = artPiece.principalOrFirstMaker;
-				var artMakerVal = artPiece.principalOrFirstMaker.val();
+				// var artMakerVal = artPiece.principalOrFirstMaker.val();
 				// var artDescription = artPiece.description;
 
 				// let's inject the title & other fields into the page
 				if (artPiece.webImage !== null) {	
 					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' href=" + artLink + ">" + "<span class='mix title'>" + artTitle + "</span></a></h3></li>"); // title & link to item
 					// artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Title: </span>" + artTitle +"</li>");
-					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='mix creator'>" + "<data-creatorName=" + artMaker + ">" + artMaker +"</span></li>");
+					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='mix creator'>" + "<data-creatorName=" + artMaker + "/>" + artMaker +"</span></li>");
 				}
 
 				// let's inject the location (only if it doesn't return as undefined) into the page
