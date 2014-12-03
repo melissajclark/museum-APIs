@@ -7,11 +7,21 @@ artApp.key = "lnJ7Bd6c";
 // 	artApp.getPieces(); // calls function below
 // };
 
+// artApp.init = function(){
+//   artApp.getPieces('color');
+//   $('#animal-select').on("submit", function(){
+//     var animal = $(this).val();
+//     var animalName = $(this).find(':selected').text();
+//     artApp.updateTitle(animalName);
+//     artApp.getPieces(animal);
+//   });
+// };
+
 artApp.init = function(){
-  artApp.getPieces('color');
-  $('#animal-select').on("change", function(){
+  artApp.getPieces('moneky');
+  $('input#animal-select').on("submit", function(){
     var animal = $(this).val();
-    var animalName = $(this).find(':selected').text();
+    var animalName = $("input[type=text]").find(':selected').text();
     artApp.updateTitle(animalName);
     artApp.getPieces(animal);
   });
