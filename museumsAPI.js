@@ -60,7 +60,6 @@ artApp.displayPieces = function(pieces) {
 			data: {
 				key: artApp.key,
 				format: "jsonp",
-				ps: 30,
 				imgonly: true,
 				culture: "en",
 			},
