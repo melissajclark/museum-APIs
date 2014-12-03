@@ -7,6 +7,7 @@
 
 # Ignore Sublime Files
 MuseumAPI.sublime-workspace
+MuseumAPI.sublime-project
 
 # sftp configuration file
 sftp-config.json
@@ -21,5 +22,3 @@ sftp-config.json
 
 node_modules/*/
 
-#### Ignore Sublime Files
-MuseumAPI.sublime-workspace
