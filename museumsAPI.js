@@ -62,6 +62,7 @@ artApp.displayPieces = function(pieces) {
 				format: "jsonp",
 				imgonly: true,
 				culture: "en",
+				q: query,
 			},
 			dataType : "jsonp",
 			success: function(result) { // another word for success = callback
