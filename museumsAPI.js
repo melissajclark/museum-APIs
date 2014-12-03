@@ -96,7 +96,7 @@ artApp.displayPieces = function(pieces) {
 
 				// let's inject the location (only if it doesn't return as undefined) into the page
 				if (artPiece.webImage !== null && artLocation !== undefined){	
-					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span>" + artLocation +"</li>");
+					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location'>" + artLocation +"</span></li>");
 				}
 
 				// let's inject the image into the page
