@@ -62,13 +62,16 @@ artApp.displayPieces = function(pieces) {
 				
 				// below: variables for use in displaying image metadata
 				var img = "<img class='artImage' src='" + artPiece.webImage.url + "'>"
-				// var artTitle = artPiece.title;
-				// var artMaker = artPiece.principalOrFirstMaker;
 				var artLink = artItem.links.web;
-				// var artDescription = artPiece.description;
 				var artLocation = artPiece.productionPlaces[0];
+
+				// below: variables - commented out because they are not currently in use (storing for later)
+
 				// var artMakerBorn = artPiece.principalMakers[0].dateOfBirth;
 				// var artMakerDied = artPiece.principalMakers[0].dateOfDeath;
+				// var artTitle = artPiece.title;
+				// var artMaker = artPiece.principalOrFirstMaker;
+				// var artDescription = artPiece.description;
 
 				// let's inject the title & other fields into the page
 				if (artPiece.webImage !== null) {	
@@ -89,7 +92,6 @@ artApp.displayPieces = function(pieces) {
 			}
 
 		});
-
 
 
 } // end for loop
