@@ -125,8 +125,8 @@ artApp.displayPieces = function(pieces) {
 $(document).ready(function(){
 	artApp.init(); // runs init function on document is ready
 
+	// artApp.init:
 
+	// calls ALL of the code above! 
 
 });
-
-
