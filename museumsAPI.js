@@ -78,8 +78,8 @@ artApp.displayPieces = function(pieces) {
 				var artLink = artItem.links.web;
 				var artDescription = artPiece.description;
 				var artLocation = artPiece.productionPlaces[0];
-				var artMakerBorn = artPiece.principalMakers[0].dateOfBirth;
-				var artMakerDied = artPiece.principalMakers[0].dateOfDeath;
+				// var artMakerBorn = artPiece.principalMakers[0].dateOfBirth;
+				// var artMakerDied = artPiece.principalMakers[0].dateOfDeath;
 
 				// let's inject the title & other fields into the page
 				if (artPiece.webImage !== null) {	
