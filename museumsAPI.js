@@ -116,6 +116,6 @@ artApp.displayPieces = function(pieces) {
 $(document).ready(function(){
 	artApp.init(); // runs init function on document is ready
 	$(function(){
-  		$('#Container').mixItUp();
+  		$('#artwork').mixItUp();
 	});
 });
