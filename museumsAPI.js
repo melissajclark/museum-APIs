@@ -20,7 +20,6 @@ artApp.key = "lnJ7Bd6c";
 artApp.init = function() {
 // init = everything for starting up the app
 	artApp.getPieces(); // calls function below
-	$('#artwork').mixItUp();
 };
 
 // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
@@ -115,4 +114,5 @@ artApp.displayPieces = function(pieces) {
 
 $(document).ready(function(){
 	artApp.init(); // runs init function on document is ready
+	$('#artwork').mixItUp();
 });
