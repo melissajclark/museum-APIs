@@ -28,7 +28,7 @@ artApp.getPieces = function(query) {
 		data: {		
 			key: artApp.key,
 			format: "jsonp",
-			ps: 10,
+			// ps: 10,
 			imgonly: true,
 			culture: "en",
 			q: query
