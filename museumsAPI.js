@@ -89,9 +89,9 @@ artApp.displayPieces = function(pieces) {
 
 				// let's inject the title & other fields into the page
 				if (artPiece.webImage !== null) {	
-					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' href=" + artLink + ">" + artPiece.scLabelLine + "</a></h3></li>"); // title & link to item
-					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Title: </span>" + artTitle +"</li>");
-					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Title: </span>" + artMaker +"</li>");
+					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' href=" + artLink + ">" + artTitle + "</a></h3></li>"); // title & link to item
+					// artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Title: </span>" + artTitle +"</li>");
+					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span>" + artMaker +"</li>");
 				}
 
 				// let's inject the location (only if it doesn't return as undefined) into the page
