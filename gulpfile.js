@@ -10,7 +10,7 @@ gulp.task('styles', function(){
                    'assets/scss/**/*.scss'], 
             {base: 'assets/scss/'} )
       .pipe(plumber())
-        .pipe(sass({ style: 'compressed' }))
+        .pipe(sass({ style: 'expanded' }))
         .pipe(gulp.dest(''))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         // .pipe(minifycss())
