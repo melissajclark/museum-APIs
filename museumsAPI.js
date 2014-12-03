@@ -107,6 +107,10 @@ artApp.displayPieces = function(pieces) {
 
 };
 
+artApp.updateTitle = function(subject){
+  $("#page-title").find("span").text(subject);
+};
+
 $(document).ready(function(){
 	artApp.init(); // runs init function on document is ready
 });
