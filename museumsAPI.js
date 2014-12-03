@@ -2,10 +2,21 @@
 var artApp = {};
 artApp.key = "lnJ7Bd6c";
 
-artApp.init = function() {
-// init = everything for starting up the app
-	artApp.getPieces(); // calls function below
+// artApp.init = function() {
+// // init = everything for starting up the app
+// 	artApp.getPieces(); // calls function below
+// };
+
+artApp.init = function(){
+  artApp.getPieces('monkey');
+  $('#animal-select').on("change", function(){
+    var animal = $(this).val();
+    var animalName = $(this).find(':selected').text();
+    artApp.updateTitle(animalName);
+    artApp.getPieces(animal);
+  });
 };
+
 
 // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
 artApp.getPieces = function() {
