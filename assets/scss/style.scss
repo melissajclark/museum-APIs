@@ -36,6 +36,10 @@ span.fieldType {
 	font-style:italic;
 }
 
+span {
+	display:inline;
+}
+
 .artworkModule { /*section for each artwork + data */
 	background:white;
 	padding:0.5em 1em 0em 1em;
@@ -115,4 +119,8 @@ list-style-type: none;
 -webkit-margin-start: 0px;
 -webkit-margin-end: 0px;
 -webkit-padding-start: 0px;
+}
+
+#artwork .mix{
+	display: none;
 }
