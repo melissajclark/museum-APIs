@@ -7,16 +7,6 @@ artApp.init = function() {
 	artApp.getPieces(); // calls function below
 };
 
-// artApp.init = function(){
-//   artApp.getPieces('monkey');
-//   $('#searchInput').on("submit", function(){
-//     // var animal = $(this).val();
-//     var animalName = $(this).find('[name="searchText"]').val();
-//     artApp.updateTitle(animalName);
-//     artApp.getPieces(animal);
-//   });
-// };
-
 // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
 artApp.getPieces = function(query) {
 	console.log("going to fetch the art");
@@ -104,10 +94,6 @@ artApp.displayPieces = function(pieces) {
 
 } // end for loop
 
-};
-
-artApp.updateTitle = function(subject){
-  $("#page-title").find("span").text(subject);
 };
 
 $(document).ready(function(){
