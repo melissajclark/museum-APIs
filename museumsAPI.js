@@ -49,7 +49,7 @@ artApp.getPieces = function(query) {
 			ps: 2,
 			imgonly: true,
 			culture: "en",
-			q: query
+			q: Q,
 		},
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
@@ -61,11 +61,6 @@ artApp.getPieces = function(query) {
 };
 
 artApp.displayPieces = function(pieces) {
-
-	// search the collection using a JSON call
-	function search(query) {
-	  return $.getJSON("https://www.rijksmuseum.nl/api/nl/collection?q=Q&key=fpGQTuED&format=json".replace("Q", query));
-	}
 
 	var artModuleTmpl = $('<section class="artworkModule"><ul class="artFields"></ul></section>');
 	// loop over each piece
