@@ -1,3 +1,18 @@
+/*=============================
+=            Notes            =
+=============================
+
+(December 3, 2014)
+
+- artApp.init runs on document ready
+	- artApp.getpieces runs inside of artApp.init
+		- artApp.displayPieces runs inside artApp.getpieces
+
+So essentially, they all run on document ready, and this is controlled by the init function. 
+
+-----  End of Notes  ------*/
+
+
 // empty namespace for app to live on
 var artApp = {};
 artApp.key = "lnJ7Bd6c";
@@ -29,7 +44,6 @@ artApp.getPieces = function(query) {
 		}
 	});
 };
-
 
 artApp.displayPieces = function(pieces) {
 
