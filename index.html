@@ -12,7 +12,6 @@
 	    takanaClient.run({host: 'localhost:48626'});
 	  </script> -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<!-- <script src="assets/js/jquery.mixitup.js"></script> -->
 	<script src="museumsAPI.js"></script>
 </head>
 <body>
@@ -24,11 +23,19 @@
 
 	<main role="main">
 	
-	<div id="users">
-	  <input class="search" placeholder="Search" />
-	  <button class="sort" data-sort="name">
-	    Sort by name
-	  </button>
+	<form>
+	    <legend>Search the Art</legend>
+	    <p>    
+	      <label for="search">
+	      	<input type="text" name="search" id="searchForm" placeholder="search" />
+	      </label>
+	    </p>
+	    <p>
+	    	<label for="submit">Submit!
+	    		<input type="submit" name=""/>
+	    	</label>
+	    </p>
+	</form>
 
 		<div id="artwork" class="container">
 		
