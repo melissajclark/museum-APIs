@@ -53,6 +53,7 @@ artApp.getPieces = function(query) {
 		},
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
+			$("#artwork").empty(); // clears artwork before adding new pieces
 			artApp.displayPieces(result.artObjects); // when the ajax request comes back - run this code! - displayPieces function is below
 			// console.log(result.artObjects);
 		}
