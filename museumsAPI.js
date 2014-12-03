@@ -8,7 +8,7 @@ artApp.key = "lnJ7Bd6c";
 // };
 
 artApp.init = function(){
-  artApp.getPieces('monkey');
+  artApp.getPieces('color');
   $('#animal-select').on("change", function(){
     var animal = $(this).val();
     var animalName = $(this).find(':selected').text();
@@ -56,7 +56,7 @@ artApp.displayPieces = function(pieces) {
 			data: {
 				key: artApp.key,
 				format: "jsonp",
-				ps: 10,
+				// ps: 10,
 				imgonly: true,
 				culture: "en",
 			},
@@ -72,10 +72,10 @@ artApp.displayPieces = function(pieces) {
 				
 				// below: variables for use in displaying image metadata
 				var img = "<img class='artImage' src='" + artPiece.webImage.url + "'>"
-				var artTitle = artPiece.title;
-				var artMaker = artPiece.principalOrFirstMaker;
+				// var artTitle = artPiece.title;
+				// var artMaker = artPiece.principalOrFirstMaker;
 				var artLink = artItem.links.web;
-				var artDescription = artPiece.description;
+				// var artDescription = artPiece.description;
 				var artLocation = artPiece.productionPlaces[0];
 				// var artMakerBorn = artPiece.principalMakers[0].dateOfBirth;
 				// var artMakerDied = artPiece.principalMakers[0].dateOfDeath;
