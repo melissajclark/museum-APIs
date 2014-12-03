@@ -9,9 +9,9 @@ artApp.key = "lnJ7Bd6c";
 
 artApp.init = function(){
   artApp.getPieces('monkey');
-  $('#animal-select').on("change", function(){
-    var animal = $(this).val();
-    var animalName = $(this).find(':selected').text();
+  $('#searchInput').on("submit", function(){
+    // var animal = $(this).val();
+    var animalName = $(this).find('[name="searchText"]').val();
     artApp.updateTitle(animalName);
     artApp.getPieces(animal);
   });
