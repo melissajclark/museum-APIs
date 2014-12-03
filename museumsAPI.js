@@ -27,8 +27,8 @@ artApp.init = function() {
 	}); // end of artSearch event function
 
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
-		var searchTerm = $(this).val();
-		console.log(searchTerm);
+		var searchContent = $(this).val();
+		console.log(searchContent);
 	});
 };
 
