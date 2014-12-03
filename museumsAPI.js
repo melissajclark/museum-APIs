@@ -20,6 +20,10 @@ artApp.key = "lnJ7Bd6c";
 artApp.init = function() {
 // init = everything for starting up the app
 	artApp.getPieces(); // calls function below
+
+	$("fieldset.artSearch").on("submit",function(event){
+		event.preventDefault(); // prevents form from refreshing
+	}); // end of artSearch event function
 };
 
 // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
