@@ -24,9 +24,6 @@ artApp.init = function() {
 	$("fieldset.artSearch").on("submit",function(event){
 		event.preventDefault(); // prevents form from refreshing
 	}); // end of artSearch event function
-	var searchTerm = $("fieldset.artSearch input[name='search']").val();
-	console.log(searchTerm);
-
 };
 
 // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
@@ -122,6 +119,12 @@ artApp.displayPieces = function(pieces) {
 
 $(document).ready(function(){
 	artApp.init(); // runs init function on document is ready
+
+	$("fieldset.artSearch input[name='searchField']").on("change",function(){
+		var searchTerm = $(this).val();
+		console.log(searchTerm);
+	});
+
 });
 
 
