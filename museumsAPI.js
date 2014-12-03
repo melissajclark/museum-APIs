@@ -8,23 +8,19 @@ artApp.init = function() {
 
 };
 
-// create a method to go and grab the artworks
+// create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
 artApp.getPieces = function() {
 	console.log("going to fetch the art");
 	// go get the art
 	$.ajax({
 		url : "https://www.rijksmuseum.nl/api/en/collection",
 		type: 'GET',
-		data: {
-			// these are the options specfic to the rijks API
-			// view their docs for all the info
-			// docs: http://rijksmuseum.github.io/
+		data: {		
 			key: artApp.key,
 			format: "jsonp",
 			ps: 10,
 			imgonly: true,
 			culture: "en",
-
 			 s: {
 			 	achronologic: false,
 			 }
@@ -52,9 +48,6 @@ artApp.displayPieces = function(pieces) {
 			url : "https://www.rijksmuseum.nl/api/en/collection/" + artItem.objectNumber,
 			type: 'GET',
 			data: {
-				// these are the options specfic to the rijks API
-				// view their docs for all the info
-				// docs: http://rijksmuseum.github.io/
 				key: artApp.key,
 				format: "jsonp",
 				ps: 10,
