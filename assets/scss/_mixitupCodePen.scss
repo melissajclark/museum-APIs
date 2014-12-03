@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
-body, button{
-  font-family: 'Helvetica Neue', arial, sans-serif;
-}
+// body, button{
+//   font-family: 'Helvetica Neue', arial, sans-serif;
+// }
 
 .controls{
   padding: 2%;
@@ -47,7 +47,7 @@ button + label{
   padding: 2% 2% 0;
   text-align: justify;
   font-size: 0.1px;
-  background: #68b8c4;
+  // background: #68b8c4;
   
   -webkit-backface-visibility: hidden;
 }
@@ -71,16 +71,48 @@ button + label{
   display: none;
 }
 
-.container .mix.category-1{
+// .container .mix.category-1{
+//   border-top: 2px solid limegreen;
+// }
+
+// .container .mix.category-2{
+//   border-top: 2px solid yellow;
+
+// }
+
+.container .title{
   border-top: 2px solid limegreen;
 }
 
-.container .mix.category-2{
+.container .creator{
   border-top: 2px solid yellow;
 }
 
 .container .mix:after{
-  content: attr(data-myorder);
+  // content: attr(data-myorder);
+  content: attr(data-creatorName);
+  color: white;
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 4% 6%;
+  font-weight: 700;
+}
+
+.container .mix:after{
+  // content: attr(data-myorder);
+  content: attr(data-location);
+  color: white;
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 4% 6%;
+  font-weight: 700;
+}
+
+.container .mix:after{
+  // content: attr(data-myorder);
+  content: attr(data-title);
   color: white;
   font-size: 16px;
   display: inline-block;
@@ -95,16 +127,16 @@ button + label{
   padding-top: 60%;
 }
 
-@media all and (min-width: 420px){
-  .container .mix,
-  .container .gap{
-    width: 32%;
-  }
-}
+// @media all and (min-width: 420px){
+//   .container .mix,
+//   .container .gap{
+//     width: 32%;
+//   }
+// }
 
-@media all and (min-width: 640px){
-  .container .mix,
-  .container .gap{
-    width: 23.5%;
-  }
-}
+// @media all and (min-width: 640px){
+//   .container .mix,
+//   .container .gap{
+//     width: 23.5%;
+//   }
+// }
