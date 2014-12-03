@@ -41,7 +41,7 @@ artApp.getPieces = function(query) {
 	console.log("going to fetch the art");
 	// go get the art
 	$.ajax({
-		url : "https://www.rijksmuseum.nl/api/en/collection" + "Q",
+		url : "https://www.rijksmuseum.nl/api/en/collection",
 		type: 'GET',
 		data: {		
 			key: artApp.key,
@@ -49,6 +49,7 @@ artApp.getPieces = function(query) {
 			ps: 2,
 			imgonly: true,
 			culture: "en",
+			q: "Q", // need to update this value with the user's input
 		},
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
