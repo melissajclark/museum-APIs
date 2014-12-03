@@ -62,6 +62,11 @@ artApp.getPieces = function(query) {
 
 artApp.displayPieces = function(pieces) {
 
+	// search the collection using a JSON call
+	function search(query) {
+	  return $.getJSON("https://www.rijksmuseum.nl/api/nl/collection?q=Q&key=fpGQTuED&format=json".replace("Q", query));
+	}
+
 	var artModuleTmpl = $('<section class="artworkModule"><ul class="artFields"></ul></section>');
 	// loop over each piece
 	console.log(pieces.length); // counts number of pieces retreived by API
