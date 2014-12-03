@@ -17,7 +17,6 @@ artApp.init = function(){
   });
 };
 
-
 // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
 artApp.getPieces = function(query) {
 	console.log("going to fetch the art");
