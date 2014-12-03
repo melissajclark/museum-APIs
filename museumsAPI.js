@@ -19,10 +19,11 @@ artApp.key = "lnJ7Bd6c";
 
 artApp.init = function() {
 // init = everything for starting up the app
-	// artApp.getPieces(); // calls function below
+	// artApp.getPieces(); // calls art piece function
 
 	$("fieldset.artSearch").on("submit",function(event){
 		event.preventDefault(); // prevents form from refreshing
+		artApp.getPieces(); // calls art piece function
 	}); // end of artSearch event function
 
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
