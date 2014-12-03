@@ -7,8 +7,17 @@ body {
 	padding:1em; 
 }
 
+a {
+	color:purple;
+	text-decoration:none;
+	border-bottom: 1px solid purple;
+	&:hover{
+		color:black;
+	}
+}
+
 .container { /*Sets basic sizing of content*/
-	max-width:95%;
+	max-width:99%;
 	margin:auto;
 }
 
@@ -19,24 +28,26 @@ span.fieldType {
 
 .artworkModule { /*section for each artwork + data */
 	background:white;
-	padding:1em;
+	padding:0.5em 1em 0em 1em;
 	border: 1px solid white;
 	border-radius:4px;
 	margin:1em;
-	max-width:23%;
+	max-width:15%;
 	min-width:300px;
+	height:auto;
 	display:inline-block;
 	vertical-align:top;
 }
 
 #artwork img {
-  max-width:100%;
   min-width:200px;
-  height: auto;
+  max-width:99%;
+  height:auto;
+  max-height:400px;
   margin: 0 auto;
-  padding: 2em 0em 2em 0em;
+  padding: 1em 0em 1em 0em;
   display:inline-block;
-  vertical-align: top;
+  vertical-align: middle;
 
 }
 
