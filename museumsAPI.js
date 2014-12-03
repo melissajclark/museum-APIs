@@ -32,6 +32,7 @@ artApp.init = function() {
 		$("legend").html("<span class='searchTermAppended'>" + "Searching for: " + "&nbsp;" + "</span>"); // adds span for new content
 		$("span.searchTermAppended").append(searchContent); // appends user's search term
 		console.log(searchContent);
+		console.log("New content in search field!")
 	});
 };
 
