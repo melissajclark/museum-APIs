@@ -31,6 +31,7 @@ artApp.getPieces = function() {
 			ps: 10,
 			imgonly: true,
 			culture: "en",
+			q: query,
 			 s: {
 			 	achronologic: false,
 			 }
