@@ -4,8 +4,7 @@ artApp.key = "lnJ7Bd6c";
 
 artApp.init = function() {
 // init = everything for starting up the app
-	artApp.getPieces();
-
+	artApp.getPieces(); // calls function below
 };
 
 // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
@@ -27,8 +26,7 @@ artApp.getPieces = function() {
 		},
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
-			// when the ajax request comes back - run this code!
-			artApp.displayPieces(result.artObjects);
+			artApp.displayPieces(result.artObjects); // when the ajax request comes back - run this code! - displayPieces function is below
 			// console.log(result.artObjects);
 		}
 	});
