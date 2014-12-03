@@ -89,7 +89,7 @@ artApp.displayPieces = function(pieces) {
 
 				// let's inject the title & other fields into the page
 				if (artPiece.webImage !== null) {	
-					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' href=" + artLink + ">" + "<span class='mix location' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
+					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' href=" + artLink + ">" + "<span class='mix title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
 					// artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Title: </span>" + artTitle +"</li>");
 					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='mix creator' data-creatorName='" + artMaker + "'>" + artMaker + "</span></li>");
 				}
