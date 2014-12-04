@@ -127,11 +127,14 @@ artApp.displayPieces = function(pieces) {
 			// injects the location only if it exists
 			if (artPiece.webImage !== null && artLocation !== undefined){
 				artModuleUl.append(artLocationContent); // original location
+				console.log("Location exists!");
 			}
 
 			// injects the medium only if it exists
 			if (artMedium !== null && artMedium.length > 0  && artMedium !== artMaterials){	
 				artModuleUl.append(artMediumContent);
+				console.log("Medium exists and is not equal to Materials! Medium: " + artMedium + "Materials: " + artMaterials);
+
 			}
 
 			// injects the materials only if it exists
