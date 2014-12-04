@@ -1,4 +1,4 @@
-/*=============================
+=============================
 =            Notes            =
 =============================
 
@@ -93,16 +93,16 @@ artApp.displayPieces = function(pieces) {
 				var artType = artPiece.objectTypes;
 				var artMaterials = artPiece.materials;
 				var artTechnique = artPiece.techniques;
-				var artInscriptions = artPiece.inscriptions;
-				var artVIP = artPiece.historicalPersons;
-				var artLabel = artPiece.label;
+				// var artInscriptions = artPiece.inscriptions;
+				// var artVIP = artPiece.historicalPersons;
+				// var artLabel = artPiece.label;
 				console.log("Physical Medium: " + artMedium)
 				console.log("Type: " + artType);
 				console.log("Materials: " + artMaterials);
 				console.log("Technique: " + artTechnique);
-				console.log("Inscription: " + artInscriptions);
-				console.log("VIPs: " + artVIP);
-				console.log("Label: " + artLabel);
+				// console.log("Inscription: " + artInscriptions);
+				// console.log("VIPs: " + artVIP);
+				// console.log("Label: " + artLabel);
 	
 
 				if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
@@ -111,6 +111,9 @@ artApp.displayPieces = function(pieces) {
 				}
 				if (artPiece.webImage !== null && artLocation !== undefined){	// injects the location only if it exists
 					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>");
+				}
+				if (artPiece.webImage !== null && artMedium !== undefined && artMedium !== null){	// injects the location only if it exists
+					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>");
 				}
 				if (artPiece.webImage !== null) { // injects the image into the page
 					artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
@@ -153,4 +156,4 @@ art colours variable = appends list of hexcodes - need to split them all to play
 
 
 
------  End of Extra Code Stuff  ------*/
+-----  End of Extra Code Stuff  ------
