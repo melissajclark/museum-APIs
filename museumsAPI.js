@@ -118,43 +118,43 @@ artApp.displayPieces = function(pieces) {
 			var artMediumTechniqueContent = artOpenLiSpan + "Physical Medium, Technique: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 
 			// injects the image into the page
-			if (artPiece.webImage.url !== null) { 
+			if (artPiece.webImage !== null) { 
 				artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
 			}
 		
 			// injects the title (linked to item), museum and creator
-			if (artPiece.webImage.url !== null) {
+			if (artPiece.webImage !== null) {
 				artModuleUl.append(artLinkTitleContent); // title & link to item
 				artModuleUl.append(artMuseumContent); // credit to museum
 				artModuleUl.append(artMakerContent);
 			}
 			
 			// injects the location only if it exists
-			if (artPiece.webImage.url !== null && artLocation !== undefined){
+			if (artPiece.webImage !== null && artLocation !== undefined){
 				artModuleUl.append(artLocationContent); // original location
 				console.log("Location exists!");
 			}
 
 			// injects the type only if it exists
-			if (artPiece.webImage.url !== null && artType.length > 0){	
+			if (artPiece.webImage !== null && artType.length > 0){	
 				artModuleUl.append(artTypeContent); // type info
 			}
 
 			// checks that medium & materials exist, then checks if they are the same
-			if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
+			if (artPiece.webImage !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
 				artModuleUl.append(artMaterialsMediumContent); // original location
 				console.log("Medium === Materials: medium is " + artMedium + "materials are: " + artMaterials);
-			} else if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials && artMedium !== artTechnique) {
+			} else if (artPiece.webImage !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials && artMedium !== artTechnique) {
 				artModuleUl.append(artMediumContent + artMaterialsContent + artTechnique); // appends materials & medium
 				console.log("Medium !== Materials!")
-			} else if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artTechnique.length > 0 && artMedium !== artMaterials && artMedium === artTechnique){
+			} else if (artPiece.webImage !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artTechnique.length > 0 && artMedium !== artMaterials && artMedium === artTechnique){
 				artModuleUl.append(artMediumTechniqueContent);
 				console.log("Medium == Technique && Medium !== Materials")
 
 			}
 					
 			// injects the technique only if it exists
-			if (artPiece.webImage.url !== null && artTechnique.length > 0){	
+			if (artPiece.webImage !== null && artTechnique.length > 0){	
 				artModuleUl.append(artTechniqueContent); // Technique info
 			}
 
