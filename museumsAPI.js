@@ -91,7 +91,7 @@ artApp.displayPieces = function(pieces) {
 			var artMaker = artPiece.principalOrFirstMaker;
 			var artMedium = artPiece.physicalMedium;
 			var artType = artPiece.objectTypes;
-			var artMaterials = artPiece.materials;
+			var artMaterials = artPiece.materials.join(", ");
 			var artTechnique = artPiece.techniques;
 		
 			if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
@@ -103,19 +103,19 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>");
 			}
 
-			if (artPiece.webImage !== null && artMedium !== undefined && artMedium !== null){	// injects the medium only if it exists
+			if (artPiece.webImage !== null && artMedium.length > 0){	// injects the medium only if it exists
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>");
 			}
 
-			if (artPiece.webImage !== null && artType !== undefined && artType !== null){	// injects the type only if it exists
+			if (artPiece.webImage !== null && artType.length > 0){	// injects the type only if it exists
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + "</span></li>");
 			}
 
-			if (artPiece.webImage !== null && artMaterials !== undefined && artMaterials !== null){	// injects the materials only if it exists
+			if (artPiece.webImage !== null && artMaterials.length > 0){	// injects the materials only if it exists
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + "</span></li>");
 			}
 
-			if (artPiece.webImage !== null && artTechnique !== undefined && artTechnique !== null && artTechnique){	// injects the technique only if it exists
+			if (artPiece.webImage !== null && artTechnique.length > 0){	// injects the technique only if it exists
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + "</span></li>");
 			}
 
