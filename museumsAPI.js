@@ -116,7 +116,7 @@ artApp.displayPieces = function(pieces) {
 			}
 
 			// injects the medium only if it exists
-			if (artPiece.webImage !== null && artMedium.length !== null || artMedium.length !== 0 ){	
+			if (artMedium !== null && artMedium.length > 0 ){	
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>");
 			}
 
