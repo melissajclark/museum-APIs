@@ -140,18 +140,18 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append(artTypeContent); // type info
 			}
 
-			// checks that medium & materials exist, then checks if they are the same
-			if (artPiece.webImage !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
-				artModuleUl.append(artMaterialsMediumContent); // original location
-				console.log("Medium === Materials: medium is " + artMedium + "materials are: " + artMaterials);
-			} else if (artPiece.webImage !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials && artMedium !== artTechnique) {
-				artModuleUl.append(artMediumContent + artMaterialsContent + artTechnique); // appends materials & medium
-				console.log("Medium !== Materials!")
-			} else if (artPiece.webImage !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artTechnique.length > 0 && artMedium !== artMaterials && artMedium === artTechnique){
-				artModuleUl.append(artMediumTechniqueContent);
-				console.log("Medium == Technique && Medium !== Materials")
+			// // checks that medium & materials exist, then checks if they are the same
+			// if (artPiece.webImage !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
+			// 	artModuleUl.append(artMaterialsMediumContent); // original location
+			// 	console.log("Medium === Materials: medium is " + artMedium + "materials are: " + artMaterials);
+			// } else if (artPiece.webImage !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials && artMedium !== artTechnique) {
+			// 	artModuleUl.append(artMediumContent + artMaterialsContent + artTechnique); // appends materials & medium
+			// 	console.log("Medium !== Materials!")
+			// } else if (artPiece.webImage !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artTechnique.length > 0 && artMedium !== artMaterials && artMedium === artTechnique){
+			// 	artModuleUl.append(artMediumTechniqueContent);
+			// 	console.log("Medium == Technique && Medium !== Materials")
 
-			}
+			// }
 					
 			// injects the technique only if it exists
 			if (artPiece.webImage !== null && artTechnique.length > 0){	
