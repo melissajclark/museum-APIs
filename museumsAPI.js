@@ -96,6 +96,11 @@ artApp.displayPieces = function(pieces) {
 			var artMaterials = artPiece.materials.join(", ");
 			var artTechnique = artPiece.techniques;
 			var artMuseum = "Rijksmuseum";
+
+			// injects the image into the page
+			if (artPiece.webImage !== null) { 
+				artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
+			}
 		
 			// injects the title (linked to item), museum and creator
 			if (artPiece.webImage !== null) {
@@ -129,10 +134,7 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + "</span></li>");
 			}
 			
-			// injects the image into the page
-			if (artPiece.webImage !== null) { 
-				artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
-			}
+			
 
 
 			$("#artwork").append(artModuleSection);
