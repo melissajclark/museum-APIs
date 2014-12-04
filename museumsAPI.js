@@ -100,7 +100,7 @@ artApp.displayPieces = function(pieces) {
 
 			// below: variables for appending image metadata (with html)
 
-			var imgContent = "<li class='artMetaData'>" + "<img class='artImage' src='" + img + "'>" + "</li>";
+			var imgContent = "<li class='artMetaData'>" + "<img class='artImage' src='" + artPiece.webImage.url + "'>" + "</li>";
 			var artLinkTitleContent = "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>";
 			var artLocationContent = "<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>";
 			// var artTitleContent = ;
@@ -110,7 +110,7 @@ artApp.displayPieces = function(pieces) {
 			var artMaterialsContent = "<li class='artMetaData'><span class='fieldType'>Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + "</span></li>";
 			var artTechniqueContent = "<li class='artMetaData'><span class='fieldType'>Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + "</span></li>";
 			var artMuseumContent = "<li class='artMetaData'><span class='fieldType'>Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + "</span></li>";
-			var artMaterialsMediumContent = "<li class='artMetaData'><span class='fieldType'>Physical Medium & Materials: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + "</span></li>";
+			var artMaterialsMediumContent = "<li class='artMetaData'><span class='fieldType'>Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + "</span></li>";
 
 			// injects the image into the page
 			if (img !== null) { 
