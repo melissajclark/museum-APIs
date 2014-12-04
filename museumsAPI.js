@@ -92,13 +92,12 @@ artApp.displayPieces = function(pieces) {
 				var artMaker = artPiece.principalOrFirstMaker;
 
 				if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
-					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
+					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
 					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='creator' data-creatorName='" + artMaker + "'>" + artMaker + "</span></li>");
 				}		
 				if (artPiece.webImage !== null && artLocation !== undefined){	// injects the location only if it exists
 					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>");
 				}
-				
 				if (artPiece.webImage !== null) { // injects the image into the page
 					artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
 				}
