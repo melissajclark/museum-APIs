@@ -90,10 +90,12 @@ artApp.displayPieces = function(pieces) {
 
 				var artTitle = artPiece.title;
 				var artMaker = artPiece.principalOrFirstMaker;
+				var artColours = artPiece.colors;
 
 				if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
 					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
 					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='creator' data-creatorName='" + artMaker + "'>" + artMaker + "</span></li>");
+					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='colours' data-colours='" + artColours + "'>" + artColours + "</span></li>");
 				}		
 				if (artPiece.webImage !== null && artLocation !== undefined){	// injects the location only if it exists
 					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>");
