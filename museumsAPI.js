@@ -152,9 +152,9 @@ artApp.displayPieces = function(pieces) {
 			if (artMedium == artTechnique && artMedium !== artMaterials){
 				artModuleUl.append(artMaterialsContent + artMediumTechniqueContent);
 				artModuleUl.append("if #1: " + "Medium & Technique = same, Medium & Materials == different");
-				console.log("Medium == Technique");
-				console.log("Medium: " + artMedium);
-				console.log("Technique: " + artTechnique);
+				// console.log("Medium == Technique");
+				// console.log("Medium: " + artMedium);
+				// console.log("Technique: " + artTechnique);
 			}
 			else if (artTechnique.length > 0 && artMedium.length > 0 && artTechnique !== artMedium && artMedium !== artMaterials){ // injects the technique only if it exists
 				artModuleUl.append(artMaterialsContent + artMediumContent + artTechniqueContent); // Technique info
@@ -165,9 +165,9 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append(artMaterialsMediumContent + artTechniqueContent);
 				artModuleUl.append("Else if #3: " + "Medium & Technique = different");
 				artModuleUl.append("Else if #3: " +  "Medium & Materials = same");
-				console.log("Technique !== Medium, Materials == Medium");
-				console.log("Medium: " + artMedium);
-				console.log("Materials: " + artMaterials);
+				// console.log("Technique !== Medium, Materials == Medium");
+				// console.log("Medium: " + artMedium);
+				// console.log("Materials: " + artMaterials);
 			}
 
 			$("#artwork").append(artModuleSection);
