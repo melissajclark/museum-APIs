@@ -175,7 +175,7 @@ artApp.displayPieces = function(pieces) {
 			}
 					
 			// injects the technique only if it exists
-			if (artPiece.webImage !== null && artTechnique.length > 0){	
+			if (artTechnique.length > 0){	
 				artModuleUl.append(artTechniqueContent); // Technique info
 			}
 
