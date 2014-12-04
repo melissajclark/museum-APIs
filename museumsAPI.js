@@ -90,7 +90,7 @@ artApp.displayPieces = function(pieces) {
 			
 			// below: variables for use in displaying image metadata
 
-			var img = artPiece.webImage.url;
+			var img = "<img class='artImage' src='" + artPiece.webImage.url + "'>";
 			var artLink = artItem.links.web;
 			var artLocation = artPiece.productionPlaces[0];
 			var artTitle = artPiece.title;
@@ -104,7 +104,7 @@ artApp.displayPieces = function(pieces) {
 			// below: variables for appending image metadata (with html)
 
 
-			var imgContent = "<img class='artImage' src='" + img + "'>";
+			// var imgContent = "<img class='artImage' src='" + artPiece.webImage.url + "'>";
 			var artLinkTitleContent = "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>";
 			var artLocationContent = artOpenLiSpan + "Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + artCloseLiSpan;
 			// var artTitleContent = ;
@@ -118,7 +118,7 @@ artApp.displayPieces = function(pieces) {
 
 			// injects the image into the page
 			if (artPiece.webImage.url !== null) { 
-				artModuleUl.append("<li class='artMetaData'>" + "<img class='artImage' src='" + imgContent + "'>" + "</li>");
+				artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
 			}
 		
 			// injects the title (linked to item), museum and creator
