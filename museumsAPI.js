@@ -1,16 +1,16 @@
-=============================
-=            Notes            =
-=============================
+// =============================
+// =            Notes            =
+// =============================
 
-(December 3, 2014)
+// (December 3, 2014)
 
-- artApp.init runs on document ready
-	- artApp.getpieces runs inside of artApp.init
-		- artApp.displayPieces runs inside artApp.getpieces
+// - artApp.init runs on document ready
+// 	- artApp.getpieces runs inside of artApp.init
+// 		- artApp.displayPieces runs inside artApp.getpieces
 
-So essentially, they all run on document ready, and this is controlled by the init function. 
+// So essentially, they all run on document ready, and this is controlled by the init function. 
 
------  End of Notes  ------*/
+// -----  End of Notes  ------*/
 
 // empty namespace for app to live on
 var artApp = {};
@@ -42,7 +42,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		data: {		
 			key: artApp.key,
 			format: "jsonp",
-			ps: 100,
+			ps: 20,
 			imgonly: true,
 			culture: "en",
 			q: query, 
@@ -62,64 +62,74 @@ artApp.displayPieces = function(pieces) {
 	console.log(pieces.length); // counts number of pieces retreived by API
 	for (var i = 0; i < pieces.length; i++) { // for loop
 
-		var artItem = pieces[i]; // variable for easier calling of looped items
-		
-		$.ajax({
-			url : "https://www.rijksmuseum.nl/api/en/collection/" + artItem.objectNumber,
-			type: 'GET',
-			data: {
-				key: artApp.key,
-				format: "jsonp",
-				imgonly: true,
-				culture: "en",
-			},
-			dataType : "jsonp",
-			success: function(result) { // another word for success = callback
-				// when the ajax request comes back - run this code!
-				console.log(result); // console logs each artwork (using variable)
-
-				// below: important variables for template / objects
-				var artModuleSection = artModuleTmpl.clone();
-				var artModuleUl = artModuleSection.find('ul');
-				var artPiece = result.artObject; // new variable like artItem to use data from success function
-				
-				// below: variables for use in displaying image metadata
-				var img = "<img class='artImage' src='" + artPiece.webImage.url + "'>"
-				var artLink = artItem.links.web;
-				var artLocation = artPiece.productionPlaces[0];
-				var artTitle = artPiece.title;
-				var artMaker = artPiece.principalOrFirstMaker;
-				var artMedium = artPiece.physicalMedium;
-				var artType = artPiece.objectTypes;
-				var artMaterials = artPiece.materials;
-				var artTechnique = artPiece.techniques;
-				// var artInscriptions = artPiece.inscriptions;
-				// var artVIP = artPiece.historicalPersons;
-				// var artLabel = artPiece.label;
-				console.log("Physical Medium: " + artMedium)
-				console.log("Type: " + artType);
-				console.log("Materials: " + artMaterials);
-				console.log("Technique: " + artTechnique);
-				// console.log("Inscription: " + artInscriptions);
-				// console.log("VIPs: " + artVIP);
-				// console.log("Label: " + artLabel);
+	var artItem = pieces[i]; // variable for easier calling of looped items
 	
+	$.ajax({
+		url : "https://www.rijksmuseum.nl/api/en/collection/" + artItem.objectNumber,
+		type: 'GET',
+		data: {
+			key: artApp.key,
+			format: "jsonp",
+			imgonly: true,
+			culture: "en",
+		},
+		dataType : "jsonp",
+		success: function(result) { // another word for success = callback
+			// when the ajax request comes back - run this code!
+			console.log(result); // console logs each artwork (using variable)
 
-				if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
-					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
-					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='creator' data-creatorName='" + artMaker + "'>" + artMaker + "</span></li>");
-				}
-				if (artPiece.webImage !== null && artLocation !== undefined){	// injects the location only if it exists
-					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>");
-				}
-				if (artPiece.webImage !== null && artMedium !== undefined && artMedium !== null){	// injects the location only if it exists
-					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>");
-				}
-				if (artPiece.webImage !== null) { // injects the image into the page
-					artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
-				}
+			// below: important variables for template / objects
+			var artModuleSection = artModuleTmpl.clone();
+			var artModuleUl = artModuleSection.find('ul');
+			var artPiece = result.artObject; // new variable like artItem to use data from success function
+			
+			// below: variables for use in displaying image metadata
+			var img = "<img class='artImage' src='" + artPiece.webImage.url + "'>"
+			var artLink = artItem.links.web;
+			var artLocation = artPiece.productionPlaces[0];
+			var artTitle = artPiece.title;
+			var artMaker = artPiece.principalOrFirstMaker;
+			var artMedium = artPiece.physicalMedium;
+			var artType = artPiece.objectTypes;
+			var artMaterials = artPiece.materials;
+			var artTechnique = artPiece.techniques;
+			// var artInscriptions = artPiece.inscriptions;
+			// var artVIP = artPiece.historicalPersons;
+			// var artLabel = artPiece.label;
+			console.log("Physical Medium: " + artMedium)
+			console.log("Type: " + artType);
+			console.log("Materials: " + artMaterials);
+			console.log("Technique: " + artTechnique);
+			// console.log("Inscription: " + artInscriptions);
+			// console.log("VIPs: " + artVIP);
+			// console.log("Label: " + artLabel);
 
-				$("#artwork").append(artModuleSection);
+
+			if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
+				artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
+				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='creator' data-creatorName='" + artMaker + "'>" + artMaker + "</span></li>");
+			}
+			
+			if (artPiece.webImage !== null && artLocation !== undefined){	// injects the location only if it exists
+				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>");
+			}
+
+			if (artPiece.webImage !== null && artMedium !== undefined && artMedium !== null){	// injects the medium only if it exists
+				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>");
+			}
+
+			if (artPiece.webImage !== null && artType !== undefined && artType !== null){	// injects the medium only if it exists
+				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + "</span></li>");
+			}
+
+			if (artPiece.webImage !== null && artMaterials !== undefined && artMaterials !== null){	// injects the medium only if it exists
+				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + "</span></li>");
+			}
+			if (artPiece.webImage !== null) { // injects the image into the page
+				artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
+			}
+
+			$("#artwork").append(artModuleSection);
 			} // end success function
 		}); // end ajax function
 
@@ -156,4 +166,4 @@ art colours variable = appends list of hexcodes - need to split them all to play
 
 
 
------  End of Extra Code Stuff  ------
+-----  End of Extra Code Stuff  ------*/
