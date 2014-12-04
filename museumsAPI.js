@@ -67,7 +67,6 @@ artApp.displayPieces = function(pieces) {
 	    continue; // skip this one there is no image
 	  }
 
-
 	var artItem = pieces[i]; // variable for easier calling of looped items
 	
 	$.ajax({
@@ -85,6 +84,7 @@ artApp.displayPieces = function(pieces) {
 			console.log(result); // console logs each artwork (using variable)
 
 			// below: important variables for template / objects
+
 			var artModuleSection = artModuleTmpl.clone();
 			var artModuleUl = artModuleSection.find('ul');
 			var artPiece = result.artObject; // new variable like artItem to use data from success function
@@ -92,13 +92,8 @@ artApp.displayPieces = function(pieces) {
 			var artOpenLiSpan = "<li class='artMetaData'><span class='fieldType'>";
 			var artCloseLiSpan = "</span></li>";
 			
+
 			// below: variables for use in displaying image metadata
-
-			// var src = "not-available.jpg"; // creates fallback image
-
-			// if (artPiece.webImage) {
-			//   src = artPiece.webImage.url;
-			// }
 
 			var img = "<img class='artImage' src='" + artPiece.webImage.url + "'>";
 			var artLink = artItem.links.web;
@@ -127,20 +122,24 @@ artApp.displayPieces = function(pieces) {
 			var artMaterialsMediumContent = artOpenLiSpan + "Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 			var artMediumTechniqueContent = artOpenLiSpan + "Physical Medium, Technique: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 
-			// injects the image into the page
-			if (artPiece.webImage !== null) { 
-				artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
-			}
-		
-			// injects the title (linked to item), museum and creator
-			if (artPiece.webImage !== null) {
-				artModuleUl.append(artLinkTitleContent); // title & link to item
-				artModuleUl.append(artMuseumContent); // credit to museum
-				artModuleUl.append(artMakerContent);
-			}
+			/*==========================================================
+			=            Injecting Image Data Into the Page            =
+			==========================================================*/
+
+			// image						
+			artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
+
+			// art title & link to content
+			artModuleUl.append(artLinkTitleContent); // title & link to item
+
+			// credit to museum
+			artModuleUl.append(artMuseumContent); 
+
+			// artwork creator info
+			artModuleUl.append(artMakerContent); 		
 			
 			// injects the location only if it exists
-			if (artPiece.webImage !== null && artLocation !== undefined){
+			if (artLocation !== undefined){
 				artModuleUl.append(artLocationContent); // original location
 				console.log("Location exists!");
 			}
