@@ -92,6 +92,7 @@ artApp.displayPieces = function(pieces) {
 			var artTitle = artPiece.title;
 			var artMaker = artPiece.principalOrFirstMaker;
 			var artMedium = artPiece.physicalMedium;
+			console.log(artMedium);
 			var artType = artPiece.objectTypes;
 			var artMaterials = artPiece.materials.join(", ");
 			var artTechnique = artPiece.techniques;
@@ -115,7 +116,7 @@ artApp.displayPieces = function(pieces) {
 			}
 
 			// injects the medium only if it exists
-			if (artPiece.webImage !== null && artMedium.length !== null && artMedium.length !== 0 ){	
+			if (artPiece.webImage !== null && artMedium.length !== null || artMedium.length !== 0 ){	
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>");
 			}
 
