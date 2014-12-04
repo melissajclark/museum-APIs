@@ -44,7 +44,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		data: {		
 			key: artApp.RMkey,
 			format: "jsonp",
-			ps: 5,
+			ps: 20,
 			imgonly: true,
 			culture: "en",
 			q: query, 
@@ -92,7 +92,7 @@ artApp.displayPieces = function(pieces) {
 			var artTitle = artPiece.title;
 			var artMaker = artPiece.principalOrFirstMaker;
 			var artMedium = artPiece.physicalMedium;
-			console.log(artMedium);
+			console.log(artMedium + ", Title: " + artTitle);
 			var artType = artPiece.objectTypes;
 			var artMaterials = artPiece.materials.join(", ");
 			var artTechnique = artPiece.techniques;
