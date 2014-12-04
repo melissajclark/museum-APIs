@@ -14,8 +14,9 @@
 
 // empty namespace for app to live on
 var artApp = {};
-artApp.RMkey = "lnJ7Bd6c";
-artApp.FGkey = "i39hegnykz7iq";
+artApp.RMkey = "lnJ7Bd6c"; // rijksmuseum
+artApp.FGkey = "i39hegnykz7iq"; // finnish national gallery
+artApp.EUkey = "HJFkApddv"; // Europeana key
 
 artApp.init = function() {
 // init = everything for starting up the app
