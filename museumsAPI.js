@@ -110,6 +110,7 @@ artApp.displayPieces = function(pieces) {
 			var artMaterialsContent = "<li class='artMetaData'><span class='fieldType'>Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + "</span></li>";
 			var artTechniqueContent = "<li class='artMetaData'><span class='fieldType'>Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + "</span></li>";
 			var artMuseumContent = "<li class='artMetaData'><span class='fieldType'>Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + "</span></li>";
+			var artMaterialsMediumContent = "<li class='artMetaData'><span class='fieldType'>Physical Medium & Materials: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>"
 
 			// injects the image into the page
 			if (artPiece.webImage !== null) { 
