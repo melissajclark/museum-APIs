@@ -150,16 +150,19 @@ artApp.displayPieces = function(pieces) {
 
 			if (artMedium == artTechnique){
 				artModuleUl.append(artMediumTechniqueContent);
+				artModuleUl.append("Medium & Technique are the same");
 				console.log("Medium == Technique");
 				console.log("Medium: " + artMedium);
 				console.log("Technique: " + artTechnique);
 			}
-			else if (artTechnique.length > 0 && artMedium.length > 0 && artTechnique !== artMedium){ // injects the technique only if it exists
-				artModuleUl.append(artMediumContent + artTechniqueContent); // Technique info
+			else if (artTechnique.length > 0 && artMedium.length > 0 && artTechnique !== artMedium && artMedium !== artMaterials){ // injects the technique only if it exists
+				artModuleUl.append(artMediumContent + artTechniqueContent + artMaterialsContent); // Technique info
+				artModuleUl.append(("Medium, Technique, Materials are all different");
 			} 
 
 			else if (artTechnique !== artMedium && artMaterials == artMedium){
 				artModuleUl.append(artMaterialsMediumContent);
+				artModuleUl.append("Technique & Medium == different, Materials && Medium == same ");
 				console.log("Technique !== Medium, Materials == Medium");
 				console.log("Medium: " + artMedium);
 				console.log("Materials: " + artMaterials);
