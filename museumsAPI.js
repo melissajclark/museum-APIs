@@ -113,19 +113,19 @@ artApp.displayPieces = function(pieces) {
 			var artMaterialsMediumContent = "<li class='artMetaData'><span class='fieldType'>Physical Medium & Materials: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + "</span></li>";
 
 			// injects the image into the page
-			if (artPiece.webImage !== null) { 
+			if (img !== null) { 
 				artModuleUl.append(imgContent);
 			}
 		
 			// injects the title (linked to item), museum and creator
-			if (artPiece.webImage !== null) {
+			if (img !== null) {
 				artModuleUl.append(artLinkTitleContent); // title & link to item
 				artModuleUl.append(artMuseumContent); // credit to museum
 				artModuleUl.append(artMakerContent);
 			}
 			
 			// injects the location only if it exists
-			if (artPiece.webImage !== null && artLocation !== undefined){
+			if (img !== null && artLocation !== undefined){
 				artModuleUl.append(artLocationContent); // original location
 				console.log("Location exists!");
 			}
@@ -144,17 +144,17 @@ artApp.displayPieces = function(pieces) {
 			}
 
 			// injects the materials only if it exists
-			if (artPiece.webImage !== null && artMaterials.length > 0){	
+			if (img !== null && artMaterials.length > 0){	
 				artModuleUl.append(artMaterialsContent); // materials info
 			}
 
 			// injects the type only if it exists
-			if (artPiece.webImage !== null && artType.length > 0){	
+			if (img !== null && artType.length > 0){	
 				artModuleUl.append(artTypeContent); // type info
 			}		
 
 			// injects the technique only if it exists
-			if (artPiece.webImage !== null && artTechnique.length > 0){	
+			if (img !== null && artTechnique.length > 0){	
 				artModuleUl.append(artTechniqueContent); // Technique info
 			}
 
