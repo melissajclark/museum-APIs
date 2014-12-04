@@ -158,7 +158,7 @@ artApp.displayPieces = function(pieces) {
 			}
 			else if (artTechnique.length > 0 && artMedium.length > 0 && artTechnique !== artMedium && artMedium !== artMaterials){ // injects the technique only if it exists
 				artModuleUl.append(artMaterialsContent + artMediumContent + artTechniqueContent); // Technique info
-				artModuleUl.append("Else if #2: " + "Medium, Technique, Materials are all different " + "Medium: " + artMedium + "Materials: " + artMaterials + "Technique: " + artTechnique );
+				artModuleUl.append("Else if #2: " + "Medium, Technique, Materials are all different");
 			} 
 
 			else if (artTechnique.length > 0 && artMedium !== artTechnique && artMedium == artMaterials){
