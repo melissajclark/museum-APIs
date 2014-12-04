@@ -115,7 +115,7 @@ artApp.displayPieces = function(pieces) {
 			var artTechniqueContent = artOpenLiSpan + "Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + artCloseLiSpan;
 			var artMuseumContent = artOpenLiSpan + "Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + artCloseLiSpan;
 			var artMaterialsMediumContent = artOpenLiSpan + "Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
-			var artMediumTechnique = artOpenLiSpan + "Physical Medium, Technique: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
+			var artMediumTechniqueContent = artOpenLiSpan + "Physical Medium, Technique: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 
 			// injects the image into the page
 			if (artPiece.webImage.url !== null) { 
@@ -147,6 +147,10 @@ artApp.displayPieces = function(pieces) {
 			} else if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials) {
 				artModuleUl.append(artMediumContent + artMaterialsContent); // appends materials & medium
 				console.log("Medium !== Materials!")
+			} else if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artTechnique.length > 0 && artMedium !== artMaterials && artMedium === artTechnique){
+				artModuleUl.append(artMediumTechniqueContent);
+				console.log("Medium == Technique && Medium !== Materials")
+
 			}
 					
 			// injects the technique only if it exists
