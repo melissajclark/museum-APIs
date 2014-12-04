@@ -135,7 +135,7 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append(artMaterialsMediumContent); // original location
 				console.log("Medium === Materials: medium is " + artMedium + "materials are: " + artMaterials);
 			} else if (img !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials) {
-				artModuleUl.append(artMaterialsContent + artMediumContent); // appends materials & medium
+				artModuleUl.append(artMediumContent + artMaterialsContent); // appends materials & medium
 				console.log("Medium !== Materials!")
 			}
 
