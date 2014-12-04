@@ -130,7 +130,7 @@ artApp.displayPieces = function(pieces) {
 			}
 
 			// injects the medium only if it exists
-			if (artMedium !== null && artMedium.length > 0 ){	
+			if (artMedium !== null && artMedium.length > 0  && artMedium !== artMaterials){	
 				artModuleUl.append(artMediumContent);
 			}
 
