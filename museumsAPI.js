@@ -42,7 +42,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		data: {		
 			key: artApp.key,
 			format: "jsonp",
-			ps: 50,
+			ps: 20,
 			imgonly: true,
 			culture: "en",
 			q: query, 
@@ -89,12 +89,18 @@ artApp.displayPieces = function(pieces) {
 				var artLocation = artPiece.productionPlaces[0];
 				var artTitle = artPiece.title;
 				var artMaker = artPiece.principalOrFirstMaker;
+				var artMedium = artPiece.physicalMedium;
+				var artType = artPiece.objectTypes;
+				var artMaterials = artPiece.materials;
+				console.log("Physical Medium: " + artMedium)
+				console.log("Type: " + artType);
+				console.log("Materials: " + artMaterials);
 	
 
 				if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
 					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
 					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='creator' data-creatorName='" + artMaker + "'>" + artMaker + "</span></li>");
-				}		
+				}
 				if (artPiece.webImage !== null && artLocation !== undefined){	// injects the location only if it exists
 					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>");
 				}
