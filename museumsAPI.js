@@ -86,53 +86,66 @@ artApp.displayPieces = function(pieces) {
 			var artPiece = result.artObject; // new variable like artItem to use data from success function
 			
 			// below: variables for use in displaying image metadata
-			var img = "<img class='artImage' src='" + artPiece.webImage.url + "'>"
+
+			var img = artPiece.webImage.url;
 			var artLink = artItem.links.web;
 			var artLocation = artPiece.productionPlaces[0];
 			var artTitle = artPiece.title;
 			var artMaker = artPiece.principalOrFirstMaker;
 			var artMedium = artPiece.physicalMedium;
-			console.log(artMedium + ", Title: " + artTitle);
 			var artType = artPiece.objectTypes;
 			var artMaterials = artPiece.materials.join(", ");
 			var artTechnique = artPiece.techniques;
 			var artMuseum = "Rijksmuseum";
 
+			// below: variables for appending image metadata (with html)
+
+			var imgContent = "<li class='artMetaData'>" + "<img class='artImage' src='" + img + "'>" + "</li>";
+			var artLinkTitleContent = "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>";
+			var artLocationContent = "<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>";
+			// var artTitleContent = ;
+			var artMakerContent = "<li class='artMetaData'><span class='fieldType'>Maker: </span><span class='maker' data-makerName='" + artMaker + "'>" + artMaker + "</span></li>";
+			var artMediumContent = "<li class='artMetaData'><span class='fieldType'>Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>";
+			var artTypeContent = "<li class='artMetaData'><span class='fieldType'>Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + "</span></li>";
+			var artMaterialsContent = "<li class='artMetaData'><span class='fieldType'>Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + "</span></li>";
+			var artTechniqueContent = "<li class='artMetaData'><span class='fieldType'>Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + "</span></li>";
+			var artMuseumContent = "<li class='artMetaData'><span class='fieldType'>Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + "</span></li>";
+
 			// injects the image into the page
 			if (artPiece.webImage !== null) { 
-				artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
+				artModuleUl.append(imgContent);
 			}
 		
 			// injects the title (linked to item), museum and creator
 			if (artPiece.webImage !== null) {
-				artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
-				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + "</span></li>");
-				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='creator' data-creatorName='" + artMaker + "'>" + artMaker + "</span></li>");
+				artModuleUl.append(artLinkTitleContent); // title & link to item
+				artModuleUl.append(artMuseumContent); // credit to museum
+				artModuleUl.append(artMakerContent);
 			}
 			
 			// injects the location only if it exists
 			if (artPiece.webImage !== null && artLocation !== undefined){
-				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>");
+				artModuleUl.append(artLocationContent); // original location
 			}
 
 			// injects the medium only if it exists
 			if (artMedium !== null && artMedium.length > 0 ){	
-				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>");
+				artModuleUl.append(artMediumContent);
 			}
 
 			// injects the type only if it exists
 			if (artPiece.webImage !== null && artType.length > 0){	
-				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + "</span></li>");
+				artModuleUl.append(artTypeContent); // type info
 			}
 
 			// injects the materials only if it exists
 			if (artPiece.webImage !== null && artMaterials.length > 0){	
-				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + "</span></li>");
+				artModuleUl.append(artMaterialsContent); // materials info
 			}
 
 			// injects the technique only if it exists
 			if (artPiece.webImage !== null && artTechnique.length > 0){	
-				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + "</span></li>");
+				artModuleUl.append(artTechniqueContent); // Technique info
 			}
 
 			$("#artwork").append(artModuleSection);
