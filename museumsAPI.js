@@ -94,13 +94,13 @@ artApp.displayPieces = function(pieces) {
 			
 			// below: variables for use in displaying image metadata
 
-			var src = "not-available.jpg"; // creates fallback image
+			// var src = "not-available.jpg"; // creates fallback image
 
-			if (artPiece.webImage) {
-			  src = artPiece.webImage.url;
-			}
+			// if (artPiece.webImage) {
+			//   src = artPiece.webImage.url;
+			// }
 
-			var img = "<img class='artImage' src='" + src + "'>";
+			var img = "<img class='artImage' src='" + artPiece.webImage.url + "'>";
 			var artLink = artItem.links.web;
 			var artLocation = artPiece.productionPlaces[0];
 			var artTitle = artPiece.title;
