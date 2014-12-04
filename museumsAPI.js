@@ -149,10 +149,10 @@ artApp.displayPieces = function(pieces) {
 			}
 
 			// checks that medium & materials exist, then checks if they are the same
-			if (artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
-				artModuleUl.append(artMaterialsMediumContent); // original location
-				console.log("Medium === Materials: medium is " + artMedium + "materials are: " + artMaterials);
-			}
+			// if (artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
+			// 	artModuleUl.append(artMaterialsMediumContent); // original location
+			// 	console.log("Medium === Materials: medium is " + artMedium + "materials are: " + artMaterials);
+			// }
 
 			// checks if medium & materials exist, then checks if medium = materials, then checks if medium = technique
 			// AKA checks if they are all unique
@@ -169,7 +169,7 @@ artApp.displayPieces = function(pieces) {
 			// 	console.log("Medium == Technique && Medium !== Materials")
 			// }
 
-			 else if (artMedium === artTechnique){
+			 if (artMedium === artTechnique){
 				artModuleUl.append(artMediumTechniqueContent);
 				console.log("Medium == Technique");
 			}
