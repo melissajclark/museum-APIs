@@ -92,9 +92,10 @@ artApp.displayPieces = function(pieces) {
 			var artOpenLiSpan = "<li class='artMetaData'><span class='fieldType'>";
 			var artCloseLiSpan = "</span></li>";
 			
-
-			// below: variables for use in displaying image metadata
-
+			/*=================================================
+			=            Variables: Image Metadata            =
+			=================================================*/
+			
 			var img = "<img class='artImage' src='" + artPiece.webImage.url + "'>";
 			var artLink = artItem.links.web;
 			var artLocation = artPiece.productionPlaces[0];
@@ -106,13 +107,12 @@ artApp.displayPieces = function(pieces) {
 			var artTechnique = artPiece.techniques;
 			var artMuseum = "Rijksmuseum";
 
-			// below: variables for appending image metadata (with html)
+			/*================================================================
+			=            Variables: Image Metadata + HTML content            =
+			================================================================*/	
 
-
-			// var imgContent = "<img class='artImage' src='" + artPiece.webImage.url + "'>";
 			var artLinkTitleContent = "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>";
 			var artLocationContent = artOpenLiSpan + "Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + artCloseLiSpan;
-			// var artTitleContent = ;
 			var artMakerContent = artOpenLiSpan + "Maker: </span><span class='maker' data-makerName='" + artMaker + "'>" + artMaker + artCloseLiSpan;
 			var artMediumContent = artOpenLiSpan + "Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 			var artTypeContent = artOpenLiSpan + "Object Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + artCloseLiSpan;
@@ -141,11 +141,10 @@ artApp.displayPieces = function(pieces) {
 			// injects the location only if it exists
 			if (artLocation !== undefined){
 				artModuleUl.append(artLocationContent); // original location
-				console.log("Location exists!");
 			}
 
 			// injects the type only if it exists
-			if (artPiece.webImage !== null && artType.length > 0){	
+			if (artType.length > 0){	
 				artModuleUl.append(artTypeContent); // type info
 			}
 
