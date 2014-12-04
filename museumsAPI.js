@@ -134,15 +134,15 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append(artMediumContent);
 			}
 
-			// injects the type only if it exists
-			if (artPiece.webImage !== null && artType.length > 0){	
-				artModuleUl.append(artTypeContent); // type info
-			}
-
 			// injects the materials only if it exists
 			if (artPiece.webImage !== null && artMaterials.length > 0){	
 				artModuleUl.append(artMaterialsContent); // materials info
 			}
+
+			// injects the type only if it exists
+			if (artPiece.webImage !== null && artType.length > 0){	
+				artModuleUl.append(artTypeContent); // type info
+			}		
 
 			// injects the technique only if it exists
 			if (artPiece.webImage !== null && artTechnique.length > 0){	
