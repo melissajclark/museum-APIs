@@ -114,7 +114,7 @@ artApp.displayPieces = function(pieces) {
 
 			// injects the image into the page
 			if (artPiece.webImage.url !== null) { 
-				artModuleUl.append(artPiece.webImage.urlContent);
+				artModuleUl.append(imgContent);
 			}
 		
 			// injects the title (linked to item), museum and creator
@@ -130,6 +130,11 @@ artApp.displayPieces = function(pieces) {
 				console.log("Location exists!");
 			}
 
+			// injects the type only if it exists
+			if (artPiece.webImage.url !== null && artType.length > 0){	
+				artModuleUl.append(artTypeContent); // type info
+			}
+
 			// checks that medium & materials exist, then checks if they are the same
 			if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
 				artModuleUl.append(artMaterialsMediumContent); // original location
@@ -143,12 +148,7 @@ artApp.displayPieces = function(pieces) {
 			// if (artPiece.webImage.url !== null && artMaterials.length > 0){	
 			// 	artModuleUl.append(artMaterialsContent); // materials info
 			// }
-
-			// injects the type only if it exists
-			if (artPiece.webImage.url !== null && artType.length > 0){	
-				artModuleUl.append(artTypeContent); // type info
-			}		
-
+					
 			// injects the technique only if it exists
 			if (artPiece.webImage.url !== null && artTechnique.length > 0){	
 				artModuleUl.append(artTechniqueContent); // Technique info
