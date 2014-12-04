@@ -144,7 +144,7 @@ artApp.displayPieces = function(pieces) {
 			if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
 				artModuleUl.append(artMaterialsMediumContent); // original location
 				console.log("Medium === Materials: medium is " + artMedium + "materials are: " + artMaterials);
-			} else if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials) {
+			} else if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials && artMedium !== artTechnique) {
 				artModuleUl.append(artMediumContent + artMaterialsContent); // appends materials & medium
 				console.log("Medium !== Materials!")
 			} else if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artTechnique.length > 0 && artMedium !== artMaterials && artMedium === artTechnique){
