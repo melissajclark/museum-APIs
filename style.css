@@ -36,6 +36,10 @@ fieldset {
   background: #ffff;
 }
 
+legend {
+  font-weight: bold;
+}
+
 .artworkModule {
   /*section for each artwork + data */
   background: white;
