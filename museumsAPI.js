@@ -169,15 +169,17 @@ artApp.displayPieces = function(pieces) {
 			// 	console.log("Medium == Technique && Medium !== Materials")
 			// }
 
-			 if (artMedium === artTechnique){
+			 if (artMedium == artTechnique){
 				artModuleUl.append(artMediumTechniqueContent);
 				console.log("Medium == Technique");
+				console.log("Medium: " + artMedium);
+				console.log("Technique: " + artTechnique);
 			}
 					
 			// injects the technique only if it exists
-			if (artTechnique.length > 0){	
-				artModuleUl.append(artTechniqueContent); // Technique info
-			}
+			// if (artTechnique.length > 0){	
+			// 	artModuleUl.append(artTechniqueContent); // Technique info
+			// }
 
 			$("#artwork").append(artModuleSection);
 			} // end success function
