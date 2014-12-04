@@ -42,7 +42,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		data: {		
 			key: artApp.key,
 			format: "jsonp",
-			ps: 20,
+			ps: 100,
 			imgonly: true,
 			culture: "en",
 			q: query, 
@@ -93,10 +93,16 @@ artApp.displayPieces = function(pieces) {
 				var artType = artPiece.objectTypes;
 				var artMaterials = artPiece.materials;
 				var artTechnique = artPiece.techniques;
+				var artInscriptions = artPiece.inscriptions;
+				var artVIP = artPiece.historicalPersons;
+				var artLabel = artPiece.label;
 				console.log("Physical Medium: " + artMedium)
 				console.log("Type: " + artType);
 				console.log("Materials: " + artMaterials);
 				console.log("Technique: " + artTechnique);
+				console.log("Inscription: " + artInscriptions);
+				console.log("VIPs: " + artVIP);
+				console.log("Label: " + artLabel);
 	
 
 				if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
