@@ -12,19 +12,16 @@ So essentially, they all run on document ready, and this is controlled by the in
 
 -----  End of Notes  ------*/
 
-
 // empty namespace for app to live on
 var artApp = {};
 artApp.key = "lnJ7Bd6c";
 
 artApp.init = function() {
 // init = everything for starting up the app
-	// artApp.getPieces(); // calls art piece function
-
 	$("fieldset.artSearch").on("submit",function(event){
 		event.preventDefault(); // prevents form from refreshing
 		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
-		artApp.getPieces(searchFieldQuery); // calls art piece function
+		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
 	}); // end of artSearch event function
 
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
@@ -37,8 +34,7 @@ artApp.init = function() {
 	});
 };
 
-// create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
-artApp.getPieces = function(query) {
+artApp.getPieces = function(query) { // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
 	console.log("going to fetch the art");
 	$.ajax({
 		url : "https://www.rijksmuseum.nl/api/en/collection",
@@ -46,16 +42,15 @@ artApp.getPieces = function(query) {
 		data: {		
 			key: artApp.key,
 			format: "jsonp",
-			ps: 2,
+			ps: 50,
 			imgonly: true,
 			culture: "en",
-			q: query, // need to update this value with the user's input
+			q: query, 
 		},
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
 			$("#artwork").empty(); // clears artwork before adding new pieces
 			artApp.displayPieces(result.artObjects); // when the ajax request comes back - run this code! - displayPieces function is below
-			// console.log(result.artObjects);
 		}
 	});
 };
@@ -93,36 +88,24 @@ artApp.displayPieces = function(pieces) {
 				var artLink = artItem.links.web;
 				var artLocation = artPiece.productionPlaces[0];
 
-				// below: variables - commented out because they are not currently in use (storing for later)
-
-				// var artMakerBorn = artPiece.principalMakers[0].dateOfBirth;
-				// var artMakerDied = artPiece.principalMakers[0].dateOfDeath;
 				var artTitle = artPiece.title;
 				var artMaker = artPiece.principalOrFirstMaker;
-				// var artMakerVal = artPiece.principalOrFirstMaker.val();
-				// var artDescription = artPiece.description;
 
-				// let's inject the title & other fields into the page
-				if (artPiece.webImage !== null) {	
+				if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
 					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
 					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='creator' data-creatorName='" + artMaker + "'>" + artMaker + "</span></li>");
-				}
-
-				// let's inject the location (only if it doesn't return as undefined) into the page
-				if (artPiece.webImage !== null && artLocation !== undefined){	
+				}		
+				if (artPiece.webImage !== null && artLocation !== undefined){	// injects the location only if it exists
 					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>");
 				}
-
-				// let's inject the image into the page
-				if (artPiece.webImage !== null) {
+				
+				if (artPiece.webImage !== null) { // injects the image into the page
 					artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
 				}
 
 				$("#artwork").append(artModuleSection);
-			}
-
-		});
-
+			} // end success function
+		}); // end ajax function
 
 } // end for loop
 
@@ -136,3 +119,18 @@ $(document).ready(function(){
 	// calls ALL of the code above! 
 
 });
+
+/*========================================
+=            Extra Code Stuff            =
+========================================
+
+// below: variables - commented out because they are not currently in use (storing for later)
+
+// var artMakerBorn = artPiece.principalMakers[0].dateOfBirth;
+// var artMakerDied = artPiece.principalMakers[0].dateOfDeath;
+// var artMakerVal = artPiece.principalOrFirstMaker.val();
+// var artDescription = artPiece.description;
+
+
+
+-----  End of Extra Code Stuff  ------*/
