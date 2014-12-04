@@ -143,11 +143,6 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append(artMediumContent + artMaterialsContent); // appends materials & medium
 				console.log("Medium !== Materials!")
 			}
-
-			// // injects the materials only if it exists
-			// if (artPiece.webImage.url !== null && artMaterials.length > 0){	
-			// 	artModuleUl.append(artMaterialsContent); // materials info
-			// }
 					
 			// injects the technique only if it exists
 			if (artPiece.webImage.url !== null && artTechnique.length > 0){	
