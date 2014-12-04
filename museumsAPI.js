@@ -133,9 +133,6 @@ artApp.displayPieces = function(pieces) {
 			if (artPiece.webImage !== null && artTechnique.length > 0){	
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + "</span></li>");
 			}
-			
-			
-
 
 			$("#artwork").append(artModuleSection);
 			} // end success function
