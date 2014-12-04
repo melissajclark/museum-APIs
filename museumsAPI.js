@@ -44,7 +44,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		data: {		
 			key: artApp.RMkey,
 			format: "jsonp",
-			ps: 200,
+			ps: 15,
 			imgonly: true,
 			culture: "en",
 			q: query, 
@@ -149,6 +149,7 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append(artTypeContent); // type info
 			}
 
+			// below checks for duplicate data and changes appended content accordingly
 			if (artMedium == artTechnique && artMedium !== artMaterials){
 				artModuleUl.append(artMaterialsContent + artMediumTechniqueContent);
 
