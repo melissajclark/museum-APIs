@@ -84,6 +84,9 @@ artApp.displayPieces = function(pieces) {
 			var artModuleSection = artModuleTmpl.clone();
 			var artModuleUl = artModuleSection.find('ul');
 			var artPiece = result.artObject; // new variable like artItem to use data from success function
+
+			var artOpenLiSpan = "<li class='artMetaData'><span class='fieldType'>";
+			var artCloseLiSpan = "</span></li>";
 			
 			// below: variables for use in displaying image metadata
 
@@ -100,8 +103,6 @@ artApp.displayPieces = function(pieces) {
 
 			// below: variables for appending image metadata (with html)
 
-			var artOpenLiSpan = "<li class='artMetaData'><span class='fieldType'>";
-			var artCloseLiSpan = "</span></li>";
 
 			var imgContent = "<li class='artMetaData'>" + "<img class='artImage' src='" + artPiece.webImage.url + "'>" + "</li>";
 			var artLinkTitleContent = "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>";
