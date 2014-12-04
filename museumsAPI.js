@@ -93,18 +93,12 @@ artApp.displayPieces = function(pieces) {
 			var artType = artPiece.objectTypes;
 			var artMaterials = artPiece.materials;
 			var artTechnique = artPiece.techniques;
-			// var artInscriptions = artPiece.inscriptions;
-			// var artVIP = artPiece.historicalPersons;
-			// var artLabel = artPiece.label;
-			console.log("Physical Medium: " + artMedium)
-			console.log("Type: " + artType);
-			console.log("Materials: " + artMaterials);
-			console.log("Technique: " + artTechnique);
-			// console.log("Inscription: " + artInscriptions);
-			// console.log("VIPs: " + artVIP);
-			// console.log("Label: " + artLabel);
 
-
+			// console.log("Physical Medium: " + artMedium)
+			// console.log("Type: " + artType);
+			// console.log("Materials: " + artMaterials);
+			// console.log("Technique: " + artTechnique);
+		
 			if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
 				artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='creator' data-creatorName='" + artMaker + "'>" + artMaker + "</span></li>");
@@ -118,16 +112,22 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>");
 			}
 
-			if (artPiece.webImage !== null && artType !== undefined && artType !== null){	// injects the medium only if it exists
+			if (artPiece.webImage !== null && artType !== undefined && artType !== null){	// injects the type only if it exists
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + "</span></li>");
 			}
 
-			if (artPiece.webImage !== null && artMaterials !== undefined && artMaterials !== null){	// injects the medium only if it exists
+			if (artPiece.webImage !== null && artMaterials !== undefined && artMaterials !== null){	// injects the materials only if it exists
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + "</span></li>");
 			}
+
+			if (artPiece.webImage !== null && artTechnique !== undefined && artTechnique !== null){	// injects the technique only if it exists
+				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + "</span></li>");
+			}
+
 			if (artPiece.webImage !== null) { // injects the image into the page
 				artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
 			}
+
 
 			$("#artwork").append(artModuleSection);
 			} // end success function
@@ -163,6 +163,15 @@ $(document).ready(function(){
 // }
 
 art colours variable = appends list of hexcodes - need to split them all to play with colours
+
+// var artInscriptions = artPiece.inscriptions;
+// var artVIP = artPiece.historicalPersons;
+// var artLabel = artPiece.label;
+
+
+// console.log("Inscription: " + artInscriptions);
+// console.log("VIPs: " + artVIP);
+// console.log("Label: " + artLabel);
 
 
 
