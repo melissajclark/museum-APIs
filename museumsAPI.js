@@ -100,17 +100,19 @@ artApp.displayPieces = function(pieces) {
 
 			// below: variables for appending image metadata (with html)
 
+			var artLiSpan = "<li class='artMetaData'><span class='fieldType'>";
+
 			var imgContent = "<li class='artMetaData'>" + "<img class='artImage' src='" + artPiece.webImage.url + "'>" + "</li>";
 			var artLinkTitleContent = "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>";
-			var artLocationContent = "<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>";
+			var artLocationContent = artLiSpan + "Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>";
 			// var artTitleContent = ;
-			var artMakerContent = "<li class='artMetaData'><span class='fieldType'>Maker: </span><span class='maker' data-makerName='" + artMaker + "'>" + artMaker + "</span></li>";
-			var artMediumContent = "<li class='artMetaData'><span class='fieldType'>Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>";
-			var artTypeContent = "<li class='artMetaData'><span class='fieldType'>Object Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + "</span></li>";
-			var artMaterialsContent = "<li class='artMetaData'><span class='fieldType'>Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + "</span></li>";
-			var artTechniqueContent = "<li class='artMetaData'><span class='fieldType'>Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + "</span></li>";
-			var artMuseumContent = "<li class='artMetaData'><span class='fieldType'>Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + "</span></li>";
-			var artMaterialsMediumContent = "<li class='artMetaData'><span class='fieldType'>Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + "</span></li>";
+			var artMakerContent = artLiSpan + "Maker: </span><span class='maker' data-makerName='" + artMaker + "'>" + artMaker + "</span></li>";
+			var artMediumContent = artLiSpan + "Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + "</span></li>";
+			var artTypeContent = artLiSpan + "Object Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + "</span></li>";
+			var artMaterialsContent = artLiSpan + "Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + "</span></li>";
+			var artTechniqueContent = artLiSpan + "Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + "</span></li>";
+			var artMuseumContent = artLiSpan + "Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + "</span></li>";
+			var artMaterialsMediumContent = artLiSpan + "Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + "</span></li>";
 
 			// injects the image into the page
 			if (artPiece.webImage.url !== null) { 
