@@ -106,15 +106,15 @@ artApp.displayPieces = function(pieces) {
 
 			var imgContent = "<li class='artMetaData'>" + "<img class='artImage' src='" + artPiece.webImage.url + "'>" + "</li>";
 			var artLinkTitleContent = "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>";
-			var artLocationContent = artOpenLiSPan + "Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + artCloseLiSpan;
+			var artLocationContent = artOpenLiSpan + "Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + artCloseLiSpan;
 			// var artTitleContent = ;
-			var artMakerContent = artOpenLiSPan + "Maker: </span><span class='maker' data-makerName='" + artMaker + "'>" + artMaker + artCloseLiSpan;
-			var artMediumContent = artOpenLiSPan + "Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + artCloseLiSpan;
-			var artTypeContent = artOpenLiSPan + "Object Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + artCloseLiSpan;
-			var artMaterialsContent = artOpenLiSPan + "Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + artCloseLiSpan;
-			var artTechniqueContent = artOpenLiSPan + "Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + artCloseLiSpan;
-			var artMuseumContent = artOpenLiSPan + "Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + artCloseLiSpan;
-			var artMaterialsMediumContent = artOpenLiSPan + "Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
+			var artMakerContent = artOpenLiSpan + "Maker: </span><span class='maker' data-makerName='" + artMaker + "'>" + artMaker + artCloseLiSpan;
+			var artMediumContent = artOpenLiSpan + "Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + artCloseLiSpan;
+			var artTypeContent = artOpenLiSpan + "Object Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + artCloseLiSpan;
+			var artMaterialsContent = artOpenLiSpan + "Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + artCloseLiSpan;
+			var artTechniqueContent = artOpenLiSpan + "Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + artCloseLiSpan;
+			var artMuseumContent = artOpenLiSpan + "Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + artCloseLiSpan;
+			var artMaterialsMediumContent = artOpenLiSpan + "Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 
 			// injects the image into the page
 			if (artPiece.webImage.url !== null) { 
