@@ -93,9 +93,11 @@ artApp.displayPieces = function(pieces) {
 			var artType = artPiece.objectTypes;
 			var artMaterials = artPiece.materials.join(", ");
 			var artTechnique = artPiece.techniques;
+			var artMuseum = "Rijksmuseum";
 		
 			if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
 				artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
+				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + "</span></li>");
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Creator: </span><span class='creator' data-creatorName='" + artMaker + "'>" + artMaker + "</span></li>");
 			}
 			
