@@ -89,8 +89,10 @@ artApp.displayPieces = function(pieces) {
 				var artLocation = artPiece.productionPlaces[0];
 
 				var artTitle = artPiece.title;
+				console.log(artTitle);
 				var artMaker = artPiece.principalOrFirstMaker;
 				var artColours = artPiece.colors;
+				console.log(artColours);
 
 				if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
 					artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
@@ -99,8 +101,8 @@ artApp.displayPieces = function(pieces) {
 				if (artPiece.webImage !== null && artLocation !== undefined){	// injects the location only if it exists
 					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + "</span></li>");
 				}
-				if (artPiece.webImage !== null && artColours !== undefined){	// injects the location only if it exists
-					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Colours: </span><span class='colours' data-colours='" + artColours + "'>" + artColours + "</span></li>");
+				if (artPiece.webImage !== null && artColours !== undefined && artColours !== null && artColours !== Array[0]){	// injects the location only if it exists
+					artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Colours: </span><span class='colours' data-colours='" + artColours + "style=background-color:" + artColours + ";'" + artColours + "</span></li>");
 				}
 				if (artPiece.webImage !== null) { // injects the image into the page
 					artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
