@@ -164,12 +164,12 @@ artApp.displayPieces = function(pieces) {
 
 			// checks if medium, materials, and technique exist, then checks if medium != materials, then checks if medium == technique
 			// if this is all true, it appends the medium (same as technique) and materials
-			 else if (artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artTechnique.length > 0 && artMedium !== artMaterials && artMedium === artTechnique){
-				artModuleUl.append(artMediumTechniqueContent + artMaterialsContent);
-				console.log("Medium == Technique && Medium !== Materials")
-			}
+			//  else if (artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artTechnique.length > 0 && artMedium !== artMaterials && artMedium === artTechnique){
+			// 	artModuleUl.append(artMediumTechniqueContent + artMaterialsContent);
+			// 	console.log("Medium == Technique && Medium !== Materials")
+			// }
 
-			 else if (artMedium !== null && artMedium.length > 0 && artTechnique.length > 0 && artMedium ==== artTechnique){
+			 else if (artMedium !== null && artMedium.length > 0 && artTechnique.length > 0 && artMedium === artTechnique){
 				artModuleUl.append(artMediumTechniqueContent + artMaterialsContent);
 				console.log("Medium == Technique");
 			}
