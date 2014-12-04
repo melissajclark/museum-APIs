@@ -115,6 +115,7 @@ artApp.displayPieces = function(pieces) {
 			var artTechniqueContent = artOpenLiSpan + "Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + artCloseLiSpan;
 			var artMuseumContent = artOpenLiSpan + "Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + artCloseLiSpan;
 			var artMaterialsMediumContent = artOpenLiSpan + "Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
+			var artMediumTechnique = artOpenLiSpan + "Physical Medium, Technique: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 
 			// injects the image into the page
 			if (artPiece.webImage.url !== null) { 
