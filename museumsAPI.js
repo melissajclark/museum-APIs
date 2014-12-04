@@ -128,6 +128,7 @@ artApp.displayPieces = function(pieces) {
 
 			// image						
 			artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
+			console.log(artTitle);
 
 			// art title & link to content
 			artModuleUl.append(artLinkTitleContent); // title & link to item
