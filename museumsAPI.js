@@ -113,44 +113,44 @@ artApp.displayPieces = function(pieces) {
 			var artMaterialsMediumContent = "<li class='artMetaData'><span class='fieldType'>Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + "</span></li>";
 
 			// injects the image into the page
-			if (img !== null) { 
-				artModuleUl.append(imgContent);
+			if (artPiece.webImage.url !== null) { 
+				artModuleUl.append(artPiece.webImage.urlContent);
 			}
 		
 			// injects the title (linked to item), museum and creator
-			if (img !== null) {
+			if (artPiece.webImage.url !== null) {
 				artModuleUl.append(artLinkTitleContent); // title & link to item
 				artModuleUl.append(artMuseumContent); // credit to museum
 				artModuleUl.append(artMakerContent);
 			}
 			
 			// injects the location only if it exists
-			if (img !== null && artLocation !== undefined){
+			if (artPiece.webImage.url !== null && artLocation !== undefined){
 				artModuleUl.append(artLocationContent); // original location
 				console.log("Location exists!");
 			}
 
 			// checks that medium & materials exist, then checks if they are the same
-			if (img !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
+			if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
 				artModuleUl.append(artMaterialsMediumContent); // original location
 				console.log("Medium === Materials: medium is " + artMedium + "materials are: " + artMaterials);
-			} else if (img !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials) {
+			} else if (artPiece.webImage.url !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials) {
 				artModuleUl.append(artMediumContent + artMaterialsContent); // appends materials & medium
 				console.log("Medium !== Materials!")
 			}
 
 			// // injects the materials only if it exists
-			// if (img !== null && artMaterials.length > 0){	
+			// if (artPiece.webImage.url !== null && artMaterials.length > 0){	
 			// 	artModuleUl.append(artMaterialsContent); // materials info
 			// }
 
 			// injects the type only if it exists
-			if (img !== null && artType.length > 0){	
+			if (artPiece.webImage.url !== null && artType.length > 0){	
 				artModuleUl.append(artTypeContent); // type info
 			}		
 
 			// injects the technique only if it exists
-			if (img !== null && artTechnique.length > 0){	
+			if (artPiece.webImage.url !== null && artTechnique.length > 0){	
 				artModuleUl.append(artTechniqueContent); // Technique info
 			}
 
