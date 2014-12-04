@@ -93,11 +93,6 @@ artApp.displayPieces = function(pieces) {
 			var artType = artPiece.objectTypes;
 			var artMaterials = artPiece.materials;
 			var artTechnique = artPiece.techniques;
-
-			// console.log("Physical Medium: " + artMedium)
-			// console.log("Type: " + artType);
-			// console.log("Materials: " + artMaterials);
-			// console.log("Technique: " + artTechnique);
 		
 			if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
 				artModuleUl.append( "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>"); // title & link to item
@@ -120,7 +115,7 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + "</span></li>");
 			}
 
-			if (artPiece.webImage !== null && artTechnique !== undefined && artTechnique !== null){	// injects the technique only if it exists
+			if (artPiece.webImage !== null && artTechnique !== undefined && artTechnique !== null && artTechnique){	// injects the technique only if it exists
 				artModuleUl.append("<li class='artMetaData'><span class='fieldType'>Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + "</span></li>");
 			}
 
@@ -173,6 +168,11 @@ art colours variable = appends list of hexcodes - need to split them all to play
 // console.log("VIPs: " + artVIP);
 // console.log("Label: " + artLabel);
 
+
+// console.log("Physical Medium: " + artMedium)
+// console.log("Type: " + artType);
+// console.log("Materials: " + artMaterials);
+// console.log("Technique: " + artTechnique);
 
 
 -----  End of Extra Code Stuff  ------*/
