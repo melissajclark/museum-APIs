@@ -1,14 +1,10 @@
-/*===============================
-=            Imports            =
-===============================*/
-/*-----  End of Imports  ------*/
 body {
   font-family: sans-serif;
   font-size: 1em;
   line-height: 1.4em;
-  background: #999999;
   max-width: 100%;
   padding: 1em;
+  background: #999999;
 }
 
 a {
@@ -33,6 +29,11 @@ span.fieldType {
 
 span {
   display: inline;
+}
+
+fieldset {
+  border: none;
+  background: #ffff;
 }
 
 .artworkModule {
