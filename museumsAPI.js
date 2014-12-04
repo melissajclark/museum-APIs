@@ -62,7 +62,11 @@ artApp.displayPieces = function(pieces) {
 	var artModuleTmpl = $('<section class="artworkModule"><ul class="artFields"></ul></section>');
 	// loop over each piece
 	console.log(pieces.length); // counts number of pieces retreived by API
-	for (var i = 0; i < pieces.length; i++) { // for loop
+	for (var i = 0; i < pieces.length; i++) 
+		if(!pieces[i].webImage) {
+		    continue; // skip this one there is no image
+		  }
+	{ // for loop
 
 	var artItem = pieces[i]; // variable for easier calling of looped items
 	
