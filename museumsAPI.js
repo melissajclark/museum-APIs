@@ -139,7 +139,7 @@ artApp.displayPieces = function(pieces) {
 
 			// checks that medium & materials exist, then checks if they are the same
 			if (artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
-				artModuleUI.append(artMaterialsMediumContent);
+				artModuleUl.append(artMaterialsMediumContent); // original location
 				console.log("Medium === Materials: medium is" + artMedium + "materials are: " + artMaterials);
 			}
 
