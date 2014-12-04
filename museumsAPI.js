@@ -169,8 +169,8 @@ artApp.displayPieces = function(pieces) {
 			// 	console.log("Medium == Technique && Medium !== Materials")
 			// }
 
-			 else if (artMedium !== null && artMedium.length > 0 && artTechnique.length > 0 && artMedium === artTechnique){
-				artModuleUl.append(artMediumTechniqueContent + artMaterialsContent);
+			 else if (artMedium === artTechnique){
+				artModuleUl.append(artMediumTechniqueContent);
 				console.log("Medium == Technique");
 			}
 					
