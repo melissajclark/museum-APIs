@@ -161,7 +161,7 @@ artApp.displayPieces = function(pieces) {
 			} 
 
 			else if (artMedium !== artTechnique && artMedium == artMaterials){
-				artModuleUl.append(artMaterialsMediumContent);
+				artModuleUl.append(artMaterialsMediumContent + artTechniqueContent);
 				artModuleUl.append("Else if #3: " + "Medium & Technique = different");
 				artModuleUl.append("Else if #3: " +  "Medium & Materials = same");
 				console.log("Technique !== Medium, Materials == Medium");
