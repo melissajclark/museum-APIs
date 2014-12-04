@@ -156,7 +156,7 @@ artApp.displayPieces = function(pieces) {
 				console.log("Technique: " + artTechnique);
 			}
 			else if (artTechnique.length > 0 && artMedium.length > 0 && artTechnique !== artMedium && artMedium !== artMaterials){ // injects the technique only if it exists
-				artModuleUl.append(artMediumContent + artTechniqueContent + artMaterialsContent); // Technique info
+				artModuleUl.append(artMaterialsContent + artMediumContent + artTechniqueContent); // Technique info
 				artModuleUl.append("Else if #2: " + "Medium, Technique, Materials are all different " + "Medium: " + artMedium + "Materials: " + artMaterials + "Technique: " + artTechnique );
 			} 
 
