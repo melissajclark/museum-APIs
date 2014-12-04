@@ -134,12 +134,15 @@ artApp.displayPieces = function(pieces) {
 			if (img !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
 				artModuleUl.append(artMaterialsMediumContent); // original location
 				console.log("Medium === Materials: medium is " + artMedium + "materials are: " + artMaterials);
+			} else if (img !== null && artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials) {
+				artModuleUl.append(artMaterialsContent + artMediumContent); // appends materials & medium
+				console.log("Medium !== Materials!")
 			}
 
-			// injects the materials only if it exists
-			if (img !== null && artMaterials.length > 0){	
-				artModuleUl.append(artMaterialsContent); // materials info
-			}
+			// // injects the materials only if it exists
+			// if (img !== null && artMaterials.length > 0){	
+			// 	artModuleUl.append(artMaterialsContent); // materials info
+			// }
 
 			// injects the type only if it exists
 			if (img !== null && artType.length > 0){	
