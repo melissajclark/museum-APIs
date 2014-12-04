@@ -168,6 +168,11 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append(artMediumTechniqueContent + artMaterialsContent);
 				console.log("Medium == Technique && Medium !== Materials")
 			}
+
+			 else if (artMedium !== null && artMedium.length > 0 && artTechnique.length > 0 && artMedium ==== artTechnique){
+				artModuleUl.append(artMediumTechniqueContent + artMaterialsContent);
+				console.log("Medium == Technique");
+			}
 					
 			// injects the technique only if it exists
 			if (artPiece.webImage !== null && artTechnique.length > 0){	
