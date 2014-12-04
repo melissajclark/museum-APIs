@@ -92,9 +92,11 @@ artApp.displayPieces = function(pieces) {
 				var artMedium = artPiece.physicalMedium;
 				var artType = artPiece.objectTypes;
 				var artMaterials = artPiece.materials;
+				var artTechnique = artPiece.techniques;
 				console.log("Physical Medium: " + artMedium)
 				console.log("Type: " + artType);
 				console.log("Materials: " + artMaterials);
+				console.log("Technique: " + artTechnique);
 	
 
 				if (artPiece.webImage !== null) {// injects the title (linked to item), and creator
