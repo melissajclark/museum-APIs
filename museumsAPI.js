@@ -14,7 +14,8 @@
 
 // empty namespace for app to live on
 var artApp = {};
-artApp.key = "lnJ7Bd6c";
+artApp.RMkey = "lnJ7Bd6c";
+artApp.FGkey = "i39hegnykz7iq";
 
 artApp.init = function() {
 // init = everything for starting up the app
@@ -40,7 +41,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		url : "https://www.rijksmuseum.nl/api/en/collection",
 		type: 'GET',
 		data: {		
-			key: artApp.key,
+			key: artApp.RMkey,
 			format: "jsonp",
 			ps: 20,
 			imgonly: true,
@@ -68,7 +69,7 @@ artApp.displayPieces = function(pieces) {
 		url : "https://www.rijksmuseum.nl/api/en/collection/" + artItem.objectNumber,
 		type: 'GET',
 		data: {
-			key: artApp.key,
+			key: artApp.RMkey,
 			format: "jsonp",
 			imgonly: true,
 			culture: "en",
