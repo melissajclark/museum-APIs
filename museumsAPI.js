@@ -148,28 +148,7 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append(artTypeContent); // type info
 			}
 
-			// checks that medium & materials exist, then checks if they are the same
-			// if (artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium === artMaterials){
-			// 	artModuleUl.append(artMaterialsMediumContent); // original location
-			// 	console.log("Medium === Materials: medium is " + artMedium + "materials are: " + artMaterials);
-			// }
-
-			// checks if medium & materials exist, then checks if medium = materials, then checks if medium = technique
-			// AKA checks if they are all unique
-			// then appends each of them 
-			// else if (artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artMedium !== artMaterials && artMedium !== artTechnique) {
-			// 	artModuleUl.append(artMediumContent + artMaterialsContent + artTechnique); // appends materials & medium
-			// 	console.log("Medium !== Materials! Medium !== Technique");
-			// }
-
-			// checks if medium, materials, and technique exist, then checks if medium != materials, then checks if medium == technique
-			// if this is all true, it appends the medium (same as technique) and materials
-			//  else if (artMedium !== null && artMedium.length > 0 && artMaterials.length > 0 && artTechnique.length > 0 && artMedium !== artMaterials && artMedium === artTechnique){
-			// 	artModuleUl.append(artMediumTechniqueContent + artMaterialsContent);
-			// 	console.log("Medium == Technique && Medium !== Materials")
-			// }
-
-			 if (artMedium == artTechnique){
+			if (artMedium == artTechnique){
 				artModuleUl.append(artMediumTechniqueContent);
 				console.log("Medium == Technique");
 				console.log("Medium: " + artMedium);
