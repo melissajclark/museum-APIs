@@ -23,7 +23,8 @@ artApp.init = function() {
 
 	$("fieldset.artSearch").on("submit",function(event){
 		event.preventDefault(); // prevents form from refreshing
-		artApp.getPieces(); // calls art piece function
+		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
+		artApp.getPieces(searchFieldQuery); // calls art piece function
 	}); // end of artSearch event function
 
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
@@ -48,7 +49,7 @@ artApp.getPieces = function(query) {
 			ps: 2,
 			imgonly: true,
 			culture: "en",
-			// q: "Q", // need to update this value with the user's input
+			q: query, // need to update this value with the user's input
 		},
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
