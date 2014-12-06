@@ -24,6 +24,7 @@ artApp.init = function() {
 		event.preventDefault(); // prevents form from refreshing
 		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
 		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
+		$("<button class='loadMore'>Load More</button>");
 	}); // end of artSearch event function
 
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
