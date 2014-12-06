@@ -59,7 +59,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 
 artApp.displayPieces = function(pieces) {
 
-	var artModuleTmpl = $("<section class='artworkModule'><section class='artImage'></section><ul class='artFields'></ul></section>");
+	var artModuleTmpl = $("<section class='artworkModule'><section class='artItem'></section><ul class='artFields'></ul></section>");
 	// loop over each piece
 	console.log(pieces.length); // counts number of pieces retreived by API
 	for (var i = 0; i < pieces.length; i++) { // for loop
@@ -87,7 +87,7 @@ artApp.displayPieces = function(pieces) {
 
 			var artModuleSection = artModuleTmpl.clone();
 			var artModuleUl = artModuleSection.find('ul');
-			var artModuleImage = artModuleSection.find('section.artImage');
+			var artModuleItem = artModuleSection.find('section.artItem');
 			var artPiece = result.artObject; // new variable like artItem to use data from success function
 
 			var artOpenLiSpan = "<li class='artMetaData'><span class='fieldType'>";
@@ -128,7 +128,7 @@ artApp.displayPieces = function(pieces) {
 			==========================================================*/
 
 			// image						
-			artModuleImage.append(img);
+			artModuleItem.append(img);
 			console.log(artTitle);
 
 			// art title & link to content
