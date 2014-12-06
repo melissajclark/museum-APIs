@@ -9,7 +9,6 @@ _-- December 2, 2014_
 ---------
 
 ## Notes & Features to Add
-_--December 5, 2014_
 
 ### Notes
 
@@ -25,3 +24,5 @@ _--December 5, 2014_
 - [ ] filtering options (ie. narrow down first results by data such as medium, maker, location, etc)
 - [ ] sorting options (ie. give user option to sort results alphabetically by maker, chronologically, etc)
 - [ ] random search option?
+
+_--December 5, 2014_
