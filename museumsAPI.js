@@ -163,8 +163,9 @@ artApp.displayPieces = function(pieces) {
 			$("ul.artFields").readmore({
 			  speed: 100,
 			  maxHeight: 1,
+			  embedCSS: false,
 			  moreLink: "<a href='#' class='readMore'>View Details</a>",
-			  lessLink: "<a href='#' class='readMore'>Close Details</a>",
+			  lessLink: "<a href='#' class='readMore'>Close Details</a>"
 			});
 
 			} // end success function
