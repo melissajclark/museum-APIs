@@ -164,8 +164,8 @@ artApp.displayPieces = function(pieces) {
 			  speed: 100,
 			  maxHeight: 1,
 			  embedCSS: false,
-			  moreLink: "<a href='#' class='readMore'>View Details</a>",
-			  lessLink: "<a href='#' class='readMore'>Close Details</a>"
+			  moreLink: "<a href='#'>View Details</a>",
+			  lessLink: "<a href='#'>Close Details</a>"
 			});
 
 			} // end success function
