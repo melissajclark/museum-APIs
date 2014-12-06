@@ -14,6 +14,13 @@ a {
 	&:hover{
 		color:black;
 	}
+	&.readmore-js-toggle {
+		border-bottom: none;
+		font-weight:strong;
+		font-size: 1.1em;
+		line-height: 1.3em;
+		margin: 0.5em 0 0.5em 0;
+	}
 }
 
 .container { /*Sets basic sizing of content*/
@@ -48,10 +55,6 @@ legend {
   overflow: hidden;
 }
 
-a.readmore-js-toggle {
-	text-decoration:none;
-	font-weight:strong;
-}
 
 .artworkModule { /*section for each artwork + data */
 	background:white;
