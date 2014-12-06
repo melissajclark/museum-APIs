@@ -128,7 +128,7 @@ artApp.displayPieces = function(pieces) {
 			==========================================================*/
 
 			// image						
-			artModuleImage.append(img + "<p class='readMore notVisible'><a href='#'>View Details</a></p>");
+			artModuleImage.append(img + "<a href='#' class='readMore notVisible'>View Details</a>");
 			console.log(artTitle);
 
 			// art title & link to content
@@ -164,7 +164,7 @@ artApp.displayPieces = function(pieces) {
 			$("#artwork").append(artModuleSection);
 				$("ul.artFields").hide();
 				$(".readMore").on("click", function(){
-					$(this).show("ul.artFields");
+					$(this).removeClass(notVisible);
 				});
 			} // end success function
 		}); // end ajax function
