@@ -38,8 +38,19 @@ legend {
 	font-weight:bold;
 }
 
-.notVisible {
-	display: none;
+/* Read More JS */
+
+.readmore-js-toggle, .readmore-js-section {
+  display: block;
+  width: 100%;
+}
+.readmore-js-section {
+  overflow: hidden;
+}
+
+a.readMore {
+	text-decoration:none;
+	font-weight:strong;
 }
 
 .artworkModule { /*section for each artwork + data */
