@@ -128,7 +128,7 @@ artApp.displayPieces = function(pieces) {
 			==========================================================*/
 
 			// image						
-			artModuleImage.append(img);
+			artModuleImage.append(img + "<p class='readMore'><a href='#'>View Details</a></p>");
 			console.log(artTitle);
 
 			// art title & link to content
@@ -162,6 +162,7 @@ artApp.displayPieces = function(pieces) {
 			}
 
 			$("#artwork").append(artModuleSection);
+				$("ul.artFields").hide();
 			} // end success function
 		}); // end ajax function
 
