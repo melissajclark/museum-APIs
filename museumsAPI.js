@@ -128,7 +128,7 @@ artApp.displayPieces = function(pieces) {
 			==========================================================*/
 
 			// image						
-			artModuleImage.append(img + "<a href='#' class='readMore'>View Details</a>");
+			artModuleImage.append(img);
 			console.log(artTitle);
 
 			// art title & link to content
