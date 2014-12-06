@@ -87,6 +87,7 @@ artApp.displayPieces = function(pieces) {
 
 			var artModuleSection = artModuleTmpl.clone();
 			var artModuleUl = artModuleSection.find('ul');
+			var artModuleImage = artModuleSection.find('artImage');
 			var artPiece = result.artObject; // new variable like artItem to use data from success function
 
 			var artOpenLiSpan = "<li class='artMetaData'><span class='fieldType'>";
@@ -127,7 +128,7 @@ artApp.displayPieces = function(pieces) {
 			==========================================================*/
 
 			// image						
-			$(".artImage").append(img);
+			artModuleImage.append(img);
 			console.log(artTitle);
 
 			// art title & link to content
