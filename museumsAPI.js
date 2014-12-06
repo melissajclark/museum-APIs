@@ -163,6 +163,9 @@ artApp.displayPieces = function(pieces) {
 
 			$("#artwork").append(artModuleSection);
 				$("ul.artFields").hide();
+				$(".readMore").on("click", function(){
+					$(this).append("ul.artFields");
+				});
 			} // end success function
 		}); // end ajax function
 
