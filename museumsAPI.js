@@ -87,7 +87,7 @@ artApp.displayPieces = function(pieces) {
 
 			var artModuleSection = artModuleTmpl.clone();
 			var artModuleUl = artModuleSection.find('ul');
-			var artModuleImage = artModuleSection.find('artImage');
+			var artModuleImage = artModuleSection.find('section.artImage');
 			var artPiece = result.artObject; // new variable like artItem to use data from success function
 
 			var artOpenLiSpan = "<li class='artMetaData'><span class='fieldType'>";
