@@ -183,6 +183,12 @@ $(document).ready(function(){
 
 	// calls ALL of the code above! 
 
+	$(function() {
+
+	    $.filtrify("ul.artFields", "filtrifyPlaceholder");
+
+	});
+
 });
 
 /*========================================
