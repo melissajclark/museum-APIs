@@ -60,7 +60,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 
 artApp.displayPieces = function(pieces) {
 
-	var artModuleTmpl = $("<section class='artworkModule'><section class='artItem'></section><ul class='artFields'></ul></section>");
+	var artModuleTmpl = $("<section class='artworkModule'><section class='artItem'></section><ul id='artFields'></ul></section>");
 	// loop over each piece
 	console.log(pieces.length); // counts number of pieces retreived by API
 	for (var i = 0; i < pieces.length; i++) { // for loop
