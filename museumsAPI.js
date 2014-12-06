@@ -161,7 +161,7 @@ artApp.displayPieces = function(pieces) {
 			$("#artwork").append(artModuleSection);
 
 			$("ul.artFields").readmore({
-			  speed: 100,
+			  speed: 150,
 			  maxHeight: 1,
 			  embedCSS: false,
 			  moreLink: "<a href='#'>View Details</a>",
