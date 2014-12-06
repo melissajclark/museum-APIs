@@ -185,7 +185,7 @@ $(document).ready(function(){
 
 	$(function() {
 
-	    $.filtrify("ul.artFields", "filtrifyPlaceholder");
+	    $.filtrify("#artFields", "filtrifyPlaceholder");
 
 	});
 
