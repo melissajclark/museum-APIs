@@ -127,7 +127,7 @@ artApp.displayPieces = function(pieces) {
 			==========================================================*/
 
 			// image						
-			$(".artworkModule").append(img);
+			$(".artImage").append(img);
 			console.log(artTitle);
 
 			// art title & link to content
