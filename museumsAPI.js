@@ -163,7 +163,10 @@ artApp.displayPieces = function(pieces) {
 
 			$("#artwork").append(artModuleSection);
 
-			$("ul.artFields").readmore();
+			$("ul.artFields").readmore({
+			  speed: 75,
+			  maxHeight: 1
+			});
 			} // end success function
 		}); // end ajax function
 
