@@ -164,9 +164,12 @@ artApp.displayPieces = function(pieces) {
 			$("#artwork").append(artModuleSection);
 
 			$("ul.artFields").readmore({
-			  speed: 75,
-			  maxHeight: 1
+			  speed: 100,
+			  maxHeight: 1,
+			  moreLink: "<a href='#' class='readMore'>View Details</a>",
+			  lessLink: "<a href='#' class='readMore'>Close Details</a>",
 			});
+
 			} // end success function
 		}); // end ajax function
 
