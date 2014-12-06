@@ -127,12 +127,9 @@ artApp.displayPieces = function(pieces) {
 			=            Injecting Image Data Into the Page            =
 			==========================================================*/
 
-			// image						
-			artModuleItem.append(img);
+			// title (with link) + image						
+			artModuleItem.append(artLinkTitleContent + img);
 			console.log(artTitle);
-
-			// art title & link to content
-			artModuleUl.append(artLinkTitleContent); // title & link to item
 
 			// credit to museum
 			artModuleUl.append(artMuseumContent); 
