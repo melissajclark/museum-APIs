@@ -24,7 +24,7 @@ artApp.init = function() {
 		event.preventDefault(); // prevents form from refreshing
 		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
 		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
-		$("#artwork").append("<button class='loadMore'>Load More</button>");
+
 	}); // end of artSearch event function
 
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
@@ -60,7 +60,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 
 artApp.displayPieces = function(pieces) {
 
-	var artModuleTmpl = $("<section class='artworkModule'><section class='artItem'></section><ul id='artFields'></ul></section>");
+	var artModuleTmpl = $("<section class='artworkModule'><section class='artItem'></section><ul class='artFields'></ul></section>");
 	// loop over each piece
 	console.log(pieces.length); // counts number of pieces retreived by API
 	for (var i = 0; i < pieces.length; i++) { // for loop
@@ -161,13 +161,15 @@ artApp.displayPieces = function(pieces) {
 
 			$("#artwork").append(artModuleSection);
 
-			$("ul.artFields").readmore({
-			  speed: 150,
-			  maxHeight: 1,
-			  embedCSS: false,
-			  moreLink: "<a href='#'>View Details</a>",
-			  lessLink: "<a href='#'>Close Details</a>"
-			});
+				$("ul.artFields").readmore({
+				  speed: 150,
+				  maxHeight: 1,
+				  embedCSS: false,
+				  moreLink: "<a href='#'>View Details</a>",
+				  lessLink: "<a href='#'>Close Details</a>"
+				});
+
+				$.filtrify("artFields", "placeHolder");
 
 			} // end success function
 		}); // end ajax function
@@ -182,12 +184,6 @@ $(document).ready(function(){
 	// artApp.init:
 
 	// calls ALL of the code above! 
-
-	$(function() {
-
-	    $.filtrify("artFields", "filtrifyPlaceholder");
-
-	});
 
 });
 
