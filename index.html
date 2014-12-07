@@ -27,12 +27,18 @@
 </head>
 <body>
 
-	<header id="header" class="container">
+	<header id="header">
 		<h1>Museum APIs</h1>
 
 		<p>Project is under Development by <a href="http://melissajclark.ca/">Melissa Jean Clark</a> | Check it out on Github: <a href="https://github.com/melissajclark/museum-APIs">MuseumAPIs</a> </p>
+		
+	</header>
 
-		<p class="info">Try searching for anything! <em>(Hint: colour, date, title, artist, medium)</em></p>
+<main role="main">
+	
+	<p class="info">Try searching for anything! <em>(Hint: colour, date, title, artist, medium)</em></p>
+
+	<div class="searchAndFilter">	
 		
 		<fieldset class="artSearch"> 
 			<form>
@@ -50,17 +56,19 @@
 			    	<button type="submit" name=""/>Submit!</button>
 			    </p>
 			</form>
+
 		</fieldset>
+
+
+		 <section id="filtrifyPlaceHolder">
+
+		 	<!-- Filtrify content appends here -->
+		 	
+		</section>
+
 		
-	</header>
 
-	<main role="main">
-
-		<div id="filtrifyPlaceHolder" class="container">
-
-			<!-- Filtrify content appends here -->
-			
-		</div>
+	</div>
 
 		<div id="artwork" class="container">
 		
@@ -68,7 +76,7 @@
 				
 		</div>
 
-	</main>
+</main>
 
 	<footer>
 	<a href="#header">Back to Top</a>
