@@ -24,6 +24,7 @@ artApp.init = function() {
 		event.preventDefault(); // prevents form from refreshing
 		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
 		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
+
 	}); // end of artSearch event function
 
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
@@ -59,7 +60,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 
 artApp.displayPieces = function(pieces) {
 
-	var artModuleTmpl = $('<section class="artworkModule"><ul class="artFields"></ul></section>');
+	var artModuleTmpl = $("<section class='artworkModule'><section class='artItem'></section><ul class='artFields'></ul></section>");
 	// loop over each piece
 	console.log(pieces.length); // counts number of pieces retreived by API
 	for (var i = 0; i < pieces.length; i++) { // for loop
@@ -87,6 +88,7 @@ artApp.displayPieces = function(pieces) {
 
 			var artModuleSection = artModuleTmpl.clone();
 			var artModuleUl = artModuleSection.find('ul');
+			var artModuleItem = artModuleSection.find('section.artItem');
 			var artPiece = result.artObject; // new variable like artItem to use data from success function
 
 			var artOpenLiSpan = "<li class='artMetaData'><span class='fieldType'>";
@@ -111,7 +113,7 @@ artApp.displayPieces = function(pieces) {
 			=            Variables: Image Metadata + HTML content            =
 			================================================================*/	
 
-			var artLinkTitleContent = "<li class='artMetaData'>" + "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3></li>";
+			var artLinkTitleContent = "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3>";
 			var artLocationContent = artOpenLiSpan + "Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + artCloseLiSpan;
 			var artMakerContent = artOpenLiSpan + "Maker: </span><span class='maker' data-makerName='" + artMaker + "'>" + artMaker + artCloseLiSpan;
 			var artMediumContent = artOpenLiSpan + "Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + artCloseLiSpan;
@@ -126,12 +128,9 @@ artApp.displayPieces = function(pieces) {
 			=            Injecting Image Data Into the Page            =
 			==========================================================*/
 
-			// image						
-			artModuleUl.append("<li class='artMetaData'>" + img + "</li>");
+			// title (with link) + image						
+			artModuleItem.append(artLinkTitleContent + img);
 			console.log(artTitle);
-
-			// art title & link to content
-			artModuleUl.append(artLinkTitleContent); // title & link to item
 
 			// credit to museum
 			artModuleUl.append(artMuseumContent); 
@@ -161,6 +160,17 @@ artApp.displayPieces = function(pieces) {
 			}
 
 			$("#artwork").append(artModuleSection);
+
+				$("ul.artFields").readmore({
+				  speed: 150,
+				  maxHeight: 1,
+				  embedCSS: false,
+				  moreLink: "<a href='#'>View Details</a>",
+				  lessLink: "<a href='#'>Close Details</a>"
+				});
+
+				$.filtrify("artFields", "placeHolder");
+
 			} // end success function
 		}); // end ajax function
 
