@@ -115,16 +115,21 @@ artApp.displayPieces = function(pieces) {
 
 			var artLinkTitleContent = "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3>";
 			var artLocationContent = artOpenLiSpan + "Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + artCloseLiSpan;
-			var artMakerContent = artOpenLiSpan + "Maker: </span><span class='maker' data-makerName='" + artMaker + "'>" + artMaker + artCloseLiSpan;
-			var artMediumContent = artOpenLiSpan + "Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + artCloseLiSpan;
-			var artTypeContent = artOpenLiSpan + "Object Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + artCloseLiSpan;
-			var artMaterialsContent = artOpenLiSpan + "Materials: </span><span class='artMaterials' data-artmaterials='" + artMaterials + "'>" + artMaterials + artCloseLiSpan;
-			var artTechniqueContent = artOpenLiSpan + "Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + artCloseLiSpan;
+			var artMakerContent = artOpenLiSpan + "Maker: </span><span class='maker' data-maker='" + artMaker + "'>" + artMaker + artCloseLiSpan;
+			var artMediumContent = artOpenLiSpan + "Physical Medium: </span><span class='physicalMedium' data-medium='" + artMedium + "'>" + artMedium + artCloseLiSpan;
+			var artTypeContent = artOpenLiSpan + "Object Type: </span><span class='artType' data-type='" + artType + "'>" + artType + artCloseLiSpan;
+			var artMaterialsContent = artOpenLiSpan + "Materials: </span><span class='artMaterials' data-materials='" + artMaterials + "'>" + artMaterials + artCloseLiSpan;
+			var artTechniqueContent = artOpenLiSpan + "Technique: </span><span class='artTechnique' data-technique='" + artTechnique + "'>" + artTechnique + artCloseLiSpan;
 			var artMuseumContent = artOpenLiSpan + "Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + artCloseLiSpan;
 			var artMaterialsMediumContent = artOpenLiSpan + "Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 			var artMediumTechniqueContent = artOpenLiSpan + "Physical Medium, Technique: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 
-			artModuleSection.attr('data-artmaterials',artMaterials);
+			artModuleSection.attr('data-materials',artMaterials);
+			artModuleSection.attr('data-museum',artMuseum);
+			artModuleSection.attr('data-location',artLocation);
+			artModuleSection.attr('data-maker',artMaker);
+			artModuleSection.attr('data-technique',artTechnique);
+			artModuleSection.attr('data-type',artType);
 			/*==========================================================
 			=            Injecting Image Data Into the Page            =
 			==========================================================*/
