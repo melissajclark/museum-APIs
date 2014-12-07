@@ -48,7 +48,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		data: {		
 			key: artApp.RMkey,
 			format: "jsonp",
-			ps: 15,
+			ps: 50,
 			imgonly: true,
 			culture: "en",
 			q: query, 
@@ -85,7 +85,7 @@ artApp.displayPieces = function(pieces) {
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
 			// when the ajax request comes back - run this code!
-			// console.log(result); // console logs each artwork (using variable)
+			console.log(result); // console logs each artwork (using variable)
 
 			// below: important variables for template / objects
 
