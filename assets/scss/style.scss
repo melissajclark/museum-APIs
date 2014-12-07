@@ -41,6 +41,26 @@ fieldset {
 	background:#ffff;
 }
 
+fieldset.artSearch {
+	float:left;
+}
+
+header, .info {
+	text-align:center;
+}
+
+.searchAndFilter, header {
+	max-width:80%;
+	margin:auto;
+	display:block;
+}
+
+.searchAndFilter:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 legend {
 	font-weight:bold;
 }
@@ -136,6 +156,23 @@ list-style-type: none;
 -webkit-margin-end: 0px;
 -webkit-padding-start: 0px;
 }
+
+
+/*===========================================
+=            My Filtrify Styling            =
+===========================================*/
+
+#filtrifyPlaceHolder {
+	float:right;
+	line-height:2;
+	text-transform:capitalize;
+	margin:1em 1em 1em 3em;
+}
+
+/*-----  End of My Filtrify Styling  ------*/
+
+
+
 
 /*============================================
 =            Filtrify Default CSS            =
