@@ -108,7 +108,7 @@ artApp.displayPieces = function(pieces) {
 			var artMedium = artPiece.physicalMedium;
 			var artType = artPiece.objectTypes;
 			var artMaterials = artPiece.materials.join(", ");
-			var artTechnique = artPiece.techniques;
+			var artTechnique = artPiece.techniques.join(", ");
 			var artMuseum = "Rijksmuseum";
 
 			/*================================================================
