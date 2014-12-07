@@ -14,6 +14,13 @@ a {
 	&:hover{
 		color:black;
 	}
+	&.readmore-js-toggle {
+		border-bottom: none;
+		font-weight:strong;
+		font-size: 1.1em;
+		line-height: 1.3em;
+		margin: 0.5em 0 0.5em 0;
+	}
 }
 
 .container { /*Sets basic sizing of content*/
@@ -37,6 +44,17 @@ fieldset {
 legend {
 	font-weight:bold;
 }
+
+/* Read More JS */
+
+.readmore-js-toggle, .readmore-js-section {
+  display: block;
+  width: 100%;
+}
+.readmore-js-section {
+  overflow: hidden;
+}
+
 
 .artworkModule { /*section for each artwork + data */
 	background:white;
@@ -118,3 +136,15 @@ list-style-type: none;
 -webkit-margin-end: 0px;
 -webkit-padding-start: 0px;
 }
+
+/*============================================
+=            Filtrify Default CSS            =
+============================================*/
+
+@import "filtrify";
+
+
+
+/*-----  End of Filtrify Default CSS  ------*/
+
+
