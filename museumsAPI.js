@@ -99,8 +99,9 @@ artApp.displayPieces = function(pieces) {
 			/*=================================================
 			=            Variables: Image Metadata            =
 			=================================================*/
+			// <a href="myimage.png" data-featherlight="image">Open image in lightbox</a>
 			
-			var img = "<img class='artImage' src='" + artPiece.webImage.url + "'>";
+			var img = "<a href='#'><img class='artImage' data-featherlight='" + artPiece.webImage.url + "' src='" + artPiece.webImage.url + "'>";
 			var artLink = artItem.links.web;
 			var artLocation = artPiece.productionPlaces[0];
 			var artTitle = artPiece.title;
