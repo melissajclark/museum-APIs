@@ -61,7 +61,8 @@
 		/* dimensions: handling large content */
 		margin-left: 5%;
 		margin-right: 5%;
-		max-height: 95%;
+		max-height: 75%;
+		max-width:75%;
 
 		/* styling */
 		background: #fff;
@@ -100,7 +101,10 @@
 
 	.featherlight .featherlight-image {
 		/* styling */
-		width: 100%;
+		// width: 100%; - original (mine below)
+		height:auto;
+		max-width:50%;
+		margin:auto;
 	}
 
 
@@ -122,7 +126,7 @@
 		/* dimensions: maximize lightbox with for small screens */
 		margin-left: 10px;
 		margin-right: 10px;
-		max-height: 98%;
+		// max-height: 98%;
 
 		padding: 10px 10px 0;
 		border-bottom: 10px solid transparent;
