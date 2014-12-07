@@ -35,6 +35,8 @@ artApp.init = function() {
 		console.log(searchContent);
 		console.log("New content in search field!")
 	});
+
+	$("a.backToTop").hide(); // hides back to top link in footer
 };
 
 artApp.getPieces = function(query) { // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
@@ -188,6 +190,10 @@ artApp.displayPieces = function(pieces) {
 				    });
 
 				});
+
+			setTimeout(function(){
+			    $("a.backToTop").show(); // adds back to top button after images load
+			},2500); // waits 2.5 seconds before loading
 
 			} // end success function
 		}); // end ajax function
