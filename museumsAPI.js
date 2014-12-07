@@ -60,7 +60,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 
 artApp.displayPieces = function(pieces) {
 
-	var artModuleTmpl = $("<section class='artworkModule'><section class='artItem'></section><ul class='artFields'></ul></section>");
+	var artModuleTmpl = $("<section class='artworkModule'><section class='artItem'></section><ul id='artContainer' class='artFields'></ul></section>");
 	// loop over each piece
 	console.log(pieces.length); // counts number of pieces retreived by API
 	for (var i = 0; i < pieces.length; i++) { // for loop
@@ -118,12 +118,13 @@ artApp.displayPieces = function(pieces) {
 			var artMakerContent = artOpenLiSpan + "Maker: </span><span class='maker' data-makerName='" + artMaker + "'>" + artMaker + artCloseLiSpan;
 			var artMediumContent = artOpenLiSpan + "Physical Medium: </span><span class='physicalMedium' data-physicalMedium='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 			var artTypeContent = artOpenLiSpan + "Object Type: </span><span class='artType' data-artType='" + artType + "'>" + artType + artCloseLiSpan;
-			var artMaterialsContent = artOpenLiSpan + "Materials: </span><span class='artMaterials' data-artMaterials='" + artMaterials + "'>" + artMaterials + artCloseLiSpan;
+			var artMaterialsContent = artOpenLiSpan + "Materials: </span><span class='artMaterials' data-artmaterials='" + artMaterials + "'>" + artMaterials + artCloseLiSpan;
 			var artTechniqueContent = artOpenLiSpan + "Technique: </span><span class='artTechnique' data-artTechnique='" + artTechnique + "'>" + artTechnique + artCloseLiSpan;
 			var artMuseumContent = artOpenLiSpan + "Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + artCloseLiSpan;
 			var artMaterialsMediumContent = artOpenLiSpan + "Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 			var artMediumTechniqueContent = artOpenLiSpan + "Physical Medium, Technique: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 
+			artModuleSection.attr('data-artmaterials',artMaterials);
 			/*==========================================================
 			=            Injecting Image Data Into the Page            =
 			==========================================================*/
@@ -169,7 +170,9 @@ artApp.displayPieces = function(pieces) {
 				  lessLink: "<a href='#'>Close Details</a>"
 				});
 
-				$.filtrify("artFields", "placeHolder");
+				$.filtrify("artwork", "placeHolder", {
+
+				});
 
 			} // end success function
 		}); // end ajax function
