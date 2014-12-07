@@ -32,15 +32,15 @@ artApp.init = function() {
 		$("span.searchTermDefault").remove(); // removes original search field name
 		$("legend").html("<span class='searchTermAppended'>" + "Searching for: " + "&nbsp;" + "</span>"); // adds span for new content
 		$("span.searchTermAppended").append('"' + searchContent + '"'); // appends user's search term
-		console.log(searchContent);
-		console.log("New content in search field!")
+		// console.log(searchContent);
+		// console.log("New content in search field!")
 	});
 
 	$("a.backToTop").hide(); // hides back to top link in footer
 };
 
 artApp.getPieces = function(query) { // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
-	console.log("going to fetch the art");
+	// console.log("going to fetch the art");
 	$.ajax({
 		url : "https://www.rijksmuseum.nl/api/en/collection",
 		type: 'GET',
@@ -64,7 +64,7 @@ artApp.displayPieces = function(pieces) {
 
 	var artModuleTmpl = $("<section class='artworkModule'><section class='artItem'></section><ul id='artContainer' class='artFields'></ul></section>");
 	// loop over each piece
-	console.log(pieces.length); // counts number of pieces retreived by API
+	// console.log(pieces.length); // counts number of pieces retreived by API
 	for (var i = 0; i < pieces.length; i++) { // for loop
 	if(!pieces[i].webImage) {
 	    continue; // skip this one there is no image
@@ -84,7 +84,7 @@ artApp.displayPieces = function(pieces) {
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
 			// when the ajax request comes back - run this code!
-			console.log(result); // console logs each artwork (using variable)
+			// console.log(result); // console logs each artwork (using variable)
 
 			// below: important variables for template / objects
 
@@ -144,7 +144,7 @@ artApp.displayPieces = function(pieces) {
 
 			// title (with link) + image						
 			artModuleItem.append(artLinkTitleContent + img);
-			console.log(artTitle);
+			// console.log(artTitle);
 
 			// credit to museum
 			artModuleUl.append(artMuseumContent); 
