@@ -124,12 +124,17 @@ artApp.displayPieces = function(pieces) {
 			var artMaterialsMediumContent = artOpenLiSpan + "Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 			var artMediumTechniqueContent = artOpenLiSpan + "Physical Medium, Technique: </span><span class='physicalMediumAndMaterials' data-physicalMediumAndMaterials='" + artMedium + "'>" + artMedium + artCloseLiSpan;
 
-			artModuleSection.attr('data-materials',artMaterials);
-			artModuleSection.attr('data-museum',artMuseum);
-			artModuleSection.attr('data-location',artLocation);
+			/*=============================================================
+			=            Appends Data Attributes to Artwork ID            =
+			=============================================================*/		
+			
+			artModuleSection.attr('data-location',artLocation);			
+			artModuleSection.attr('data-materials',artMaterials);		
 			artModuleSection.attr('data-maker',artMaker);
+			artModuleSection.attr('data-museum',artMuseum);
 			artModuleSection.attr('data-technique',artTechnique);
 			artModuleSection.attr('data-type',artType);
+
 			/*==========================================================
 			=            Injecting Image Data Into the Page            =
 			==========================================================*/
@@ -175,7 +180,12 @@ artApp.displayPieces = function(pieces) {
 				  lessLink: "<a href='#'>Close Details</a>"
 				});
 
-				$.filtrify("artwork", "placeHolder", {
+				$(function() {
+
+				    /* Blocking "data-title" and "data-rating" from being added as categories */
+				    $.filtrify("artwork", "filtrifyPlaceHolder", {
+				        block : ["data-title", "data-museum"]
+				    });
 
 				});
 
