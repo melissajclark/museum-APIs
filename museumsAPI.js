@@ -25,6 +25,7 @@ artApp.init = function() {
 	});
 
 	$("a.backToTop").hide(); // hides back to top link in footer
+	$("#legend").hide();
 };
 
 /*-----  End of Artapp.init  ------*/
@@ -41,7 +42,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		data: {		
 			key: artApp.RMkey,
 			format: "jsonp",
-			ps: 20, // sets number of pieces displayed
+			ps: 100, // sets number of pieces displayed
 			imgonly: true,
 			culture: "en",
 			q: query, 
@@ -173,8 +174,12 @@ artApp.displayPieces = function(pieces) {
 			}
 
 			// below checks for duplicate data and changes appended content accordingly
-			if (artMedium == artTechnique && artMedium !== artMaterials){
-				artModuleUl.append(artMaterialsContent + artMediumTechniqueContent);
+			if (artMedium == artTechnique && artMedium !== artMaterials && artMaterials.length > 0){
+				artModuleUl.append(artMaterialsContent);
+			}
+
+			if (artMedium == artTechnique && artMedium !== artMaterials && artMaterials.length > 0){
+				artModuleUl.append(artMediumTechniqueContent);
 
 			} else if (artTechnique.length > 0 && artMedium.length > 0 && artTechnique !== artMedium && artMedium !== artMaterials){ // injects the technique only if it exists
 				artModuleUl.append(artMaterialsContent + artMediumContent + artTechniqueContent); // Technique info
@@ -195,6 +200,8 @@ artApp.displayPieces = function(pieces) {
 
 
 				$(function() {
+
+					$("#legend").show();
 				    /*
 				        Simple callback function that writes a legend for all the categories and also a counter.
 				        Setting "close" to true closes the panel everytime a tag is added so you can see the 
@@ -205,7 +212,7 @@ artApp.displayPieces = function(pieces) {
 				        close : true,
 				        callback : function( query, match, mismatch ) {
 				            if ( !mismatch.length ) {
-				                $("#legend").html("<i>Viewing all movies.</i>");
+				                $("#legend").html("<em>Viewing all search results.</em>");
 				            } else {
 				                var category, tags, i, tag, legend = "<h4>Viewing:</h4>";
 				                for ( category in query ) {
