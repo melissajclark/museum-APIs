@@ -42,7 +42,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		data: {		
 			key: artApp.RMkey,
 			format: "jsonp",
-			ps: 100, // sets number of pieces displayed
+			ps: 10, // sets number of pieces displayed
 			imgonly: true,
 			culture: "en",
 			q: query, 
@@ -64,7 +64,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 
 artApp.displayPieces = function(pieces) {
 
-	var artModuleTmpl = $("<section class='artworkModule'><section class='artItem'></section><ul id='artContainer' class='artFields'></ul></section>");
+	var artModuleTmpl = $("<section class='artworkModule'><ul class='artFields'></ul></section>");
 	// loop over each piece
 	// console.log(pieces.length); // counts number of pieces retreived by API
 	for (var i = 0; i < pieces.length; i++) { // for loop
@@ -92,9 +92,7 @@ artApp.displayPieces = function(pieces) {
 
 			var artModuleSection = artModuleTmpl.clone();
 			var artModuleUl = artModuleSection.find('ul');
-			var artModuleItem = artModuleSection.find('section.artItem');
 			var artPiece = result.artObject; // new variable like artItem to use data from success function
-
 			var artOpenLiSpan = "<li class='artMetaData'><span class='fieldType'>";
 			var artCloseLiSpan = "</span></li>";
 			
@@ -154,8 +152,7 @@ artApp.displayPieces = function(pieces) {
 			==========================================================*/
 
 			// title (with link) + image						
-			artModuleItem.append(artLinkTitleContent + img);
-			// console.log(artTitle);
+			artModuleUl.before(artLinkTitleContent + img);
 
 			// credit to museum
 			artModuleUl.append(artMuseumContent); 
@@ -194,8 +191,8 @@ artApp.displayPieces = function(pieces) {
 				  speed: 150,
 				  maxHeight: 1,
 				  embedCSS: false,
-				  moreLink: "<a href='#'>View Details</a>",
-				  lessLink: "<a href='#'>Close Details</a>"
+				  moreLink: "<button href='#'>View Details</button>",
+				  lessLink: "<button href='#'>Close Details</>"
 				});
 
 
