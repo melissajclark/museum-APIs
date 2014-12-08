@@ -48,7 +48,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		data: {		
 			key: artApp.RMkey,
 			format: "jsonp",
-			ps: 50,
+			ps: 10,
 			imgonly: true,
 			culture: "en",
 			q: query, 
@@ -57,6 +57,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		success: function(result) { // another word for success = callback
 			$("#artwork").empty(); // clears artwork before adding new pieces
 			artApp.displayPieces(result.artObjects); // when the ajax request comes back - run this code! - displayPieces function is below
+			// console.log(result);
 		}
 	});
 };
@@ -109,6 +110,15 @@ artApp.displayPieces = function(pieces) {
 			var artLocation = artPiece.productionPlaces[0];
 			var artTitle = artPiece.title;
 			var artMaker = artPiece.principalOrFirstMaker;
+
+			var artMakers = artPiece.makers;
+			var artMakersMore = artMakers.unFixedName;
+			console.log(artMakers);
+			console.log("Length: " + artMakers.length);
+			console.log(artMakersMore);
+
+
+
 			var artMedium = artPiece.physicalMedium;
 			var artType = artPiece.objectTypes;
 			var artMaterials = artPiece.materials.join(", ");
