@@ -48,7 +48,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		data: {		
 			key: artApp.RMkey,
 			format: "jsonp",
-			ps: 10,
+			ps: 20, // sets number of pieces displayed
 			imgonly: true,
 			culture: "en",
 			q: query, 
