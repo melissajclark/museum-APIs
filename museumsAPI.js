@@ -17,6 +17,7 @@ artApp.init = function() {
 		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
 	}); // end of artSearch event function
 
+	// gets value of search and updates "searching for" text for user
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
 		var searchContent = $(this).val();
 		$("span.searchTermDefault").remove(); // removes original search field name
@@ -24,6 +25,7 @@ artApp.init = function() {
 		$("span.searchTermAppended").append('"' + searchContent + '"'); // appends user's search term
 	});
 
+	/* Hides Elements on Page Load */
 	$("a.backToTop").hide(); // hides back to top link in footer
 	$("#legend").hide();
 	$("button.moreArt").hide();
@@ -36,9 +38,6 @@ artApp.initMore = function() {
 		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
 	}); // end of artSearch event function
 };
-
-
-
 
 /*-----  End of Artapp.init  ------*/
 
@@ -98,10 +97,8 @@ artApp.displayPieces = function(pieces) {
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
 			// when the ajax request comes back - run this code!
-			// console.log(result); // console logs each artwork (using variable)
 
 			// below: important variables for template / objects
-
 			var artModuleSection = artModuleTmpl.clone();
 			var artModuleUl = artModuleSection.find('ul');
 			var artPiece = result.artObject; // new variable like artItem to use data from success function
@@ -243,8 +240,9 @@ artApp.displayPieces = function(pieces) {
 
 				}); // end filtrify function 
 
+			/* Inserts buttons at bottom of page after images load */
 			setTimeout(function(){
-			    $("a.backToTop").show(); // adds back to top button after images load
+			    $("a.backToTop").show();
 			    $("button.moreArt").show();
 			},2500); // waits 2.5 seconds before loading
 
