@@ -19,13 +19,16 @@ artApp.FGkey = "i39hegnykz7iq"; // finnish national gallery
 artApp.EUkey = "HJFkApddv"; // Europeana key
 artApp.thumbSize = 500;
 
+/*===================================
+=            Artapp.init            =
+===================================*/
+
 artApp.init = function() {
 // init = everything for starting up the app
 	$("fieldset.artSearch").on("submit",function(event){
 		event.preventDefault(); // prevents form from refreshing
 		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
 		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
-
 	}); // end of artSearch event function
 
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
@@ -33,12 +36,16 @@ artApp.init = function() {
 		$("span.searchTermDefault").remove(); // removes original search field name
 		$("legend").html("<span class='searchTermAppended'>" + "Searching for: " + "&nbsp;" + "</span>"); // adds span for new content
 		$("span.searchTermAppended").append('"' + searchContent + '"'); // appends user's search term
-		// console.log(searchContent);
-		// console.log("New content in search field!")
 	});
 
 	$("a.backToTop").hide(); // hides back to top link in footer
 };
+
+/*-----  End of Artapp.init  ------*/
+
+/*==================================
+=            Get Pieces            =
+==================================*/
 
 artApp.getPieces = function(query) { // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
 	// console.log("going to fetch the art");
@@ -61,6 +68,12 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		}
 	});
 };
+
+/*-----  End of Get Pieces  ------*/
+
+/*======================================
+=            Display Pieces            =
+======================================*/
 
 artApp.displayPieces = function(pieces) {
 
@@ -121,7 +134,7 @@ artApp.displayPieces = function(pieces) {
     			artMakers = artPiece.makers[art].unFixedName;
 					}
 
-			artMakersData = artMakers.replace(", ","&#44;"); // replaces comma with ASCII code for comma
+			artMakersData = artMakers.replace(", ","&#44; "); // replaces comma with ASCII code for comma
 			console.log(artMakersData);
 
 			/*================================================================
@@ -215,6 +228,9 @@ artApp.displayPieces = function(pieces) {
 } // end for loop
 
 };
+
+/*-----  End of Display Pieces  ------*/
+
 
 $(document).ready(function(){
 	artApp.init(); // runs init function on document is ready
