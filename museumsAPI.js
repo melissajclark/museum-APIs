@@ -17,12 +17,6 @@ artApp.init = function() {
 		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
 	}); // end of artSearch event function
 
-	$("button.moreArt").on("click",function(event){
-		event.preventDefault(); // prevents form from refreshing
-		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
-		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
-	}); // end of artSearch event function
-
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
 		var searchContent = $(this).val();
 		$("span.searchTermDefault").remove(); // removes original search field name
@@ -34,6 +28,17 @@ artApp.init = function() {
 	$("#legend").hide();
 	$("button.moreArt").hide();
 };
+
+artApp.initMore = function() {
+	$("button.moreArt").on("click",function(event){
+		event.preventDefault(); // prevents form from refreshing
+		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
+		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
+	}); // end of artSearch event function
+};
+
+
+
 
 /*-----  End of Artapp.init  ------*/
 
@@ -335,6 +340,8 @@ artApp.displayPieces = function(pieces) {
 
 $(document).ready(function(){
 	artApp.init(); // runs init function on document is ready
+
+	artApp.initMore();
 
 	// artApp.init:
 
