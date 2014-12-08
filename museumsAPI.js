@@ -117,8 +117,8 @@ artApp.displayPieces = function(pieces) {
     			artMakers = artPiece.makers[art].unFixedName;
 				}
 
-			artMakersData = artMakers.replace(", ","&#44; "); // replaces comma with ASCII code for comma (otherwise the commas mess up the data attributes)
-			// console.log(artMakersData);
+			// replaces comma with ASCII code for comma (otherwise the commas mess up the data attributes)
+			artMakersData = artMakers.replace(", ","&#44; "); 
 
 			/*================================================================
 			=            Variables: Image Metadata + HTML content            =
