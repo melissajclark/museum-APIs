@@ -110,15 +110,6 @@ artApp.displayPieces = function(pieces) {
 			var artLocation = artPiece.productionPlaces[0];
 			var artTitle = artPiece.title;
 			var artMaker = artPiece.principalOrFirstMaker;
-
-			var artMakers = artPiece.makers;
-			var artMakersMore = artMakers.unFixedName;
-			console.log(artMakers);
-			console.log("Length: " + artMakers.length);
-			console.log(artMakersMore);
-
-
-
 			var artMedium = artPiece.physicalMedium;
 			var artType = artPiece.objectTypes;
 			var artMaterials = artPiece.materials.join(", ");
