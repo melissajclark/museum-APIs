@@ -101,9 +101,6 @@ artApp.displayPieces = function(pieces) {
 			/*=================================================
 			=            Variables: Image Metadata            =
 			=================================================*/
-			// <a href="myimage.png" data-featherlight="image">Open image in lightbox</a>
-
-			// href="assets/images/droplets.jpg" data-featherlight='image'
 			
 			var img = "<a href='" + artPiece.webImage.url + "'data-featherlight='image'><img class='artImage' src='" + artPiece.webImage.url + "'></a>";
 			var artLink = artItem.links.web;
@@ -117,32 +114,37 @@ artApp.displayPieces = function(pieces) {
 			var artMuseum = "Rijksmuseum";
 
 			var artMakers = ""; // empty string
+
+			// loops over "makers" in artPiece object - gets unFixedName (last, firtst)
 			for (var art = 0; art < artPiece.makers.length; art++) {
-    			console.log(artPiece.makers[art].unFixedName);
+    			// console.log(artPiece.makers[art].unFixedName);
     			artMakers = artPiece.makers[art].unFixedName;
 					}
+
+			artMakersData = artMakers.replace(", ","&#44;"); // replaces comma with ASCII code for comma
+			console.log(artMakersData);
 
 			/*================================================================
 			=            Variables: Image Metadata + HTML content            =
 			================================================================*/	
 
 			var artLinkTitleContent = "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3>";
-			var artLocationContent = artOpenLiSpan + "Original Location: </span><span class='location' data-location='" + artLocation + "'>" + artLocation + artCloseLiSpan;
-			var artMakerContent = artOpenLiSpan + "Maker: </span><span class='maker' data-makers='" + artMakers + "'>" + artMakers + artCloseLiSpan;
-			var artMediumContent = artOpenLiSpan + "Physical Medium: </span><span class='physicalMedium' data-medium='" + artMedium + "'>" + artMedium + artCloseLiSpan;
-			var artTypeContent = artOpenLiSpan + "Object Type: </span><span class='artType' data-type='" + artType + "'>" + artType + artCloseLiSpan;
-			var artMaterialsContent = artOpenLiSpan + "Materials: </span><span class='artMaterials' data-materials='" + artMaterials + "'>" + artMaterials + artCloseLiSpan;
-			var artTechniqueContent = artOpenLiSpan + "Technique: </span><span class='artTechnique' data-technique='" + artTechnique + "'>" + artTechnique + artCloseLiSpan;
-			var artMuseumContent = artOpenLiSpan + "Museum: </span><span class='museum' data-museum='" + artMuseum + "'>" + artMuseum + artCloseLiSpan;
-			var artMaterialsMediumContent = artOpenLiSpan + "Physical Medium, Material: </span><span class='physicalMediumAndMaterials' data-medium='" + artMedium + "'" + "data-materials='" + artMaterials + "'>" + artMedium + artCloseLiSpan;
-			var artMediumTechniqueContent = artOpenLiSpan + "Physical Medium, Technique: </span><span class='physicalMediumAndMaterials' data-medium='" + artMedium + "' data-technique='" + artTechnique + "'>" + artMedium + artCloseLiSpan;
+			var artLocationContent = artOpenLiSpan + "Original Location: </span><span data-location='" + artLocation + "'>" + artLocation + artCloseLiSpan;
+			var artMakerContent = artOpenLiSpan + "Maker: </span><span data-makers='" + artMakersData + "'>" + artMakersData + artCloseLiSpan;
+			var artMediumContent = artOpenLiSpan + "Physical Medium: </span><span data-medium='" + artMedium + "'>" + artMedium + artCloseLiSpan;
+			var artTypeContent = artOpenLiSpan + "Object Type: </span><span data-type='" + artType + "'>" + artType + artCloseLiSpan;
+			var artMaterialsContent = artOpenLiSpan + "Materials: </span><span data-materials='" + artMaterials + "'>" + artMaterials + artCloseLiSpan;
+			var artTechniqueContent = artOpenLiSpan + "Technique: </span><span data-technique='" + artTechnique + "'>" + artTechnique + artCloseLiSpan;
+			var artMuseumContent = artOpenLiSpan + "Museum: </span><span data-museum='" + artMuseum + "'>" + artMuseum + artCloseLiSpan;
+			var artMaterialsMediumContent = artOpenLiSpan + "Physical Medium, Material: </span><span data-medium='" + artMedium + "'" + "data-materials='" + artMaterials + "'>" + artMedium + artCloseLiSpan;
+			var artMediumTechniqueContent = artOpenLiSpan + "Physical Medium, Technique: </span><span data-medium='" + artMedium + "' data-technique='" + artTechnique + "'>" + artMedium + artCloseLiSpan;
 
 			/*=============================================================
 			=            Appends Data Attributes to Artwork ID            =
 			=============================================================*/		
 			
 			artModuleSection.attr('data-location',artLocation);	
-			artModuleSection.attr('data-makers',artMakers);		
+			artModuleSection.attr('data-makers',artMakersData);		
 			artModuleSection.attr('data-materials',artMaterials);		
 			artModuleSection.attr('data-medium',artMedium);		
 			artModuleSection.attr('data-museum',artMuseum);
