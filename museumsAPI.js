@@ -86,7 +86,7 @@ artApp.displayPieces = function(pieces) {
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
 			// when the ajax request comes back - run this code!
-			console.log(result); // console logs each artwork (using variable)
+			// console.log(result); // console logs each artwork (using variable)
 
 			// below: important variables for template / objects
 
@@ -120,7 +120,7 @@ artApp.displayPieces = function(pieces) {
 				}
 
 			artMakersData = artMakers.replace(", ","&#44; "); // replaces comma with ASCII code for comma (otherwise the commas mess up the data attributes)
-			console.log(artMakersData);
+			// console.log(artMakersData);
 
 			/*================================================================
 			=            Variables: Image Metadata + HTML content            =
@@ -168,17 +168,17 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append(artLocationContent); // original location
 			}
 
-			// injects the type only if it exists
-			if (artType.length > 0){	
-				artModuleUl.append(artTypeContent); // type info
-			}
-
 			// below checks for duplicate data and changes appended content accordingly
 			if (artMedium == artTechnique && artMedium !== artMaterials && artMaterials.length > 0){
 				artModuleUl.append(artMaterialsContent);
 			}
 
-			if (artMedium == artTechnique && artMedium !== artMaterials && artMaterials.length > 0){
+			// injects the type only if it exists
+			if (artType.length > 0){	
+				artModuleUl.append(artTypeContent); // type info
+			}
+
+			if (artMedium == artTechnique && artMedium !== artMaterials){
 				artModuleUl.append(artMediumTechniqueContent);
 
 			} else if (artTechnique.length > 0 && artMedium.length > 0 && artTechnique !== artMedium && artMedium !== artMaterials){ // injects the technique only if it exists
@@ -241,8 +241,85 @@ artApp.displayPieces = function(pieces) {
 			} // end success function
 		}); // end ajax function
 
-		$(function() {
-		    $("img.lazy").lazyload();
+
+		/*============================================
+		=            Scroll Stop Function            =
+		============================================*/
+
+		(function(){
+		 
+		    var special = jQuery.event.special,
+		        uid1 = 'D' + (+new Date()),
+		        uid2 = 'D' + (+new Date() + 1);
+		 
+		    special.scrollstart = {
+		        setup: function() {
+		 
+		            var timer,
+		                handler =  function(evt) {
+		 
+		                    var _self = this,
+		                        _args = arguments;
+		 
+		                    if (timer) {
+		                        clearTimeout(timer);
+		                    } else {
+		                        evt.type = 'scrollstart';
+		                        jQuery.event.handle.apply(_self, _args);
+		                    }
+		 
+		                    timer = setTimeout( function(){
+		                        timer = null;
+		                    }, special.scrollstop.latency);
+		 
+		                };
+		 
+		            jQuery(this).bind('scroll', handler).data(uid1, handler);
+		 
+		        },
+		        teardown: function(){
+		            jQuery(this).unbind( 'scroll', jQuery(this).data(uid1) );
+		        }
+		    };
+		 
+		    special.scrollstop = {
+		        latency: 300,
+		        setup: function() {
+		 
+		            var timer,
+		                    handler = function(evt) {
+		 
+		                    var _self = this,
+		                        _args = arguments;
+		 
+		                    if (timer) {
+		                        clearTimeout(timer);
+		                    }
+		 
+		                    timer = setTimeout( function(){
+		 
+		                        timer = null;
+		                        evt.type = 'scrollstop';
+		                        jQuery.event.handle.apply(_self, _args);
+		 
+		                    }, special.scrollstop.latency);
+		 
+		                };
+		 
+		            jQuery(this).bind('scroll', handler).data(uid2, handler);
+		 
+		        },
+		        teardown: function() {
+		            jQuery(this).unbind( 'scroll', jQuery(this).data(uid2) );
+		        }
+		    };
+		 
+		})();
+			
+		/*-----  End of Scroll Stop Function  ------*/
+		
+		$("img.lazy").lazyload({
+		  event: "scrollstop"
 		});
 
 } // end for loop
