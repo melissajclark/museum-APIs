@@ -17,6 +17,12 @@ artApp.init = function() {
 		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
 	}); // end of artSearch event function
 
+	$("button.moreArt").on("click",function(event){
+		event.preventDefault(); // prevents form from refreshing
+		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
+		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
+	}); // end of artSearch event function
+
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
 		var searchContent = $(this).val();
 		$("span.searchTermDefault").remove(); // removes original search field name
@@ -26,6 +32,7 @@ artApp.init = function() {
 
 	$("a.backToTop").hide(); // hides back to top link in footer
 	$("#legend").hide();
+	$("button.moreArt").hide();
 };
 
 /*-----  End of Artapp.init  ------*/
@@ -233,11 +240,11 @@ artApp.displayPieces = function(pieces) {
 
 			setTimeout(function(){
 			    $("a.backToTop").show(); // adds back to top button after images load
+			    $("button.moreArt").show();
 			},2500); // waits 2.5 seconds before loading
 
 			} // end success function
 		}); // end ajax function
-
 
 		/*============================================
 		=            Scroll Stop Function            =
