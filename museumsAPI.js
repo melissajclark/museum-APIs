@@ -101,11 +101,10 @@ artApp.displayPieces = function(pieces) {
 			=            Variables: Image Metadata            =
 			=================================================*/
 			
-			var img = "<a href='" + artPiece.webImage.url + "'data-featherlight='image'><img class='artImage' src='" + artPiece.webImage.url + "'></a>";
+			var img = "<a href='" + artPiece.webImage.url + "'data-featherlight='image'><img class='artImage lazy' data-original='" + artPiece.webImage.url + "'" + "src='" + artPiece.webImage.url + "'></a>";
 			var artLink = artItem.links.web;
 			var artLocation = artPiece.productionPlaces[0];
 			var artTitle = artPiece.title;
-			var artMaker = artPiece.principalOrFirstMaker;
 			var artMedium = artPiece.physicalMedium;
 			var artType = artPiece.objectTypes;
 			var artMaterials = artPiece.materials.join(", ");
@@ -116,11 +115,10 @@ artApp.displayPieces = function(pieces) {
 
 			// loops over "makers" in artPiece object - gets unFixedName (last, firtst)
 			for (var art = 0; art < artPiece.makers.length; art++) {
-    			// console.log(artPiece.makers[art].unFixedName);
     			artMakers = artPiece.makers[art].unFixedName;
-					}
+				}
 
-			artMakersData = artMakers.replace(", ","&#44; "); // replaces comma with ASCII code for comma
+			artMakersData = artMakers.replace(", ","&#44; "); // replaces comma with ASCII code for comma (otherwise the commas mess up the data attributes)
 			console.log(artMakersData);
 
 			/*================================================================
@@ -210,6 +208,10 @@ artApp.displayPieces = function(pieces) {
 
 			} // end success function
 		}); // end ajax function
+
+		$(function() {
+		    $("img.lazy").lazyload();
+		});
 
 } // end for loop
 
