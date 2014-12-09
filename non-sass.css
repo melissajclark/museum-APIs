@@ -25,6 +25,12 @@ h3 {
   font-size: 24px;
 }
 
+ul.searchArt {
+  list-style-type:none;
+  display:inline-block;
+  line-height:1.5;
+}
+
 a:hover {
   color: black;
 }
