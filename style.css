@@ -27,7 +27,12 @@ a.readmore-js-toggle {
 
 .container {
   max-width: 100%;
-  margin: auto;
+  margin: 0 auto;
+}
+
+footer, button.moreArt {
+  text-align: center;
+  margin: 0 auto;
 }
 
 span.fieldType {
@@ -2933,7 +2938,14 @@ Copyright (c) 2014 Daniel Eden
 /*============================================
 =            Filtrify Default CSS            =
 ============================================*/
-/* Modified styling by Zoe Rooney http://zoerooney.com */
+/* icons font-face */
+@font-face {
+  font-family: "FiltrifyRegular";
+  src: url("assets/font/filtrify/filtrify-webfont.eot");
+  src: url("assets/font/filtrify/filtrify-webfont.eot?#iefix") format("embedded-opentype"), url("assets/font/filtrify/filtrify-webfont.woff") format("woff"), url("assets/font/filtrify/filtrify-webfont.ttf") format("truetype"), url("assets/font/filtrify/filtrify-webfont.svg#FiltrifyRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 /* reset */
 ul.ft-menu,
 ul.ft-menu * {
@@ -2943,11 +2955,7 @@ ul.ft-menu * {
   line-height: 1;
   position: relative;
   text-align: left;
-  font-family: 'NovecentoDemiBold';
-  font-weight: normal !important;
-  font-size: 0.9em !important;
-  letter-spacing: 2px !important;
-  color: #bbb;
+  font: normal normal 100% sans-serif;
 }
 
 ul.ft-menu {
@@ -2956,64 +2964,53 @@ ul.ft-menu {
 
 ul.ft-menu > li.ft-field {
   display: inline-block;
-  border: 2px solid #ddd;
-  padding: 8px 10px;
-  width: 27%;
-  margin-right: 3.5%;
-  margin-bottom: 2%;
   *display: inline;
   *zoom: 1;
+  margin-right: 30px;
   background: none !important;
   position: relative !important;
-}
-
-@media screen and (max-width: 885px) {
-  ul.ft-menu > li.ft-field {
-    width: 91%;
-    margin-right: 0;
-  }
-}
-ul.ft-menu > li.ft-field:last-of-type {
-  margin-right: 0;
 }
 
 ul.ft-menu > li.ft-field > span.ft-label {
   cursor: pointer;
 }
 
-ul.ft-menu > li.ft-field > span.ft-label:after {
-  font-family: FontAwesome;
-  font-size: 90%;
-  content: "\f0dd";
-  padding: 0 5px;
-  position: relative;
-  bottom: 1px;
-  float: right;
-  color: #ddd;
+ul.ft-menu > li.ft-field > span.ft-label:before {
+  font-family: "FiltrifyRegular";
+  content: "t";
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 20px;
 }
 
-ul.ft-menu > li.ft-field > span.ft-label.ft-active {
-  color: #fb5e7e;
+ul.ft-menu > li.ft-field > span.ft-label:after {
+  font-size: 80%;
+  content: " \25bc";
+}
+
+ul.ft-menu > li.ft-field > span.ft-label.ft-active:before {
+  content: "T";
+  color: #2D3743;
 }
 
 ul.ft-menu > li.ft-field > span.ft-label.ft-opened:after {
-  content: "\f0de";
-  bottom: -3px;
+  content: " \25b2";
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel {
   position: absolute;
   min-width: 200px;
   background-clip: padding-box;
-  border: 5px solid #ddd;
+  border: 5px solid #333333;
   border: 5px solid rgba(0, 0, 0, 0.3);
-  border-radius: 2px;
+  border-radius: 3px;
   top: 100%;
   margin-top: 15px;
   left: 50%;
   margin-left: -105px;
   z-index: 9999;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel:before,
@@ -3028,7 +3025,7 @@ ul.ft-menu > li.ft-field > div.ft-panel:after {
 ul.ft-menu > li.ft-field > div.ft-panel:before {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #ddd;
+  border-bottom: 10px solid #333333;
   border-bottom: 10px solid rgba(0, 0, 0, 0.3);
   top: -15px;
   margin-left: -10px;
@@ -3040,14 +3037,14 @@ ul.ft-menu > li.ft-field > div.ft-panel:after {
   width: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid #eee;
+  border-bottom: 8px solid #F5F3EE;
   top: -8px;
   margin-left: -8px;
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected {
   padding: 10px 10px 0 10px;
-  background: #eee;
+  background: #F5F3EE;
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
@@ -3057,32 +3054,43 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
   *zoom: 1;
   margin: 1px;
   cursor: pointer;
-  padding: 1px 5px 2px 5px;
-  color: #555;
-  border: 1px solid #555;
+  padding: 0px 5px 1px 5px;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #057ED0;
+  border: 1px solid rgba(5, 126, 208, 0.7);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: #019AD2;
+  background: -webkit-linear-gradient(#33BCEF, #019AD2);
+  background: linear-gradient(#33BCEF, #019AD2);
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:after {
-  font-family: FontAwesome;
-  content: " \f00d";
-  color: #555;
+  content: " \00D7";
+  color: white;
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:active {
-  background: #fee3e8;
+  background: #33BCEF;
+  background: -webkit-linear-gradient(#019AD2, #33BCEF);
+  background: linear-gradient(#019AD2, #33BCEF);
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search {
   padding: 10px;
-  background: #eee;
+  background: #F5F3EE;
+  background: -webkit-linear-gradient(#F5F3EE, #D0CDC9);
+  background: linear-gradient(#F5F3EE, #D0CDC9);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#F5F3EE", EndColorStr="#D0CDC9");
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search:before {
-  font-family: "FontAwesome";
-  content: "\f002";
+  font: normal normal 12px "FiltrifyRegular";
+  content: "s";
   position: absolute;
   width: 20px;
-  bottom: 17px;
+  bottom: 15px;
   left: 18px;
   color: #BBB;
   text-shadow: none;
@@ -3093,27 +3101,37 @@ ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search > input {
   outline: none;
   display: block;
   width: 140px;
-  padding: 6px 10px 3px 25px !important;
+  padding: 4px 10px 4px 25px;
   color: gray;
   background: white;
+  border-radius: 13px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(0, 0, 0, 0.3);
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags {
   position: relative !important;
   max-height: 200px !important;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #33373D;
   overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li {
-  background: white;
+  font-size: 12px;
   display: block;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #33373D;
+  box-shadow: inset 0 1px 0 0 #878e98;
   display: block;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
   padding: 8px 35px 8px 15px;
   cursor: pointer;
+  background: #616975;
+  background: -webkit-linear-gradient(#727A86, #505864);
+  background: linear-gradient(#727A86, #505864);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#727a86", EndColorStr="#505864");
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after {
@@ -3129,23 +3147,38 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after {
   margin-top: -9px;
   padding: 3px 6px;
   color: white;
-  background: #fb5e7e;
-  border-radius: 10px;
+  background: #48515C;
+  border-radius: 8px;
+  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.26), 0px 1px 0px 0px rgba(255, 255, 255, 0.15);
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight {
-  border-bottom: 1px solid #fee3e8;
-  background: #fee3e8;
+  border-bottom: 1px solid #103C56;
+  box-shadow: inset 0px 1px 0px 0px #6ad2ef;
+  background: #35AFE3;
+  background: -webkit-linear-gradient(#45C7EB, #2698DB);
+  background: linear-gradient(#45C7EB, #2698DB);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#45c7eb", EndColorStr="#2698db");
+}
+
+ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:active {
+  background: -webkit-linear-gradient(#2698DB, #45C7EB);
+  background: linear-gradient(#2698DB, #45C7EB);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#2698DB", EndColorStr="#45C7EB");
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:after {
-  background: #fb5e7e;
+  background: #2173A1;
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > div.ft-mismatch {
+  font-size: 11px;
   padding: 10px 15px;
   color: white;
   background: #555555;
+  background: -webkit-linear-gradient(#555555, #333333);
+  background: linear-gradient(#555555, #333333);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#555555", EndColorStr="#333333");
 }
 
 /* REQUIRED! */

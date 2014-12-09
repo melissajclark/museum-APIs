@@ -29,7 +29,12 @@ a {
 
 .container { // Sets basic sizing of content
 	max-width:100%;
-	margin:auto;
+	margin: 0 auto;
+}
+
+footer, button.moreArt {
+	text-align:center;
+	margin: 0 auto;
 }
 
 span.fieldType {
