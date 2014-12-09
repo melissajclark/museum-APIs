@@ -5,7 +5,7 @@ body {
   font-weight: 400;
   max-width: 100%;
   padding: 1em;
-  line-height: 1.8;
+  line-height: 1.6;
   font-size: 17px;
   background: rgba(178, 178, 178, 0.23);
 }
@@ -42,12 +42,12 @@ ul.searchArt li {
 a {
   color: rgb(87, 147, 71);
   text-decoration:none;
-  border-bottom: 2px solid rgb(87, 147, 71);
+  /*border-bottom: 2px solid rgb(87, 147, 71);*/
 }
 
 a:hover {
-  color: #888;
-  border-bottom: 2px solid #888;
+  color: #666;
+  /*border-bottom: 2px solid #888;*/
 }
 a.readmore-js-toggle {
   border-bottom: none;
