@@ -205,8 +205,8 @@ artApp.displayPieces = function(pieces) {
 				  speed: 150,
 				  maxHeight: 1,
 				  embedCSS: false,
-				  moreLink: "<button href='#'>View Details</button>",
-				  lessLink: "<button href='#'>Close Details</>"
+				  moreLink: "<button class='btn btn-default btn-sm' href='#'>View Details</button>",
+				  lessLink: "<button class='btn btn-default btn-sm' href='#'>Close Details</>"
 				});
 
 				    $.filtrify("artwork", "filtrifyPlaceHolder", {
