@@ -43,6 +43,7 @@ ul.searchArt li {
 
 a {
   color: #111;
+  text-decoration:none;
   border-bottom: 2px solid rgb(158, 72, 121);
 }
 
