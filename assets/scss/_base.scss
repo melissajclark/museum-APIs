@@ -11,13 +11,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: "brandon-grotesque";
 	font-style:italic;
 	font-weight:500;
+	color: rgba(62, 153, 186, 0.98);
 }
 
 
 a {
-	color:purple;
+	// color:purple;
 	text-decoration:none;
-	border-bottom: 1px solid purple;
+	border-bottom: 2px solid black;
 	&:hover{
 		color:black;
 	}
