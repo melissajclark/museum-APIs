@@ -93,7 +93,7 @@
 		var f = 0, field,
 			browser = $.browser;
 
-		this._menu.list = $("<ul class='ft-menu' />");
+		this._menu.list = $("<ul class='ft-menu'/>");
 
 		for ( f; f < this._order.length; f++ ) {
 			field = browser.webkit || browser.opera ? 
