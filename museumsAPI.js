@@ -114,7 +114,7 @@ artApp.displayPieces = function(pieces) {
 			=            Variables: Image Metadata            =
 			=================================================*/
 			
-			var img = "<a href='" + artPiece.webImage.url + "'data-featherlight='image'><img class='artImage lazy' data-original='" + artPiece.webImage.url + "'" + "src='" + artPiece.webImage.url + "'><span class='fa fa-external-link'></span></a>";
+			var img = "<a href='" + artPiece.webImage.url + "'data-featherlight='image'><span class='fa fa-external-link'></span><img class='artImage lazy' data-original='" + artPiece.webImage.url + "'" + "src='" + artPiece.webImage.url + "'></a>";
 			var artLink = artItem.links.web;
 			var artLocation = artPiece.productionPlaces[0];
 			var artTitle = artPiece.title;
