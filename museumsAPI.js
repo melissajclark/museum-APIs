@@ -209,41 +209,10 @@ artApp.displayPieces = function(pieces) {
 				  lessLink: "<button href='#'>Close Details</>"
 				});
 
-
-				$(function() {
-
-					$("#legend").show();
-				    /*
-				        Simple callback function that writes a legend for all the categories and also a counter.
-				        Setting "close" to true closes the panel everytime a tag is added so you can see the 
-				        legend working right away.
-				    */
 				    $.filtrify("artwork", "filtrifyPlaceHolder", {
 				    	block : ["data-title", "data-museum"],
-				        close : true,
-				        callback : function( query, match, mismatch ) {
-				            if ( !mismatch.length ) {
-				                $("#legend").html("<em>Viewing all search results.</em>");
-				            } else {
-				                var category, tags, i, tag, legend = "<h4>Viewing:</h4>";
-				                for ( category in query ) {
-				                    tags = query[category];
-				                    if ( tags.length ) {
-				                        legend += "<p><span>" + category + ":</span>";
-				                        for ( i = 0; i < tags.length; i++ ) {
-				                            tag = tags[i];
-				                            legend += "<em>" + tag + "</em>";
-				                        };
-				                        legend += "</p>";
-				                    };
-				                };
-				                legend += "<p><i>" + match.length + " item" + (match.length !== 1 ? "s" : "") + " found.</i></p>";
-				                $("#legend").html( legend );
-				            };
-				        }
 				    });
 
-				}); // end filtrify function 
 
 			/* Inserts buttons at bottom of page after images load */
 			setTimeout(function(){
