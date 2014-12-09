@@ -1,0 +1,9 @@
+/*============================================
+=           Form Element Styling            =
+============================================*/
+
+.grid-form fieldset { // this styling overrides the settings in _gridforms.scss 
+	margin-top: 2.5em;
+	margin-bottom: 2.5em;
+}
+
