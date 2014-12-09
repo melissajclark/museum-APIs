@@ -151,8 +151,8 @@ legend {
   padding: 0.75em;
   border: 2px double darkgrey;
   border-radius: 4px;
-  margin: 0.5em;
-  max-width: 20%;
+  margin: 1em;
+  max-width: 18%;
   max-height: 10%;
   display: inline-block;
   vertical-align: top;
@@ -160,8 +160,8 @@ legend {
 }
 @media screen and (max-width: 1700px) {
   .artworkModule {
-    margin: 1.5em;
-    max-width: 28%;
+/*     margin: 1.5em; */
+    max-width: 23%;
     max-height: 15%;
     height: auto;
     display: inline-block;
@@ -170,7 +170,7 @@ legend {
 }
 @media screen and (max-width: 1400px) {
   .artworkModule {
-    margin: 1em;
+/*     margin: 1em; */
     max-width: 23%;
     max-height: 15%;
     height: auto;
@@ -180,7 +180,7 @@ legend {
 }
 @media screen and (max-width: 1100px) {
   .artworkModule {
-    margin: 0.75em;
+/*     margin: 0.75em; */
     max-width: 40%;
     max-height: 15%;
     height: auto;
@@ -190,7 +190,7 @@ legend {
 }
 @media screen and (max-width: 700px) {
   .artworkModule {
-    margin: 0.5em;
+/*     margin: 0.5em; */
     max-width: 100%;
     max-height: 50%;
     height: auto;
@@ -203,11 +203,14 @@ legend {
   max-width: 99%;
   height: auto;
   max-height: 20%;
-  margin: 0 auto;
-  padding: 1em 0em 1em 0em;
+/*   margin: 0 auto; */
+  padding: 1em 1em 1em 0em;
   display: inline-block;
   vertical-align: middle;
+  text-decoration:none;
 }
+
+
 @media screen and (max-width: 800px) {
   #artwork img {
     max-width: 100%;
