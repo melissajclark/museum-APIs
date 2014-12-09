@@ -1,5 +1,6 @@
 // empty namespace for app to live on
 var artApp = {};
+artApp.pages = 1;
 artApp.RMkey = "lnJ7Bd6c"; // rijksmuseum
 artApp.FGkey = "i39hegnykz7iq"; // finnish national gallery
 artApp.EUkey = "HJFkApddv"; // Europeana key
@@ -34,6 +35,7 @@ artApp.init = function() {
 artApp.initMore = function() {
 	$("button.moreArt").on("click",function(event){
 		event.preventDefault(); // prevents form from refreshing
+		artApp.pages++; // adds 1 to 
 		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
 		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
 	}); // end of artSearch event function
@@ -53,16 +55,18 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 		data: {		
 			key: artApp.RMkey,
 			format: "jsonp",
-			ps: 10, // sets number of pieces displayed
+			p: artApp.pages,
+			ps: 2, // sets number of pieces displayed
 			imgonly: true,
 			culture: "en",
 			q: query, 
 		},
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
-			$("#artwork").empty(); // clears artwork before adding new pieces
+			console.log(artApp.pages);
+			// $("#artwork").empty(); // clears artwork before adding new pieces
 			artApp.displayPieces(result.artObjects); // when the ajax request comes back - run this code! - displayPieces function is below
-			// console.log(result);
+			console.log(result);
 		}
 	});
 };
@@ -96,6 +100,7 @@ artApp.displayPieces = function(pieces) {
 		},
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
+		console.log(result);
 			// when the ajax request comes back - run this code!
 
 			// below: important variables for template / objects
