@@ -1,17 +1,20 @@
 body {
-	font-family: "brandon-grotesque";
-	font-weight:400;
+	font-family: "abril-text",sans-serif;
+	font-style: normal;
+	font-weight: 400;
 	font-size:1em;
 	line-height:1.4em;
 	max-width:100%;
 	padding:1em;
+	background:rgba(79, 141, 158, 0.6);
 }
 
+
+
 h1, h2, h3, h4, h5, h6 {
-	font-family: "brandon-grotesque";
-	font-style:italic;
-	font-weight:500;
-	color: rgba(62, 153, 186, 0.98);
+	font-family: "abril-text",sans-serif;
+	font-style: italic;
+	font-weight: 600;
 }
 
 
@@ -93,6 +96,7 @@ legend {
 	max-height:10%;
 	display:inline-block;
 	vertical-align:top;
+	background:white;
 	@media screen and (max-width:1700px){
 	 	// max-width:20%;
 	 	margin:1.5em;

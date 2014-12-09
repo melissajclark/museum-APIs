@@ -1,23 +1,24 @@
 @charset "UTF-8";
 body {
-  font-family: "brandon-grotesque";
+  font-family: "abril-text",sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 1em;
   line-height: 1.4em;
   max-width: 100%;
   padding: 1em;
+  background: rgba(79, 141, 158, 0.6);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "brandon-grotesque";
+  font-family: "abril-text",sans-serif;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a {
-  color: purple;
   text-decoration: none;
-  border-bottom: 1px solid purple;
+  border-bottom: 2px solid black;
 }
 a:hover {
   color: black;
@@ -93,6 +94,7 @@ legend {
   max-height: 10%;
   display: inline-block;
   vertical-align: top;
+  background: white;
 }
 @media screen and (max-width: 1700px) {
   .artworkModule {
