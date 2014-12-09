@@ -4,13 +4,22 @@ body {
 	font-weight: 400;
 	max-width:100%;
 	padding:1em;
-	background:rgba(79, 141, 158, 0.6);
+	font-size:17px;
+	background:rgba(45, 47, 42, 0.23);
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "abril-text",sans-serif;
-	font-style: italic;
 	font-weight: 600;
+}
+
+h1 {
+	font-size:30px;
+	font-style: italic;
+}
+
+h3 {
+	font-size:24px;
 }
 
 
