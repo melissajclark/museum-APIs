@@ -96,11 +96,19 @@ header, .info {
   text-align: center;
 }
 
-.searchAndFilter, header {
+header {
   max-width: 80%;
   margin: auto;
   display: block;
 }
+
+.searchAndFilter {
+  max-width: 50%;
+  margin: 0 auto;
+  display: block;
+  padding-top: 2em;
+}
+
 
 /* .searchAndFilter:after {
   content: "";
@@ -3946,7 +3954,7 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-thumb {
 =            My Filtrify Styling            =
 ===========================================*/
 #filtrifyPlaceHolder {
-  float: right;
+  /*float: right;*/
   line-height: 2;
   text-transform: capitalize;
   margin: 1em 1em 1em 3em;
