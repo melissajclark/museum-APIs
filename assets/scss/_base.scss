@@ -4,7 +4,7 @@ body {
 	line-height:1.4em;
 	max-width:100%;
 	padding:1em; 
-	background:rgba(123, 111, 136, 0.34);
+	background:#fff;
 }
 
 a {
@@ -77,9 +77,8 @@ legend {
 
 
 .artworkModule { /*section for each artwork + data */
-	background:white;
-	padding:0.5em 1em 0em 1em;
-	border: 1px solid white;
+	padding:0.75em;
+	border: 2px double darkgrey;
 	border-radius:4px;
 	margin:1em;
 	max-width:12%;
