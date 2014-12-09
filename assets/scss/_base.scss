@@ -2,35 +2,19 @@ body {
 	font-family: "abril-text",sans-serif;
 	font-style: normal;
 	font-weight: 400;
-	font-size:1em;
-	line-height:1.8em;
 	max-width:100%;
 	padding:1em;
 	background:rgba(79, 141, 158, 0.6);
 }
 
-
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: "abril-text",sans-serif;
 	font-style: italic;
 	font-weight: 600;
-	line-height:2;
 }
 
-h1 {
-	font-size:3em;
-	line-height:4.5em;
-}
-
-h3 {
-	font-size:2.5em;
-}
 
 a {
-	color:#6C6056;
-	text-decoration:none;
-	// border-bottom: 2px solid black;
 	&:hover{
 		color:black;
 	}
@@ -43,7 +27,7 @@ a {
 	}
 }
 
-.container { /*Sets basic sizing of content*/
+.container { // Sets basic sizing of content
 	max-width:100%;
 	margin:auto;
 }

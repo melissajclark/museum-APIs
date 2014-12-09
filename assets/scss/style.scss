@@ -2,7 +2,7 @@
 // =            Base            =
 // ============================*/
 
-@import "reset";
+// @import "reset";
 @import "base";
 /*-----  End of Base  ------*/
 
@@ -10,30 +10,30 @@
 =          Formalize      =
 ============================*/
 
-@import "formalize"; // creates similar experience across browsers
-/*-----  End of formalize  ------*/
+// @import "formalize"; // creates similar experience across browsers
+// /*-----  End of formalize  ------*/
 
-/*=========================================
-=            Bootstrap Buttons            =
-=========================================*/
+// /*=========================================
+// =            Bootstrap Buttons            =
+// =========================================*/
 
-@import "bootstrap/_buttons-css.scss";
-/*-----  End of Bootstrap Buttons  ------*/
+// @import "bootstrap/_buttons-css.scss";
+// /*-----  End of Bootstrap Buttons  ------*/
 
-/*=====================================
-=            Form Elements            =
-=====================================*/
+// =====================================
+// =            Form Elements            =
+// =====================================
 
-@import "form-elements";
-/*-----  End of Form Elements  ------*/
+// @import "form-elements";
+// /*-----  End of Form Elements  ------*/
 
 
-/*=================================
-=            Gridforms            =
-=================================*/
+// /*=================================
+// =            Gridforms            =
+// =================================*/
 
-@import "gridforms"; // creates grid-like form experience
-/*-----  End of Gridforms  ------*/
+// @import "gridforms"; // creates grid-like form experience
+// /*-----  End of Gridforms  ------*/
 
 
 /*===================================
