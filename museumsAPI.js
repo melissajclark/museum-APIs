@@ -54,7 +54,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 			key: artApp.RMkey,
 			format: "jsonp",
 			p: artApp.pages,
-			ps: 20, // sets number of pieces displayed
+			ps: 10, // sets number of pieces displayed
 			imgonly: true,
 			culture: "en",
 			q: query, 
@@ -254,9 +254,7 @@ artApp.displayPieces = function(pieces) {
 			} // end success function
 		}); // end ajax function
 		
-		$("img.lazy").lazyload({
-		  event: "scrollstop",
-		});
+		$("img.lazy").lazyload();
 
 } // end for loop
 
