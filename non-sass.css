@@ -103,10 +103,10 @@ header {
 }
 
 .searchAndFilter {
-  max-width: 50%;
   margin: 0 auto;
   display: block;
   padding-top: 2em;
+  text-align:center;
 }
 
 
