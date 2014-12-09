@@ -256,12 +256,6 @@ artApp.displayPieces = function(pieces) {
 		
 		$("img.lazy").lazyload();
 
-		// with jQuery
-		$('#artwork').masonry({
-		  columnWidth: 200,
-		  itemSelector: '.artworkModule',
-		});
-
 } // end for loop
 
 };
