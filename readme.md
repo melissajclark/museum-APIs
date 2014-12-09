@@ -26,4 +26,4 @@ _-- December 2, 2014_
 - [ ] sorting options (ie. give user option to sort results alphabetically by maker, chronologically, etc)
 - [ ] random search option?
 
-_--December 5, 2014_
+_Last updated --December 9, 2014_
