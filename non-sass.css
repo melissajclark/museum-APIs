@@ -29,6 +29,7 @@ ul.searchArt li {
   list-style-type:none;
   display:inline-block;
   line-height:1.5;
+  padding: 0px 10px 0px 10px;
 }
 
 a:hover {
