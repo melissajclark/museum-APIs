@@ -114,7 +114,7 @@ artApp.displayPieces = function(pieces) {
 			=            Variables: Image Metadata            =
 			=================================================*/
 			
-			var img = "<a href='" + artPiece.webImage.url + "'data-featherlight='image'><span class='fa fa-external-link'></span><img class='artImage lazy' data-original='" + artPiece.webImage.url + "'" + "src='" + artPiece.webImage.url + "'></a>";
+			var img = "<a href='" + artPiece.webImage.url + "'data-featherlight='image'><img class='artImage lazy' data-original='" + artPiece.webImage.url + "'" + "src='" + artPiece.webImage.url + "'></a>";
 			var artLink = artItem.links.web;
 			var artLocation = artPiece.productionPlaces[0];
 			var artTitle = artPiece.title;
@@ -138,7 +138,7 @@ artApp.displayPieces = function(pieces) {
 			=            Variables: Image Metadata + HTML content            =
 			================================================================*/	
 
-			var artLinkTitleContent = "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span></a></h3>";
+			var artLinkTitleContent = "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + "</span><span class='fa fa-external-link'></span></a></h3>";
 			var artLocationContent = artOpenLiSpan + "Original Location: </span><span data-location='" + artLocation + "'>" + artLocation + artCloseLiSpan;
 			var artMakerContent = artOpenLiSpan + "Maker: </span><span data-makers='" + artMakersData + "'>" + artMakersData + artCloseLiSpan;
 			var artMediumContent = artOpenLiSpan + "Physical Medium: </span><span data-medium='" + artMedium + "'>" + artMedium + artCloseLiSpan;
