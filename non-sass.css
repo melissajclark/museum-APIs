@@ -3973,10 +3973,11 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-thumb {
   /*float: right;*/
   line-height: 2;
   text-transform: capitalize;
-  margin: 1em 1em 1em 3em;
+  /* margin: 1em 1em 1em 3em; */
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 1em;
 }
-
-/*-----  End of My Filtrify Styling  ------*/
 /*================================================
 =            FeatherLight Default CSS            =
 ================================================*/
