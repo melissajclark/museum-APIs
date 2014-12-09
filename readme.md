@@ -19,7 +19,7 @@ _-- December 2, 2014_
 ### Features to Implement (in order of priority)
 
 - [x] expandable "read more" section around image metadata
-- [ ] button for user to load more items (only appending a few artworks at a time to reduce initial loading time)
+- [x] button for user to load more items (only appending a few artworks at a time to reduce initial loading time)
 - [ ] append date of artwork
 - [x] lightbox / gallery feature for users to view images larger
 - [x] filtering options (ie. narrow down first results by data such as medium, maker, location, etc)
