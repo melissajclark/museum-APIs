@@ -8,9 +8,9 @@ ul.ft-menu * {
 	line-height: 1;
 	position: relative;
 	text-align: left;
-	font-family: 'NovecentoDemiBold';
+	// font-family: 'NovecentoDemiBold';
 	font-weight: normal !important;
-	font-size: 0.9em !important;
+	// font-size: 0.9em !important;
 	letter-spacing: 2px !important;
 	color: #bbb;
 }
@@ -29,7 +29,7 @@ ul.ft-menu > li.ft-field {
 	margin-bottom: 2%;
 	*display: inline; 
 	*zoom: 1;
-	background: none !important;
+	background: rgba(0, 0, 0, 0.68);
 	position: relative !important;
 }
 @media screen and (max-width: 885px) {
@@ -47,7 +47,7 @@ ul.ft-menu > li.ft-field > span.ft-label {
 }
 ul.ft-menu > li.ft-field > span.ft-label:after { 
     font-family: FontAwesome;
-    font-size: 90%; 
+    // font-size: 90%; 
     content:"\f0dd";
     padding:0 5px;
     position: relative;
@@ -108,10 +108,10 @@ ul.ft-menu > li.ft-field > div.ft-panel:after {
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected {
 	padding: 10px 10px 0 10px;
-	background: #eee;
+	// background: #eee;
 }
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li {
-	font-size: 10px;
+	// font-size: 10px;
 	display: inline-block;
 	*display: inline; 
 	*zoom: 1;
@@ -127,12 +127,12 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:after {
 	color: #555;
 }
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-selected > li:active {
-	background: #fee3e8;
+	// background: white;
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search { 
 	padding: 10px;
-	background: #eee;
+	// background: #eee;
 }
 ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search:before {
 	font-family: "FontAwesome";
@@ -151,19 +151,20 @@ ul.ft-menu > li.ft-field > div.ft-panel > fieldset.ft-search > input {
 	width: 140px;
 	padding: 6px 10px 3px 25px !important; 
 	color: gray;
-	background: white;
+	// background: white;
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags { 
 	position: relative !important; 
 	max-height: 200px !important; 
 	border-top: 1px solid #ddd;
+	background: rgba(0, 0, 0, 0.68);
 	overflow-x: hidden; 
 	overflow-y: auto; 
 	width: 100%;
 }
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li { 
-    background: white;
+    // background: white;
 	display: block;
 	border-bottom: 1px solid #ddd;
 	display: block;
@@ -172,7 +173,7 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li {
 }
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after { 
 	content: attr(data-count);
-    font-size: 11px;
+    // font-size: 11px;
     font-weight: normal;
 	display: inline-block;
 	*display: inline;
@@ -183,24 +184,24 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li:after {
 	margin-top: -9px;
 	padding: 3px 6px;
 	color: white;
-	background: #fb5e7e;
+	background: rgba(0, 0, 0, 0.68);
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 }
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight { 
 	border-bottom: 1px solid #fee3e8;
-	background: #fee3e8;
+	background: white;
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags > li.ft-highlight:after {
-	background: #fb5e7e;
+	// background: #fb5e7e;
 }
 
 ul.ft-menu > li.ft-field > div.ft-panel > div.ft-mismatch {
 	padding: 10px 15px;
 	color: white;
-	background: #555555;
+	background: white;
 }
 
 /* REQUIRED! */
@@ -213,11 +214,11 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar {
 }
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
-    background: #DDD;
+    background: white;
 }
 ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-thumb {
     border-radius: 2px;
     box-shadow: 0 0 5px rgba(0,0,0,0.7);
-    background: #EEE;
+    background: white;
 }
 
