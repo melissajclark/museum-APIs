@@ -15,7 +15,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 43px;
+  color: rgba(40, 74, 136, 0.94);
+  letter-spacing: 1.5px;
   font-style: italic;
 }
 
