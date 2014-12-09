@@ -14,6 +14,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+
+
 h1 {
   font-size: 43px;
   color: rgba(40, 74, 136, 0.94);
@@ -22,7 +24,8 @@ h1 {
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 22px;
+  letter-spacing:0.5px;
 }
 
 ul.searchArt li {
@@ -32,8 +35,15 @@ ul.searchArt li {
   padding: 0px 10px 0px 10px;
 }
 
+a {
+  color: rgb(87, 147, 71);
+  text-decoration:none;
+  border-bottom: 2px solid rgb(87, 147, 71);
+}
+
 a:hover {
-  color: black;
+  color: #888;
+  border-bottom: 2px solid #888;
 }
 a.readmore-js-toggle {
   border-bottom: none;
@@ -103,10 +113,10 @@ header {
 }
 
 .searchAndFilter {
+  max-width: 50%;
   margin: 0 auto;
   display: block;
   padding-top: 2em;
-  text-align:center;
 }
 
 
@@ -136,7 +146,7 @@ legend {
   border: 2px double darkgrey;
   border-radius: 4px;
   margin: 0.5em;
-  max-width: 30%;
+  max-width: 10%;
   max-height: 10%;
   display: inline-block;
   vertical-align: top;
