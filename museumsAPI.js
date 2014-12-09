@@ -1,9 +1,8 @@
 // empty namespace for app to live on
 var artApp = {};
+artApp.searchFieldQuery = "";
 artApp.pages = 1;
 artApp.RMkey = "lnJ7Bd6c"; // rijksmuseum
-artApp.FGkey = "i39hegnykz7iq"; // finnish national gallery
-artApp.EUkey = "HJFkApddv"; // Europeana key
 artApp.thumbSize = 500;
 
 /*===================================
@@ -14,8 +13,8 @@ artApp.init = function() {
 // init = everything for starting up the app
 	$("fieldset.artSearch").on("submit",function(event){
 		event.preventDefault(); // prevents form from refreshing
-		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
-		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
+		artApp.searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
+		artApp.getPieces(artApp.searchFieldQuery); // calls art piece function and passes content in search field
 	}); // end of artSearch event function
 
 	// gets value of search and updates "searching for" text for user
@@ -32,15 +31,14 @@ artApp.init = function() {
 	$("button.moreArt").hide();
 };
 
+// gets more art!
 artApp.initMore = function() {
 	$("button.moreArt").on("click",function(event){
 		event.preventDefault(); // prevents form from refreshing
-		artApp.pages++; // adds 1 to 
-		var searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
-		artApp.getPieces(searchFieldQuery); // calls art piece function and passes content in search field
+		artApp.pages++; // adds 1 to number of page results
+		artApp.getPieces(artApp.searchFieldQuery); // calls art piece function and passes content in search field
 	}); // end of artSearch event function
 };
-
 /*-----  End of Artapp.init  ------*/
 
 /*==================================
@@ -56,7 +54,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 			key: artApp.RMkey,
 			format: "jsonp",
 			p: artApp.pages,
-			ps: 2, // sets number of pieces displayed
+			ps: 20, // sets number of pieces displayed
 			imgonly: true,
 			culture: "en",
 			q: query, 
@@ -66,11 +64,10 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 			console.log(artApp.pages);
 			// $("#artwork").empty(); // clears artwork before adding new pieces
 			artApp.displayPieces(result.artObjects); // when the ajax request comes back - run this code! - displayPieces function is below
-			console.log(result);
+			console.log(result.artObjects);
 		}
 	});
 };
-
 /*-----  End of Get Pieces  ------*/
 
 /*======================================
@@ -81,7 +78,6 @@ artApp.displayPieces = function(pieces) {
 
 	var artModuleTmpl = $("<section class='artworkModule'><ul class='artFields'></ul></section>");
 	// loop over each piece
-	// console.log(pieces.length); // counts number of pieces retreived by API
 	for (var i = 0; i < pieces.length; i++) { // for loop
 	if(!pieces[i].webImage) {
 	    continue; // skip this one there is no image
@@ -99,16 +95,20 @@ artApp.displayPieces = function(pieces) {
 			culture: "en",
 		},
 		dataType : "jsonp",
-		success: function(result) { // another word for success = callback
-		console.log(result);
-			// when the ajax request comes back - run this code!
+		success: function(result) {  // when the ajax request comes back - run this code! (another word for success = callback)
 
-			// below: important variables for template / objects
+			/*========================================================
+			=            Variables for template / objects            =
+			========================================================*/
+
 			var artModuleSection = artModuleTmpl.clone();
 			var artModuleUl = artModuleSection.find('ul');
 			var artPiece = result.artObject; // new variable like artItem to use data from success function
 			var artOpenLiSpan = "<li class='artMetaData'><span class='fieldType'>";
 			var artCloseLiSpan = "</span></li>";
+			
+			/*-----  End of Variables for template / objects  ------*/
+			
 			
 			/*=================================================
 			=            Variables: Image Metadata            =
@@ -258,80 +258,80 @@ artApp.displayPieces = function(pieces) {
 		=            Scroll Stop Function            =
 		============================================*/
 
-		(function(){
+		// (function(){
 		 
-		    var special = jQuery.event.special,
-		        uid1 = 'D' + (+new Date()),
-		        uid2 = 'D' + (+new Date() + 1);
+		//     var special = jQuery.event.special,
+		//         uid1 = 'D' + (+new Date()),
+		//         uid2 = 'D' + (+new Date() + 1);
 		 
-		    special.scrollstart = {
-		        setup: function() {
+		//     special.scrollstart = {
+		//         setup: function() {
 		 
-		            var timer,
-		                handler =  function(evt) {
+		//             var timer,
+		//                 handler =  function(evt) {
 		 
-		                    var _self = this,
-		                        _args = arguments;
+		//                     var _self = this,
+		//                         _args = arguments;
 		 
-		                    if (timer) {
-		                        clearTimeout(timer);
-		                    } else {
-		                        evt.type = 'scrollstart';
-		                        jQuery.event.handle.apply(_self, _args);
-		                    }
+		//                     if (timer) {
+		//                         clearTimeout(timer);
+		//                     } else {
+		//                         evt.type = 'scrollstart';
+		//                         jQuery.event.handle.apply(_self, _args);
+		//                     }
 		 
-		                    timer = setTimeout( function(){
-		                        timer = null;
-		                    }, special.scrollstop.latency);
+		//                     timer = setTimeout( function(){
+		//                         timer = null;
+		//                     }, special.scrollstop.latency);
 		 
-		                };
+		//                 };
 		 
-		            jQuery(this).bind('scroll', handler).data(uid1, handler);
+		//             jQuery(this).bind('scroll', handler).data(uid1, handler);
 		 
-		        },
-		        teardown: function(){
-		            jQuery(this).unbind( 'scroll', jQuery(this).data(uid1) );
-		        }
-		    };
+		//         },
+		//         teardown: function(){
+		//             jQuery(this).unbind( 'scroll', jQuery(this).data(uid1) );
+		//         }
+		//     };
 		 
-		    special.scrollstop = {
-		        latency: 300,
-		        setup: function() {
+		//     special.scrollstop = {
+		//         latency: 300,
+		//         setup: function() {
 		 
-		            var timer,
-		                    handler = function(evt) {
+		//             var timer,
+		//                     handler = function(evt) {
 		 
-		                    var _self = this,
-		                        _args = arguments;
+		//                     var _self = this,
+		//                         _args = arguments;
 		 
-		                    if (timer) {
-		                        clearTimeout(timer);
-		                    }
+		//                     if (timer) {
+		//                         clearTimeout(timer);
+		//                     }
 		 
-		                    timer = setTimeout( function(){
+		//                     timer = setTimeout( function(){
 		 
-		                        timer = null;
-		                        evt.type = 'scrollstop';
-		                        jQuery.event.handle.apply(_self, _args);
+		//                         timer = null;
+		//                         evt.type = 'scrollstop';
+		//                         jQuery.event.handle.apply(_self, _args);
 		 
-		                    }, special.scrollstop.latency);
+		//                     }, special.scrollstop.latency);
 		 
-		                };
+		//                 };
 		 
-		            jQuery(this).bind('scroll', handler).data(uid2, handler);
+		//             jQuery(this).bind('scroll', handler).data(uid2, handler);
 		 
-		        },
-		        teardown: function() {
-		            jQuery(this).unbind( 'scroll', jQuery(this).data(uid2) );
-		        }
-		    };
+		//         },
+		//         teardown: function() {
+		//             jQuery(this).unbind( 'scroll', jQuery(this).data(uid2) );
+		//         }
+		//     };
 		 
-		})();
+		// })();
 			
 		/*-----  End of Scroll Stop Function  ------*/
 		
 		$("img.lazy").lazyload({
-		  event: "scrollstop"
+		  event: "scrollstop",
 		});
 
 } // end for loop
