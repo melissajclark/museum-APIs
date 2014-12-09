@@ -58,6 +58,14 @@ a.readmore-js-toggle {
   margin: 0.5em 0 0.5em 0;
 }
 
+a.artImageLink {
+  border-bottom:none;
+}
+
+a.artImageLink:hover {
+  opacity: 0.5;
+}
+
 .container {
   max-width: 100%;
   margin: 0 auto;
