@@ -46,7 +46,7 @@ a {
 }
 
 a:hover {
-  color: #666;
+  color: rgba(40, 74, 136, 0.94);
   /*border-bottom: 2px solid #888;*/
 }
 a.readmore-js-toggle {
