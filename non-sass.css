@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: rgba(40, 74, 136, 0.94);
   letter-spacing: 1.5px;
-  font-style: italic;
+  
 }
 
 h2 {
@@ -24,6 +24,7 @@ h2 {
 
 h1 {
   font-size: 43px;
+  font-style: italic;
 }
 
 h3 {
