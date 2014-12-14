@@ -200,13 +200,13 @@ artApp.displayPieces = function(pieces) {
 				artModuleUl.append(artMaterialsContent);
 			}
 
-			// period of artwork creation
-			artModuleUl.append(artPeriodContent); 
-
 			// injects the type only if it exists
 			if (artType.length > 0){	
 				artModuleUl.append(artTypeContent); // type info
 			}
+			
+			// period of artwork creation
+			artModuleUl.append(artPeriodContent); 
 
 			if (artMedium == artTechnique && artMedium !== artMaterials){
 				artModuleUl.append(artMediumTechniqueContent);
