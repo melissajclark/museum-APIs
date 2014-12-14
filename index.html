@@ -46,41 +46,42 @@
 		(Hint: colour, date, title, artist, medium)
 	</section>
 	
-	<div class="searchAndFilter">	
+	<section class="searchAndFilter">	
 		
 		<ul class="searchArt">
 			<fieldset class="artSearch"> 
-				<form>
-				 <li>
-				    <legend>
-				 	<h3><span class="searchTermDefault">Search the Art</span></h3>
-				    	<!-- User's input to search field will append above -->
-				    	 </legend>
-				 </li>
-				 
-				   <li> 
-				      <label for="search">
-				      	<input type="text" name="searchField" id="searchForm" placeholder="search" />
-				      </label>
-				    </li>
-	
-				    <li>
-				    	<button type="submit" class="btn btn-default btn-lg" placeholder="search"/>Submit!</button>
-				    </li>
-				</form>
+				<form><!--form -->
+					 <li>
+					    <legend>
+					 		<h3><span class="searchTermDefault">Search the Art</span></h3>
+					    	<!-- User's input to search field will append above -->
+					    </legend>
+					 </li>
+					 
+					   <li> 
+					      <label for="search">
+					      	<input type="text" name="searchField" id="searchForm" placeholder="search" />
+					      </label>
+					    </li>
+		
+					    <li>
+					    	<button type="submit" class="btn btn-default btn-lg" placeholder="search"/>Submit!</button>
+					    </li>
+				</form><!--#form -->
 			</fieldset>
 		</ul>
+
 		 <section id="filtrifyPlaceHolder">
 		 	<!-- Filtrify content appends here -->	 	
 		</section>
 
-		<div id="legend"></div>
+	</section><!-- Search & Filter -->
 
-	</div>
+	<section id="artwork" class="container">
 
-		<div id="artwork" class="container">
-		<!-- Artworks are appended here with jQuery (woohoo) -->
-		</div>
+	<!-- Artworks are appended here with jQuery (woohoo) -->
+
+	</section><!-- Artwork section -->
 		
 </main>
 
