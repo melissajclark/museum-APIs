@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/*@charset "UTF-8";
 body {
   font-family: "abril-text",sans-serif;
   font-style: normal;
@@ -31,7 +31,7 @@ h1 {
 h3 {
   font-size: 22px;
   letter-spacing:0.5px;
-}
+}*/
 
 ul.searchArt li {
   list-style-type:none;
@@ -41,7 +41,7 @@ ul.searchArt li {
   margin-bottom:15px;
 }
 
-a {
+/*a {
   color: #111;
   text-decoration:none;
   border-bottom: 2px solid rgb(158, 72, 121);
@@ -64,9 +64,9 @@ a.artImageLink {
 
 a.artImageLink:hover {
   opacity: 0.5;
-}
+}*/
 
-.container {
+/*.container {
   max-width: 100%;
   margin: 0 auto;
 }
@@ -74,17 +74,17 @@ a.artImageLink:hover {
 footer, button.moreArt {
   text-align: center;
   margin: 0 auto;
-}
+}*/
 
-span.fieldType {
+/*span.fieldType {
   font-weight: bold;
-}
+}*/
 
-span {
+/*span {
   display: inline;
-}
+}*/
 
-fieldset {
+/*fieldset {
   border: none;
   background: #ffff;
 }
@@ -108,22 +108,22 @@ cursor: auto;
 ::-webkit-input-placeholder {
    text-align:left;
    font-size: 12px;
-}
+}*/
 
 
 /* fieldset.artSearch {
   float: left;
 } */
-
+/*
 header, .info {
   text-align: center;
-}
-
+}*/
+/*
 header {
   max-width: 80%;
   margin: auto;
   display: block;
-}
+}*/
 
 .searchAndFilter {
   /* max-width: 50%; */
@@ -140,9 +140,9 @@ header {
   clear: both;
 }
  */
-legend {
+/*legend {
   font-weight: bold;
-}
+}*/
 
 /* Read More JS */
 .readmore-js-toggle, .readmore-js-section {
