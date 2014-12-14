@@ -164,13 +164,14 @@ artApp.displayPieces = function(pieces) {
 			/*=============================================================
 			=            Appends Data Attributes to Artwork ID            =
 			=============================================================*/		
-			
+			artModuleSection.attr('data-date',artDate);	 
 			artModuleSection.attr('data-location',artLocation);	
 			artModuleSection.attr('data-makers',artMakersData);		
 			artModuleSection.attr('data-materials',artMaterials);		
 			artModuleSection.attr('data-medium',artMedium);		
 			artModuleSection.attr('data-museum',artMuseum);
 			artModuleSection.attr('data-technique',artTechnique);
+			artModuleSection.attr('data-period',artPeriod);
 			artModuleSection.attr('data-type',artType);
 
 			/*==========================================================
