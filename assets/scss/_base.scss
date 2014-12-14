@@ -118,18 +118,7 @@ ul.searchArt li {
   clear: both;
 }
 
-/*===========================================
-=            My Filtrify Styling            =
-===========================================*/
-#filtrifyPlaceHolder {
-  /*float: right;*/
-  line-height: 2;
-  text-transform: capitalize;
-  /* margin: 1em 1em 1em 3em; */
-  max-width: 800px;
-  margin: 0 auto;
-  padding-bottom: 1em;
-}
+
 
 /*-----  End of Search & Filter Section  ------*/
 
@@ -149,18 +138,11 @@ legend {
 
 fieldset {
 	border:none;
-	background:#ffff;
 }
-
 
 footer, button.moreArt {
 	text-align:center;
 	margin: 0 auto;
-}
-
-fieldset {
-  border: none;
-  background: #ffff;
 }
 
 input[type="text"] {
@@ -276,4 +258,4 @@ header, .info {
 
 }
 
-/*-----  End of Layout  ------*/
+/*-----  End of Layout  ------ */
