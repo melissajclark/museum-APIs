@@ -139,8 +139,8 @@ artApp.displayPieces = function(pieces) {
 			var artPeriod = artPiece.dating.period;
 			console.log(artPeriod);
 
-			var artYear = artPiece.dating.year;
-			console.log(artYear);
+			var artDate = artPiece.dating.year;
+			console.log(artDate);
 
 
 			/*================================================================
@@ -156,7 +156,9 @@ artApp.displayPieces = function(pieces) {
 			var artTechniqueContent = artOpenLiSpan + "Technique: </span><span data-technique='" + artTechnique + "'>" + artTechnique + artCloseLiSpan;
 			var artMuseumContent = artOpenLiSpan + "Museum: </span><span data-museum='" + artMuseum + "'>" + artMuseum + artCloseLiSpan;
 			var artMaterialsMediumContent = artOpenLiSpan + "Physical Medium, Material: </span><span data-medium='" + artMedium + "'" + "data-materials='" + artMaterials + "'>" + artMedium + artCloseLiSpan;
-			var artMediumTechniqueContent = artOpenLiSpan + "Physical Medium, Technique: </span><span data-medium='" + artMedium + "' data-technique='" + artTechnique + "'>" + artMedium + artCloseLiSpan;
+			var artMediumTechniqueContent = artOpenLiSpan + "Physical Medium, Technique: </span><span data-medium='" + artMedium + "' data-technique='" + artTechnique + "'>" + artMedium + artCloseLiSpan; 
+			var artPeriodContent = artOpenLiSpan + "Period: </span><span data-period='" + artPeriod + "'>" + artPeriod + artCloseLiSpan;
+			var artDateContent = artOpenLiSpan + "Date: </span><span data-date='" + artDate + "'>" + artDate + artCloseLiSpan;
 
 			/*=============================================================
 			=            Appends Data Attributes to Artwork ID            =
