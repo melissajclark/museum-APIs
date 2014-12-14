@@ -26,5 +26,6 @@ _-- December 2, 2014_
 - [ ] sorting options (ie. give user option to sort results alphabetically by maker, chronologically, etc)
 - [ ] random search option?
 - [ ] filtrify: hide items with a value of 0 when user filters (ie. if user filters view to only see 1900 and that excludes paintings, don't show 0 paintings in filters)
+- [ ] add message if nothing is found
 
 _Last updated --December 9, 2014_
