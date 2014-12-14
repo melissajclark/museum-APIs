@@ -55,16 +55,21 @@ list-style-type: none;
 ====================================*/
 
 a {
-	&:hover{
-		color:black;
-	}
-	&.readmore-js-toggle {
-		border-bottom: none;
-		font-weight:strong;
-		font-size: 1.1em;
-		line-height: 1.3em;
-		margin: 0.5em 0 0.5em 0;
-	}
+  color: #111;
+  text-decoration:none;
+  border-bottom: 2px solid rgb(158, 72, 121);
+}
+
+a:hover {
+  color: rgb(158, 72, 121);
+}
+
+a.artImageLink {
+  border-bottom:none;
+}
+
+a.artImageLink:hover {
+  opacity: 0.5;
 }
 
 /* Read More JS */
@@ -73,9 +78,22 @@ a {
   display: block;
   width: 100%;
 }
+
 .readmore-js-section {
   overflow: hidden;
 }
+
+
+a.readmore-js-toggle {
+  border-bottom: none;
+  font-weight: strong;
+  font-size: 1.1em;
+  line-height: 1.3em;
+  margin: 0.5em 0 0.5em 0;
+}
+
+
+
 
 /*-----  End of Link Styling  ------*/
 
@@ -117,12 +135,45 @@ footer, button.moreArt {
 	margin: 0 auto;
 }
 
+fieldset {
+  border: none;
+  background: #ffff;
+}
+
+input[type="text"] {
+-webkit-appearance: textfield;
+padding: 10px 50px 10px 5px;
+text-align:left;
+background-color: white;
+border: 2px inset;
+border-image-source: initial;
+border-image-slice: initial;
+border-image-width: initial;
+border-image-outset: initial;
+border-image-repeat: initial;
+-webkit-rtl-ordering: logical;
+-webkit-user-select: text;
+cursor: auto;
+}
+
+::-webkit-input-placeholder {
+   text-align:left;
+   font-size: 12px;
+}
+
 /*-----  End of Form Styling  ------*/
 
 
 /*==============================
 =            Layout            =
 ==============================*/
+
+
+header {
+  max-width: 80%;
+  margin: auto;
+  display: block;
+}
 
 span {
 	display:inline;
@@ -138,72 +189,67 @@ header, .info {
 }
 
 .artworkModule { /*section for each artwork + data */
-	padding:0.75em;
+	padding: 0.75em;
 	border: 2px double darkgrey;
-	border-radius:4px;
-	margin:0.5em;
-	max-width:30%;
-	max-height:10%;
-	display:inline-block;
-	vertical-align:top;
-	background:white;
-	@media screen and (max-width:1700px){
-	 	// max-width:20%;
-	 	margin:1.5em;
-	 	max-width:28%;
-		max-height:15%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
-	 }
-	 @media screen and (max-width:1400px){
-	 	margin:1em;
-	 	max-width:23%;
-		max-height:15%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
-	 }
-	 @media screen and (max-width:1100px){
-	 	margin:0.75em;
-	 	max-width:37%;
-		max-height:15%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
-	 }
-	 @media screen and (max-width:700px){
-	 	margin:1em;
-	 	max-width:95%;
-	 	max-height:50%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
-	 }
+	border-radius: 4px;
+	margin: 1em;
+	max-width: 18%;
+	max-height: 10%;
+	display: inline-block;
+	vertical-align: top;
+	background: white;
+		@media screen and (max-width:1700px){
+		max-width: 23%;
+		max-height: 15%;
+		height: auto;
+		display: inline-block;
+		vertical-align: top;
+		 }
+		 @media screen and (max-width:1400px){
+		 max-width: 23%;
+		 max-height: 15%;
+		 height: auto;
+		 display: inline-block;
+		 vertical-align: top;
+		 }
+		 @media screen and (max-width:1100px){
+		max-width: 40%;
+		max-height: 15%;
+		height: auto;
+		display: inline-block;
+		vertical-align: top;
+		 }
+		 @media screen and (max-width:700px){
+		max-width: 100%;
+		max-height: 50%;
+		height: auto;
+		display: inline-block;
+		vertical-align: top;
+		 }
 }
 
 #artwork img {
-  max-width:99%;
-  height:auto;
-  max-height:20%;
-  margin: 0 auto;
-  padding: 1em 0em 1em 0em;
-  display:inline-block;
-  vertical-align: middle;
+    max-width: 99%;
+    height: auto;
+    max-height: 20%;
+  /*   margin: 0 auto; */
+    padding: 1em 1em 1em 0em;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration:none;
 	 @media screen and (max-width:800px){
-	 	max-width:100%;
-	 	max-height:50%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
+	 	max-width: 100%;
+	 	max-height: 50%;
+	 	height: auto;
+	 	display: inline-block;
+	 	vertical-align: top;
 	 }
 	  @media screen and (max-width:500px){
-	 	// max-width:20%;
-	 	max-width:100%;
-	 	max-height:50%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
+	 	max-width: 100%;
+	 	max-height: 50%;
+	 	height: auto;
+	 	display: inline-block;
+	 	vertical-align: top;
 	 }
 
 }
