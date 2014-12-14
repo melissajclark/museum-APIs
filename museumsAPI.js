@@ -145,7 +145,11 @@ artApp.displayPieces = function(pieces) {
 			// gets the last digit of the string 
 			var artPeriodLastDigit = artPeriod.charAt(1);
 
-
+			if (artPeriodLastDigit === 1 && artPeriod === 21 || artPeriod === 1 && artPeriod != 11) {
+				artPeriod = artPeriod + "st Century"; // 1st or 21st Century
+			} if (artPeriodLastDigit === 1 && artPeriod != 1 && artPeriod != 21){
+				artPeriod = artPeriod + "th Century"; // 11th Century
+			}
 
 
 			/*================================================================
