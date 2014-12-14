@@ -210,7 +210,14 @@ artApp.displayPieces = function(pieces) {
 			} // end success function
 		}); // end ajax function
 		
+
 		$("img.lazy").lazyload();
+
+
+		// filtrify appends the data about each artwork so users can filter by artist, location, etc
+		$.filtrify("artwork", "filtrifyPlaceHolder", {
+	    	block : ["data-title", "data-museum"],
+	    });
 
 } // end for loop
 
