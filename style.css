@@ -1,31 +1,83 @@
 @charset "UTF-8";
+/*==================================
+=            Typography            =
+==================================*/
 body {
   font-family: "abril-text",sans-serif;
   font-style: normal;
   font-weight: 400;
   max-width: 100%;
   padding: 1em;
+  line-height: 1.6;
   font-size: 17px;
-  background: rgba(45, 47, 42, 0.23);
+  background: rgba(178, 178, 178, 0.23);
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "abril-text",sans-serif;
   font-weight: 600;
+  color: rgba(40, 74, 136, 0.94);
+  letter-spacing: 1.5px;
+}
+
+h2 {
+  font-size: 25px;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 38px;
   font-style: italic;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+ul.artFields {
+  /* Removes all padding from ul section*/
+  display: block;
+  list-style-type: none;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 0px;
+}
+
+/*-----  End of Typography  ------*/
+/*====================================
+=            Link Styling            =
+====================================*/
+a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 2px solid #9e4879;
 }
 
 a:hover {
-  color: black;
+  color: #9e4879;
 }
+
+a.artImageLink {
+  border-bottom: none;
+}
+
+a.artImageLink:hover {
+  opacity: 0.5;
+}
+
+/* Read More JS */
+.readmore-js-toggle, .readmore-js-section {
+  display: block;
+  width: 100%;
+}
+
+.readmore-js-section {
+  overflow: hidden;
+}
+
 a.readmore-js-toggle {
   border-bottom: none;
   font-weight: strong;
@@ -34,35 +86,16 @@ a.readmore-js-toggle {
   margin: 0.5em 0 0.5em 0;
 }
 
-.container {
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-footer, button.moreArt {
-  text-align: center;
-  margin: 0 auto;
-}
-
-span.fieldType {
-  font-weight: bold;
-}
-
-span {
-  display: inline;
-}
-
-fieldset {
-  border: none;
-  background: #ffff;
-}
-
-fieldset.artSearch {
-  float: left;
-}
-
-header, .info {
-  text-align: center;
+/*-----  End of Link Styling  ------*/
+/*===============================================
+=            Search & Filter Section            =
+===============================================*/
+ul.searchArt li {
+  list-style-type: none;
+  display: inline-block;
+  line-height: 1.5;
+  padding: 0px 10px 0px 10px;
+  margin-bottom: 15px;
 }
 
 .searchAndFilter, header {
@@ -77,18 +110,73 @@ header, .info {
   clear: both;
 }
 
+/*-----  End of Search & Filter Section  ------*/
+/*====================================
+=            Form Styling            =
+====================================*/
+span.fieldType {
+  font-weight: bold;
+}
+
 legend {
   font-weight: bold;
 }
 
-/* Read More JS */
-.readmore-js-toggle, .readmore-js-section {
-  display: block;
-  width: 100%;
+fieldset {
+  border: none;
 }
 
-.readmore-js-section {
-  overflow: hidden;
+footer, button.moreArt {
+  text-align: center;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: none;
+}
+
+input[type="text"] {
+  -webkit-appearance: textfield;
+  padding: 10px 50px 10px 5px;
+  text-align: left;
+  background-color: white;
+  border: 2px inset;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  -webkit-rtl-ordering: logical;
+  -webkit-user-select: text;
+  cursor: auto;
+}
+
+::-webkit-input-placeholder {
+  text-align: left;
+  font-size: 12px;
+}
+
+/*-----  End of Form Styling  ------*/
+/*==============================
+=            Layout            =
+==============================*/
+header {
+  max-width: 80%;
+  margin: auto;
+  display: block;
+}
+
+span {
+  display: inline;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+header, .info {
+  text-align: center;
 }
 
 .artworkModule {
@@ -96,8 +184,8 @@ legend {
   padding: 0.75em;
   border: 2px double darkgrey;
   border-radius: 4px;
-  margin: 0.5em;
-  max-width: 30%;
+  margin: 1em;
+  max-width: 18%;
   max-height: 10%;
   display: inline-block;
   vertical-align: top;
@@ -105,8 +193,7 @@ legend {
 }
 @media screen and (max-width: 1700px) {
   .artworkModule {
-    margin: 1.5em;
-    max-width: 28%;
+    max-width: 23%;
     max-height: 15%;
     height: auto;
     display: inline-block;
@@ -115,7 +202,6 @@ legend {
 }
 @media screen and (max-width: 1400px) {
   .artworkModule {
-    margin: 1em;
     max-width: 23%;
     max-height: 15%;
     height: auto;
@@ -125,8 +211,7 @@ legend {
 }
 @media screen and (max-width: 1100px) {
   .artworkModule {
-    margin: 0.75em;
-    max-width: 37%;
+    max-width: 40%;
     max-height: 15%;
     height: auto;
     display: inline-block;
@@ -135,8 +220,7 @@ legend {
 }
 @media screen and (max-width: 700px) {
   .artworkModule {
-    margin: 1em;
-    max-width: 95%;
+    max-width: 100%;
     max-height: 50%;
     height: auto;
     display: inline-block;
@@ -148,10 +232,11 @@ legend {
   max-width: 99%;
   height: auto;
   max-height: 20%;
-  margin: 0 auto;
-  padding: 1em 0em 1em 0em;
+  /*   margin: 0 auto; */
+  padding: 1em 1em 1em 0em;
   display: inline-block;
   vertical-align: middle;
+  text-decoration: none;
 }
 @media screen and (max-width: 800px) {
   #artwork img {
@@ -172,17 +257,7 @@ legend {
   }
 }
 
-ul.artFields {
-  /* Removes all padding from ul section*/
-  display: block;
-  list-style-type: none;
-  -webkit-margin-before: 0em;
-  -webkit-margin-after: 0em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
-  -webkit-padding-start: 0px;
-}
-
+/*-----  End of Layout  ------ */
 /*-----  End of Base  ------*/
 /*============================
 =          Formalize      =
@@ -3911,17 +3986,6 @@ ul.ft-menu > li.ft-field > div.ft-panel > ul.ft-tags::-webkit-scrollbar-thumb {
 }
 
 /*-----  End of Filtrify Default CSS  ------*/
-/*===========================================
-=            My Filtrify Styling            =
-===========================================*/
-#filtrifyPlaceHolder {
-  float: right;
-  line-height: 2;
-  text-transform: capitalize;
-  margin: 1em 1em 1em 3em;
-}
-
-/*-----  End of My Filtrify Styling  ------*/
 /*================================================
 =            FeatherLight Default CSS            =
 ================================================*/
