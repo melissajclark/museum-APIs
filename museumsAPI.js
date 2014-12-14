@@ -184,6 +184,9 @@ artApp.displayPieces = function(pieces) {
 			// credit to museum
 			artModuleUl.append(artMuseumContent); 
 
+			// date artwork created
+			artModuleUl.append(artDateContent); 
+
 			// artwork creator info
 			artModuleUl.append(artMakerContent); 		
 			
@@ -196,6 +199,9 @@ artApp.displayPieces = function(pieces) {
 			if (artMedium == artTechnique && artMedium !== artMaterials && artMaterials.length > 0){
 				artModuleUl.append(artMaterialsContent);
 			}
+
+			// period of artwork creation
+			artModuleUl.append(artPeriodContent); 
 
 			// injects the type only if it exists
 			if (artType.length > 0){	
