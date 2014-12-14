@@ -162,6 +162,10 @@ artApp.displayPieces = function(pieces) {
 				artPeriod = artPeriodString + "nd Century"; // for the 2nd centrury or 22nd
 			} else if (artPeriodLastDigit === "2" && artPeriod === 12){ // for 13th century
 				artPeriod = artPeriodString + "th Century";
+			} else if (artPeriodLastDigit === "1" && artPeriod != 11 || artPeriodLastDigit === "1" && artPeriod === 21 ) {
+				artPeriod = artPeriodString + "st Century"; // for the 1st centrury or 21st
+			} else if (artPeriodLastDigit === "1" && artPeriod === 11){ // for 11th century
+				artPeriod = artPeriodString + "th Century";
 			}
 
 
