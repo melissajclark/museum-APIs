@@ -149,6 +149,9 @@ artApp.displayPieces = function(pieces) {
 			// gets the last digit of the string 
 			var artPeriodLastDigit = artPeriodString.charAt(1);
 
+			console.log("artPeriod = " + artPeriod + "artPeriodString = " + artPeriodString + " artPeriodLastDigit = " + artPeriodLastDigit);
+
+
 
 			/*================================================================
 			=            Variables: Image Metadata + HTML content            =
