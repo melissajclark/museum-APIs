@@ -151,6 +151,11 @@ artApp.displayPieces = function(pieces) {
 
 			console.log("artPeriod = " + artPeriod + "artPeriodString = " + artPeriodString + " artPeriodLastDigit = " + artPeriodLastDigit);
 
+			if (artPeriodLastDigit === "4" || artPeriodLastDigit === "5" || artPeriodLastDigit === "6" || artPeriodLastDigit === "7" || artPeriodLastDigit === "8" || artPeriodLastDigit === "9") {
+				artPeriod = artPeriodString + "th Century";
+				console.log(artPeriod);
+			}
+
 
 
 			/*================================================================
