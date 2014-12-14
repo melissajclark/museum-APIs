@@ -160,7 +160,6 @@ artApp.displayPieces = function(pieces) {
 			artModuleSection.attr('data-medium',artMedium);		
 			artModuleSection.attr('data-museum',artMuseum);
 			artModuleSection.attr('data-technique',artTechnique);
-			artModuleSection.attr('data-title',artTitle);	
 			artModuleSection.attr('data-type',artType);
 
 			/*==========================================================
@@ -205,7 +204,7 @@ artApp.displayPieces = function(pieces) {
 
 			// filtrify appends the data about each artwork so users can filter by artist, location, etc
 			$.filtrify("artwork", "filtrifyPlaceHolder", {
-		    	block : ["data-museum"],
+		    	block : ["data-title", "data-museum"],
 		    });
 
 			/* Inserts buttons at bottom of page after images load */
