@@ -148,6 +148,7 @@ artApp.displayPieces = function(pieces) {
 			================================================================*/	
 
 			var artLinkTitleContent = "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + " " + "</span><span class='fa fa-external-link'></span></a></h3>";
+			var artDateContent = artOpenLiSpan + "Date: </span><span data-date='" + artDate + "'>" + artDate + artCloseLiSpan;
 			var artLocationContent = artOpenLiSpan + "Original Location: </span><span data-location='" + artLocation + "'>" + artLocation + artCloseLiSpan;
 			var artMakerContent = artOpenLiSpan + "Maker: </span><span data-makers='" + artMakersData + "'>" + artMakersData + artCloseLiSpan;
 			var artMediumContent = artOpenLiSpan + "Physical Medium: </span><span data-medium='" + artMedium + "'>" + artMedium + artCloseLiSpan;
@@ -158,7 +159,7 @@ artApp.displayPieces = function(pieces) {
 			var artMaterialsMediumContent = artOpenLiSpan + "Physical Medium, Material: </span><span data-medium='" + artMedium + "'" + "data-materials='" + artMaterials + "'>" + artMedium + artCloseLiSpan;
 			var artMediumTechniqueContent = artOpenLiSpan + "Physical Medium, Technique: </span><span data-medium='" + artMedium + "' data-technique='" + artTechnique + "'>" + artMedium + artCloseLiSpan; 
 			var artPeriodContent = artOpenLiSpan + "Period: </span><span data-period='" + artPeriod + "'>" + artPeriod + artCloseLiSpan;
-			var artDateContent = artOpenLiSpan + "Date: </span><span data-date='" + artDate + "'>" + artDate + artCloseLiSpan;
+			
 
 			/*=============================================================
 			=            Appends Data Attributes to Artwork ID            =
