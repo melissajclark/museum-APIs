@@ -136,15 +136,16 @@ artApp.displayPieces = function(pieces) {
 			// replaces comma with ASCII code for comma (otherwise the commas mess up the data attributes)
 			artMakersData = artMakers.replace(", ","&#44; "); 
 
-			var artPeriod = artPiece.dating.period.toString();
-			// var artPeriodLength = artPeriod.length;
-			var artPeriodLastDigit = artPeriod.charAt(1);
-
-			// var artPeriodDigitTwo = artPeriod.length.charAt(2);
-			console.log("Period: " + artPeriod + ". 2nd Digit = " + artPeriodLastDigit);
-
 			var artDate = artPiece.dating.year;
 			// console.log(artDate);
+
+			// gets art period and converts it to a string
+			var artPeriod = artPiece.dating.period.toString();
+
+			// gets the last digit of the string 
+			var artPeriodLastDigit = artPeriod.charAt(1);
+
+
 
 
 			/*================================================================
