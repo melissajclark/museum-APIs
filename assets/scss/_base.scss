@@ -92,10 +92,35 @@ a.readmore-js-toggle {
   margin: 0.5em 0 0.5em 0;
 }
 
-
-
-
 /*-----  End of Link Styling  ------*/
+
+/*===============================================
+=            Search & Filter Section            =
+===============================================*/
+
+ul.searchArt li {
+  list-style-type:none;
+  display:inline-block;
+  line-height:1.5;
+  padding: 0px 10px 0px 10px;
+  margin-bottom:15px;
+}
+
+.searchAndFilter, header {
+	max-width:80%;
+	margin:auto;
+	display:block;
+}
+
+.searchAndFilter:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*-----  End of Search & Filter Section  ------*/
+
+
 
 /*====================================
 =            Form Styling            =
@@ -116,18 +141,6 @@ fieldset {
 
 fieldset.artSearch {
 	float:left;
-}
-
-.searchAndFilter, header {
-	max-width:80%;
-	margin:auto;
-	display:block;
-}
-
-.searchAndFilter:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 footer, button.moreArt {
@@ -167,7 +180,6 @@ cursor: auto;
 /*==============================
 =            Layout            =
 ==============================*/
-
 
 header {
   max-width: 80%;
