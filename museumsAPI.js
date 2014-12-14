@@ -201,19 +201,6 @@ artApp.displayPieces = function(pieces) {
 
 			$("#artwork").append(artModuleSection);
 
-				$("ul.artFields").readmore({
-				  speed: 150,
-				  maxHeight: 1,
-				  embedCSS: false,
-				  moreLink: "<button class='btn btn-default btn-sm' href='#'>View Details</button>",
-				  lessLink: "<button class='btn btn-default btn-sm' href='#'>Close Details</>"
-				});
-
-				    $.filtrify("artwork", "filtrifyPlaceHolder", {
-				    	block : ["data-title", "data-museum"],
-				    });
-
-
 			/* Inserts buttons at bottom of page after images load */
 			setTimeout(function(){
 			    $("a.backToTop").show();
