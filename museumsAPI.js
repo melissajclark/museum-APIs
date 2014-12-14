@@ -155,8 +155,9 @@ artApp.displayPieces = function(pieces) {
 				artPeriod = artPeriodString + "th Century";
 				console.log(artPeriod);
 			} else if (artPeriodLastDigit === "3" && artPeriod != 13 ) {
-				artPeriod = artPeriodString + "rd Century"; // for the 3rd centrury
-
+				artPeriod = artPeriodString + "rd Century"; // for the 3rd centrury or 23rd
+			} else if (artPeriodLastDigit === "3" && artPeriod === 13){ // for 13th century
+				artPeriod = artPeriodString + "th Century";
 			}
 
 
