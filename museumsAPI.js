@@ -201,6 +201,11 @@ artApp.displayPieces = function(pieces) {
 
 			$("#artwork").append(artModuleSection);
 
+			// filtrify appends the data about each artwork so users can filter by artist, location, etc
+			$.filtrify("artwork", "filtrifyPlaceHolder", {
+		    	block : ["data-title", "data-museum"],
+		    });
+
 			/* Inserts buttons at bottom of page after images load */
 			setTimeout(function(){
 			    $("a.backToTop").show();
@@ -214,10 +219,6 @@ artApp.displayPieces = function(pieces) {
 		$("img.lazy").lazyload();
 
 
-		// filtrify appends the data about each artwork so users can filter by artist, location, etc
-		$.filtrify("artwork", "filtrifyPlaceHolder", {
-	    	block : ["data-title", "data-museum"],
-	    });
 
 } // end for loop
 
