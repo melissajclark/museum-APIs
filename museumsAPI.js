@@ -136,7 +136,17 @@ artApp.displayPieces = function(pieces) {
 			// replaces comma with ASCII code for comma (otherwise the commas mess up the data attributes)
 			artMakersData = artMakers.replace(", ","&#44; "); 
 
-			var artPeriod = artPiece.dating.period  + "th Century";
+			var artPeriod = artPiece.dating.period  + artPeriodDetails;
+
+			if (artPeriod =< 10)
+
+
+
+
+
+
+
+
 			console.log(artPeriod);
 
 			var artDate = artPiece.dating.year;
