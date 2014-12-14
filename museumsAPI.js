@@ -151,7 +151,7 @@ artApp.displayPieces = function(pieces) {
 
 			console.log("artPeriod = " + artPeriod + "artPeriodString = " + artPeriodString + " artPeriodLastDigit = " + artPeriodLastDigit);
 
-			if (artPeriodLastDigit === "4" || artPeriodLastDigit === "5" || artPeriodLastDigit === "6" || artPeriodLastDigit === "7" || artPeriodLastDigit === "8" || artPeriodLastDigit === "9") {
+			if (artPeriodLastDigit === "4" || artPeriodLastDigit === "5" || artPeriodLastDigit === "6" || artPeriodLastDigit === "7" || artPeriodLastDigit === "8" || artPeriodLastDigit === "9" || artPeriod === 6) {
 				artPeriod = artPeriodString + "th Century";
 				console.log(artPeriod);
 			} else if (artPeriodLastDigit === "3" && artPeriod != 13 ) {
