@@ -140,7 +140,8 @@ artApp.displayPieces = function(pieces) {
 			// console.log(artDate);
 
 			// artPeriod as an integer (useful in if statement)
-			var artPeriodString = artPiece.dating.period;
+			var artPeriod = artPiece.dating.period;
+			// console.log(artPeriod);
 
 			// gets art period and converts it to a string
 			var artPeriodString = artPiece.dating.period.toString();
@@ -148,12 +149,13 @@ artApp.displayPieces = function(pieces) {
 			// gets the last digit of the string 
 			var artPeriodLastDigit = artPeriodString.charAt(1);
 
-			if (artPeriodLastDigit === 1 && artPeriod === 21 || artPeriod === 1 && artPeriod != 11) {
-				artPeriod = artPeriod + "st Century"; // 1st or 21st Century
-			} if (artPeriodLastDigit === 1 && artPeriod != 1 && artPeriod != 21){
-				artPeriod = artPeriod + "th Century"; // 11th Century
-				console.log("11th century!")
-			}
+			// if (artPeriodLastDigit === "1" && artPeriodString === "21" || artPeriodString === "1" && artPeriodString != "11") {
+			// 	artPeriod = artPeriodString + "st Century"; // 1st or 21st Century
+			// 	console.log(artPeriod);
+			// } if (artPeriodLastDigit === "1" && artPeriod != 1 && artPeriod != 21){
+			// 	artPeriod = artPeriodString + "th Century"; // 11th Century
+			// 	console.log("11th century!");
+			// } 
 
 
 			/*================================================================
