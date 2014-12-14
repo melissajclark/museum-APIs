@@ -222,7 +222,7 @@ artApp.displayPieces = function(pieces) {
 $(document).ready(function(){
 	artApp.init(); // runs init function on document is ready
 
-	artApp.initMore();
+	artApp.initMore(); // gets more pieces for load more button
 
 	// artApp.init:
 
