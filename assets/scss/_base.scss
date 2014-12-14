@@ -1,27 +1,58 @@
+/*==================================
+=            Typography            =
+==================================*/
+
 body {
-	font-family: "abril-text",sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	max-width:100%;
-	padding:1em;
-	font-size:17px;
-	background:rgba(45, 47, 42, 0.23);
+  font-family: "abril-text",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  max-width: 100%;
+  padding: 1em;
+  line-height: 1.6;
+  font-size: 17px;
+  background: rgba(178, 178, 178, 0.23);
+  max-width:100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "abril-text",sans-serif;
-	font-weight: 600;
+  font-family: "abril-text",sans-serif;
+  font-weight: 600;
+  color: rgba(40, 74, 136, 0.94);
+  letter-spacing: 1.5px;
+  
+}
+
+h2 {
+  font-size: 25px;
 }
 
 h1 {
-	font-size:30px;
-	font-style: italic;
+  font-size: 38px;
+  font-style: italic;
 }
 
 h3 {
-	font-size:24px;
+  font-size: 22px;
+  letter-spacing:0.5px;
 }
 
+ul.artFields { /* Removes all padding from ul section*/
+display: block;
+list-style-type: none;
+-webkit-margin-before: 0em;
+-webkit-margin-after: 0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 0px;
+}
+
+
+/*-----  End of Typography  ------*/
+
+
+/*====================================
+=            Link Styling            =
+====================================*/
 
 a {
 	&:hover{
@@ -36,22 +67,28 @@ a {
 	}
 }
 
-.container { // Sets basic sizing of content
-	max-width:100%;
-	margin: 0 auto;
+/* Read More JS */
+
+.readmore-js-toggle, .readmore-js-section {
+  display: block;
+  width: 100%;
+}
+.readmore-js-section {
+  overflow: hidden;
 }
 
-footer, button.moreArt {
-	text-align:center;
-	margin: 0 auto;
-}
+/*-----  End of Link Styling  ------*/
+
+/*====================================
+=            Form Styling            =
+====================================*/
 
 span.fieldType {
 	font-weight:bold;
 }
 
-span {
-	display:inline;
+legend {
+	font-weight:bold;
 }
 
 fieldset {
@@ -61,10 +98,6 @@ fieldset {
 
 fieldset.artSearch {
 	float:left;
-}
-
-header, .info {
-	text-align:center;
 }
 
 .searchAndFilter, header {
@@ -79,20 +112,30 @@ header, .info {
   clear: both;
 }
 
-legend {
-	font-weight:bold;
+footer, button.moreArt {
+	text-align:center;
+	margin: 0 auto;
 }
 
-/* Read More JS */
+/*-----  End of Form Styling  ------*/
 
-.readmore-js-toggle, .readmore-js-section {
-  display: block;
-  width: 100%;
-}
-.readmore-js-section {
-  overflow: hidden;
+
+/*==============================
+=            Layout            =
+==============================*/
+
+span {
+	display:inline;
 }
 
+.container { // Sets basic sizing of content
+	max-width:100%;
+	margin: 0 auto;
+}
+
+header, .info {
+	text-align:center;
+}
 
 .artworkModule { /*section for each artwork + data */
 	padding:0.75em;
@@ -165,12 +208,4 @@ legend {
 
 }
 
-ul.artFields { /* Removes all padding from ul section*/
-display: block;
-list-style-type: none;
--webkit-margin-before: 0em;
--webkit-margin-after: 0em;
--webkit-margin-start: 0px;
--webkit-margin-end: 0px;
--webkit-padding-start: 0px;
-}
+/*-----  End of Layout  ------*/
