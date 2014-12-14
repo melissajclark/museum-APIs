@@ -28,7 +28,6 @@ artApp.init = function() {
 
 	/* Hides Elements on Page Load */
 	$("a.backToTop").hide(); // hides back to top link in footer
-	$("#legend").hide();
 	$("button.moreArt").hide();
 };
 
