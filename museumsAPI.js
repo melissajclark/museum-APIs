@@ -149,14 +149,6 @@ artApp.displayPieces = function(pieces) {
 			// gets the last digit of the string 
 			var artPeriodLastDigit = artPeriodString.charAt(1);
 
-			// if (artPeriodLastDigit === "1" && artPeriodString === "21" || artPeriodString === "1" && artPeriodString != "11") {
-			// 	artPeriod = artPeriodString + "st Century"; // 1st or 21st Century
-			// 	console.log(artPeriod);
-			// } if (artPeriodLastDigit === "1" && artPeriod != 1 && artPeriod != 21){
-			// 	artPeriod = artPeriodString + "th Century"; // 11th Century
-			// 	console.log("11th century!");
-			// } 
-
 
 			/*================================================================
 			=            Variables: Image Metadata + HTML content            =
