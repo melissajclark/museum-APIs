@@ -139,6 +139,10 @@ artApp.displayPieces = function(pieces) {
 			var artPeriod = artPiece.dating.period;
 			console.log(artPeriod);
 
+			var artYear = artPiece.dating.year;
+			console.log(artYear);
+
+
 			/*================================================================
 			=            Variables: Image Metadata + HTML content            =
 			================================================================*/	
