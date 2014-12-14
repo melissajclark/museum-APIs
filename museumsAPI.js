@@ -21,9 +21,9 @@ artApp.init = function() {
 	// gets value of search and updates "searching for" text for user
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
 		var searchContent = $(this).val();
-		$("span.searchTermDefault").remove(); // removes original search field name
-		$("legend").html("<h3 style='text-align:center;'><span class='searchTermAppended'>" + "Searching for: " + "&nbsp;" + "</span></h3>"); // adds span for new content
-		$("span.searchTermAppended").append('"' + searchContent + '"'); // appends user's search term
+		$("h3.searchContent").remove(); // removes original search field name
+		$("legend").html("<h3 class='searchContent'>" + "Searching for: " + "&nbsp;" + "</h3>"); // adds h3 for new content
+		$("h3.searchContent").append('"' + searchContent + '"'); // appends user's search term
 	});
 
 	/* Hides Elements on Page Load */
