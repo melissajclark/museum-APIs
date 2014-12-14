@@ -28,4 +28,4 @@ _-- December 2, 2014_
 - [ ] filtrify: hide items with a value of 0 when user filters (ie. if user filters view to only see 1900 and that excludes paintings, don't show 0 paintings in filters)
 - [ ] add message if nothing is found
 
-_Last updated --December 9, 2014_
+_Last updated --December 14, 2014_
