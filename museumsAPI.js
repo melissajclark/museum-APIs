@@ -97,6 +97,7 @@ artApp.displayPieces = function(pieces) {
 		},
 		dataType : "jsonp",
 		success: function(result) {  // when the ajax request comes back - run this code! (another word for success = callback)
+		console.log(result); // console logs full object data of artwork
 
 			/*========================================================
 			=            Variables for template / objects            =
