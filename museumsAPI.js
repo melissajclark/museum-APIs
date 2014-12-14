@@ -167,6 +167,8 @@ artApp.displayPieces = function(pieces) {
 				artPeriod = artPeriodString + "st Century"; // for the 1st centrury or 21st
 			} else if (artPeriodLastDigit === "1" && artPeriod === 11){ // for 11th century
 				artPeriod = artPeriodString + "th Century";
+			} else if (artPeriodLastDigit === "0") {
+				artPeriod = artPeriodString + "th Century"; // accounts for 10, 20, 30, etc
 			}
 
 
