@@ -212,8 +212,6 @@ artApp.displayPieces = function(pieces) {
 		
 		$("img.lazy").lazyload();
 
-		artApp.initMore(); // gets more pieces for load more button
-
 } // end for loop
 
 };
@@ -224,7 +222,7 @@ artApp.displayPieces = function(pieces) {
 $(document).ready(function(){
 	artApp.init(); // runs init function on document is ready
 
-	
+	artApp.initMore(); // gets more pieces for load more button
 
 	// artApp.init:
 
