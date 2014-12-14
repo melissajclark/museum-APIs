@@ -137,14 +137,14 @@ artApp.displayPieces = function(pieces) {
 			artMakersData = artMakers.replace(", ","&#44; "); 
 
 			var artPeriod = artPiece.dating.period.toString();
-			var artPeriodLength = artPeriod.length;
-			var artPeriodLastDigit = artPeriod.length-1;
+			// var artPeriodLength = artPeriod.length;
+			var artPeriodLastDigit = artPeriod.charAt(1);
 
 			// var artPeriodDigitTwo = artPeriod.length.charAt(2);
-			console.log("Period: " + artPeriod + "Length: " + artPeriodLength + "2nd Digit " + artPeriodLastDigit);
+			console.log("Period: " + artPeriod + ". 2nd Digit = " + artPeriodLastDigit);
 
 			var artDate = artPiece.dating.year;
-			console.log(artDate);
+			// console.log(artDate);
 
 
 			/*================================================================
