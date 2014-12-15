@@ -215,7 +215,7 @@ artApp.displayPieces = function(pieces) {
 			=================================================*/
 			
 			var img = "<a class='artImageLink' href='" + artPiece.webImage.url + "'data-featherlight='image'><img class='artImage lazy artImageLink' data-original='" + artPiece.webImage.url + "'" + "src='" + artPiece.webImage.url + "'></a>";
-			var artLink = artItem.links.web;
+			var artLink = "https://www.rijksmuseum.nl/en/collection/" + artPiece.objectNumber;
 			var artLocation = artPiece.productionPlaces[0];
 			var artTitle = artPiece.title;
 			var artMedium = artPiece.physicalMedium;
