@@ -380,7 +380,7 @@ artApp.displayPieces = function(pieces) {
 		    	block : ["data-title", "data-museum"],
 		    });
 
-		    $("ul.ft-menu").attr("data-row-span", 12);
+		    $("ul.ft-menu").attr("data-row-span", 24);
 		    $("ul.ft-menu").before('<h3>Filter Results:</h3>');
 
 		    $("ul.ft-menu li.ft-field").attr("data-field-span", 1);
