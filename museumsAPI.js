@@ -31,6 +31,22 @@ artApp.init = function() { // init = everything for starting up the app
 			"<option value='"+ artApp.sort[5] + "'>Artist Desc</option>"
 		);
 
+
+	/**
+	*
+	* Sets Items per Page based on user's input
+	*
+	**/
+
+	$("#itemsPerPage").append(
+		"<option value='"+ artApp.pageItems[0] +"'>10</option>" + 
+		"<option value='"+ artApp.pageItems[1] + "'>25</option>" +
+		"<option value='"+ artApp.pageItems[2] + "'>40</option>" +
+		"<option value='"+ artApp.pageItems[3] + "'>60</option>" +
+		"<option value='"+ artApp.pageItems[4] + "'>75</option>" +
+		"<option value='"+ artApp.pageItems[5] + "'>100</option>"
+	);
+
 	/**
 	*
 	* Passes user's search field input as query + hides artwork if a new search occurs
