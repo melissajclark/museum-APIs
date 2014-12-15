@@ -16,12 +16,18 @@ artApp.init = function() { // init = everything for starting up the app
 
 	/**
 	*
-	* Hides Footer Links on Page Load & Appends sort Options to Select Menu
+	* Hides Footer Links on Page Load
 	*
 	**/
 
 		$("a.backToTop").hide(); // hides back to top link in footer
 		$("button.moreArt").hide();
+
+	/**
+	*
+	* Appends sort Options to Select Menu
+	*
+	**/
 
 		$("#sortOptions").append(
 			"<option value='"+ artApp.sort[0] +"'>Relevance</option>" + 
