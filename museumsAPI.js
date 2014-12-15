@@ -4,7 +4,7 @@ artApp.searchFieldQuery = "";
 artApp.pages = 1;
 artApp.RMkey = "lnJ7Bd6c"; // rijksmuseum
 artApp.sort = ["relevance", "objecttype", "chronologic", "achronologic", "artist", "artistdesc"];
-var sortChoice = "";
+artApp.sortChoice = "";
 
 /*===================================
 =            Artapp.init            =
@@ -30,8 +30,8 @@ artApp.init = function() { // init = everything for starting up the app
 	}); // end of artSearch event function
 
 	$('#sortOptions').on("change", function(){
-	  sortChoice = $(this).find(':selected').val();
-	  console.log("SortChoice: " + sortChoice);
+	  artApp.sortChoice = $(this).find(':selected').val();
+	  console.log("SortChoice: " + artApp.sortChoice);
 	});
 
 
