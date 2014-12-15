@@ -2,7 +2,8 @@
 var artApp = {};
 artApp.searchFieldQuery = "";
 artApp.pages = 1;
-artApp.pageItems = [10, 25, 40, 60, 75, 100]
+artApp.pageItems = [10, 25, 40, 60, 75, 100];
+artApp.pageItemsChoice = "";
 artApp.RMkey = "lnJ7Bd6c"; // rijksmuseum
 artApp.sort = ["relevance", "objecttype", "chronologic", "achronologic", "artist", "artistdesc"];
 artApp.sortChoice = "";
@@ -83,6 +84,17 @@ artApp.init = function() { // init = everything for starting up the app
 		$('#sortOptions').on("change", function(){
 		  artApp.sortChoice = $(this).find(':selected').val();
 		  artApp.sort = artApp.sortChoice;
+		});
+
+	/**
+	*
+	* Updates number of items per page based on user's input
+	*
+	**/
+		
+		$('#itemsPerPage').on("change", function(){
+		  artApp.pageItemsChoice = $(this).find(':selected').val();
+		  artApp.pageItems = artApp.pageItemsChoice;
 		});
 
 }; // end of artApp.init
