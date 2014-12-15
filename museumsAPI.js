@@ -104,6 +104,17 @@ artApp.init = function() { // init = everything for starting up the app
 		  artApp.pageItems = artApp.pageItemsChoice;
 		});
 
+		$("#sortOptions").chosen({
+			disable_search_threshold: 2,
+			 no_results_text: "Oops, nothing found!",
+			 width: "95%"
+		});
+		$("#itemsPerPage").chosen({
+			disable_search_threshold: 2,
+			 no_results_text: "Oops, nothing found!",
+			 width: "95%"
+		});
+
 }; // end of artApp.init
 
 /*========================================
