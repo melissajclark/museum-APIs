@@ -3,10 +3,8 @@ var artApp = {};
 artApp.searchFieldQuery = "";
 artApp.pages = 1;
 artApp.RMkey = "lnJ7Bd6c"; // rijksmuseum
-artApp.thumbSize = 500;
 artApp.sort = ["relevance", "objecttype", "chronologic", "achronologic", "artist", "artistdesc"];
 var sortChoice = "";
-var sortChoiceName = "";
 
 /*===================================
 =            Artapp.init            =
