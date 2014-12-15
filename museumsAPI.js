@@ -29,6 +29,12 @@ artApp.init = function() { // init = everything for starting up the app
 		$("h3.searchContent").append('"' + searchContent + '"'); // appends user's search term
 	});
 
+	$("#sortType").on("change", function(){
+		var selectedType = (this).val();
+		var userSelectedOption = $(this).find(:selected).text();
+		artApp.
+	});
+
 	/* Hides Elements on Page Load */
 	$("a.backToTop").hide(); // hides back to top link in footer
 	$("button.moreArt").hide();
