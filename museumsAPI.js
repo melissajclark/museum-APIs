@@ -2,6 +2,7 @@
 var artApp = {};
 artApp.searchFieldQuery = "";
 artApp.pages = 1;
+artApp.pageItems = [10, 25, 40, 60, 75, 100]
 artApp.RMkey = "lnJ7Bd6c"; // rijksmuseum
 artApp.sort = ["relevance", "objecttype", "chronologic", "achronologic", "artist", "artistdesc"];
 artApp.sortChoice = "";
@@ -110,7 +111,7 @@ artApp.init = function() { // init = everything for starting up the app
 				key: artApp.RMkey,
 				format: "jsonp",
 				p: artApp.pages,
-				ps: 10, // sets number of pieces displayed
+				ps: artApp.pageItems, // sets number of pieces displayed
 				imgonly: true,
 				culture: "en",
 				q: query,
