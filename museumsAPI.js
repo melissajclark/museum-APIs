@@ -22,6 +22,7 @@ artApp.init = function() { // init = everything for starting up the app
 
 		$("a.backToTop").hide(); // hides back to top link in footer
 		$("button.moreArt").hide();
+		$("h3.filtrifyInfo").hide();
 
 	/**
 	*
@@ -358,6 +359,8 @@ artApp.displayPieces = function(pieces) {
 			}
 
 			$("#artwork").append(artModuleSection);
+
+			$("h3.filtrifyInfo").show();
 
 			// filtrify appends the data about each artwork so users can filter by artist, location, etc
 			$.filtrify("artwork", "filtrifyPlaceHolder", {
