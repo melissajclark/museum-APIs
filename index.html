@@ -48,54 +48,42 @@
 		
 	<section class="searchAndFilter">
 		
-		<ul class="searchArt">
 			<fieldset class="artSearch"> 
-				<form>
-					 <li>
-					    <legend>
-					 		<h3 class="searchContent">Search the Art</h3>
-					    	<!-- User's input to search field will append above -->
-					    </legend>
-					 </li>
-					 
-					   <li> 
-					      <label for="search">
-					      	<input type="text" name="searchField" id="searchForm" placeholder="search" required/>
-					      </label>
-					    </li>
+				<form class="grid-form">
 
-				        <li>
-				        	<label for="sortOptions">
-				        		<h3>Sort by:</h3>
-				        	</label>
-				        </li>
-				    	<li>
-				    		<select name="sort" id="sortOptions" required>
+				<section data-row-span="8">
+				      <label for="search" data-field-span="2">
+				      <h3 class="searchContent">Search the Art</h3>
+				      	<input type="text" name="searchField" id="searchForm" placeholder="search" required/>
+				      </label>		
+							
+		        	<label for="sortOptions" data-field-span="2">
+		        		<h3>Sort by:</h3>
 
-							<!-- Select Options created with jquery -->
+			    		<select name="sort" id="sortOptions"  required>
 
-				    		</select>
-				    	</li>
+						<!-- Select Options created with jquery -->
 
-		    	        <li>
-		    	        	<label for="itemsPerPage">
-		    	        		<h3>Items per page:</h3>
-		    	        	</label>
-		    	        </li>
-		    	    	<li>
-		    	    		<select name="items" id="itemsPerPage" required>
+			    		</select>
+		        	</label>
 
-		    				<!-- Select Options created with jquery -->
+	        	<label for="itemsPerPage" data-field-span="2">
+	        		<h3>Items per page:</h3>
 
-		    	    		</select>
-		    	    	</li>
-		
-					    <li>
-					    	<button type="submit" class="btn btn-default btn-lg" placeholder="search"/>Submit!</button>
-					    </li>
+		    		<select name="items" id="itemsPerPage" required>
+
+					<!-- Select Options created with jquery -->
+
+		    		</select>
+	        	</label>
+
+	        	<button type="submit" class="btn btn-default btn-lg" data-field-span="2" placeholder="search"/>Submit!</button>
+
+				</section> <!-- #end of data row set #1-->
+
 				</form>
 			</fieldset>
-		</ul>
+
 		<h3 class="filtrifyInfo">Filter Results:</h3>
 		 <section id="filtrifyPlaceHolder">
 
