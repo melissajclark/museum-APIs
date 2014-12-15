@@ -12,6 +12,15 @@ artApp.sort = ["relevance", "objecttype", "chronologic", "achronologic", "artist
 
 artApp.init = function() { // init = everything for starting up the app
 
+	$("#sortOptions").append(
+		"<option value='"+ artApp.sort[0] +"'>Relevance</option>" + 
+		"<option value='"+ artApp.sort[1] + "'>Object Type</option>" +
+		"<option value='"+ artApp.sort[2] + "'>Chronologic</option>" +
+		"<option value='"+ artApp.sort[3] + "'>Achronologic</option>" +
+		"<option value='"+ artApp.sort[4] + "'>Artist</option>" +
+		"<option value='"+ artApp.sort[5] + "'>Artist Desc</option>"
+	);
+
 	$("fieldset.artSearch").on("submit",function(event){
 		event.preventDefault(); // prevents form from refreshing
 		artApp.searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
@@ -27,18 +36,6 @@ artApp.init = function() { // init = everything for starting up the app
 		$("h3.searchContent").remove(); // removes original search field name
 		$("legend").html("<h3 class='searchContent'>" + "Searching for: " + "&nbsp;" + "</h3>"); // adds h3 for new content
 		$("h3.searchContent").append('"' + searchContent + '"'); // appends user's search term
-
-		$("#sortOptions").append(
-			"<option value='"+ artApp.sort[0] +"'>Relevance</option>" + 
-			"<option value='"+ artApp.sort[1] + "'>Object Type</option>" +
-			"<option value='"+ artApp.sort[2] + "'>Chronologic</option>" +
-			"<option value='"+ artApp.sort[3] + "'>Achronologic</option>" +
-			"<option value='"+ artApp.sort[4] + "'>Artist</option>" +
-			"<option value='"+ artApp.sort[5] + "'>Artist Desc</option>"
-
-			);
-
-
 	});
 
 	/* Hides Elements on Page Load */
@@ -82,7 +79,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 			imgonly: true,
 			culture: "en",
 			q: query,
-			s: artApp.sort[0],  // default: [0] = relevance
+			s: artApp.sort,  // default: [0] = relevance
 		},
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
