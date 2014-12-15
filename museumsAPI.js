@@ -5,6 +5,8 @@ artApp.pages = 1;
 artApp.RMkey = "lnJ7Bd6c"; // rijksmuseum
 artApp.thumbSize = 500;
 artApp.sort = ["relevance", "objecttype", "chronologic", "achronologic", "artist", "artistdesc"];
+var sortChoice = "";
+var sortChoiceName = "";
 
 /*===================================
 =            Artapp.init            =
@@ -29,6 +31,12 @@ artApp.init = function() { // init = everything for starting up the app
 
 	}); // end of artSearch event function
 
+	$('#sortOptions').on("change", function(){
+	  sortChoice = $(this).find(':selected').val();
+	  console.log("SortChoice: " + sortChoice);
+	});
+
+
 	// gets value of search and updates "searching for" text for user
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
 
@@ -42,8 +50,7 @@ artApp.init = function() { // init = everything for starting up the app
 	$("a.backToTop").hide(); // hides back to top link in footer
 	$("button.moreArt").hide();
 
-}; 
-/*-----  End of Artapp.init  ------*/
+}; // end of artApp.init
 
 /*========================================
 =            ArtApp init More            =
@@ -170,7 +177,7 @@ artApp.displayPieces = function(pieces) {
 			// gets the last digit of the string 
 			var artPeriodLastDigit = artPeriodString.charAt(1);
 
-			console.log("artPeriod = " + artPeriod + "artPeriodString = " + artPeriodString + " artPeriodLastDigit = " + artPeriodLastDigit);
+			// console.log("artPeriod = " + artPeriod + "artPeriodString = " + artPeriodString + " artPeriodLastDigit = " + artPeriodLastDigit);
 
 			if (artPeriodLastDigit === "4" || artPeriodLastDigit === "5" || artPeriodLastDigit === "6" || artPeriodLastDigit === "7" || artPeriodLastDigit === "8" || artPeriodLastDigit === "9") {
 				artPeriod = artPeriodString + "th Century";
