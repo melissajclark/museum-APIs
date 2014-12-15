@@ -31,8 +31,8 @@ artApp.init = function() { // init = everything for starting up the app
 
 	$("#sortType").on("change", function(){
 		var selectedType = (this).val();
-		var userSelectedOption = $(this).find(:selected).text();
-		artApp.
+		var userSelectedOption = $(this).find(":selected").text();
+		console.log(userSelectedOption);
 	});
 
 	/* Hides Elements on Page Load */
