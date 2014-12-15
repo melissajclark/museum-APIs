@@ -95,46 +95,59 @@ artApp.init = function() { // init = everything for starting up the app
 =            Get Pieces            =
 ==================================*/
 
-artApp.getPieces = function(query) { // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
-	// console.log("going to fetch the art");
-	$.ajax({
-		url : "https://www.rijksmuseum.nl/api/en/collection",
-		type: 'GET',
-		data: {		
-			key: artApp.RMkey,
-			format: "jsonp",
-			p: artApp.pages,
-			ps: 10, // sets number of pieces displayed
-			imgonly: true,
-			culture: "en",
-			q: query,
-			s: artApp.sort,  // default: [0] = relevance
-		},
-		dataType : "jsonp",
-		success: function(result) { // another word for success = callback
-			console.log(artApp.pages);
-			// $("#artwork").empty(); // clears artwork before adding new pieces
-			artApp.displayPieces(result.artObjects); // when the ajax request comes back - run this code! - displayPieces function is below
-			console.log(result.artObjects);
-		}
-	});
-};
+/**
+*
+* This function gets the initial data from the Rijksmuseum API
+*
+**/
+
+	artApp.getPieces = function(query) { // create a method to go and grab the artworks API docs: http://rijksmuseum.github.io/
+		// console.log("going to fetch the art");
+		$.ajax({
+			url : "https://www.rijksmuseum.nl/api/en/collection",
+			type: 'GET',
+			data: {		
+				key: artApp.RMkey,
+				format: "jsonp",
+				p: artApp.pages,
+				ps: 10, // sets number of pieces displayed
+				imgonly: true,
+				culture: "en",
+				q: query,
+				s: artApp.sort,  // default: [0] = relevance
+			},
+			dataType : "jsonp",
+			success: function(result) { // another word for success = callback
+				console.log(artApp.pages);
+				// $("#artwork").empty(); // clears artwork before adding new pieces
+				artApp.displayPieces(result.artObjects); // when the ajax request comes back - run this code! - displayPieces function is below
+				console.log(result.artObjects);
+			}
+		});
+	};
+
 /*-----  End of Get Pieces  ------*/
 
 /*======================================
 =            Display Pieces            =
 ======================================*/
 
+/**
+*
+* This function uses the initial data (object number to be specific) and does a second ajax call to get more details on the artwork
+*
+**/
+
 artApp.displayPieces = function(pieces) {
 
 	var artModuleTmpl = $("<section class='artworkModule'><ul class='artFields'></ul></section>");
-	// loop over each piece
-	for (var i = 0; i < pieces.length; i++) { // for loop
+	
+	for (var i = 0; i < pieces.length; i++) { // loop over each piece
 	if(!pieces[i].webImage) {
 	    continue; // skip this one there is no image
 	  }
 
-	var artItem = pieces[i]; // variable for easier calling of looped items
+	var artItem = pieces[i]; // variable for easier calling of items in for loop
 	
 	$.ajax({
 		url : "https://www.rijksmuseum.nl/api/en/collection/" + artItem.objectNumber,
@@ -155,12 +168,11 @@ artApp.displayPieces = function(pieces) {
 
 			var artModuleSection = artModuleTmpl.clone();
 			var artModuleUl = artModuleSection.find('ul');
-			var artPiece = result.artObject; // new variable like artItem to use data from success function
+			var artPiece = result.artObject; // variable to use data from success function
 			var artOpenLiSpan = "<li class='artMetaData'><span class='fieldType'>";
 			var artCloseLiSpan = "</span></li>";
 			
 			/*-----  End of Variables for template / objects  ------*/
-			
 			
 			/*=================================================
 			=            Variables: Image Metadata            =
@@ -187,19 +199,25 @@ artApp.displayPieces = function(pieces) {
 			artMakersData = artMakers.replace(", ","&#44; "); 
 
 			var artDate = artPiece.dating.year;
-			// console.log(artDate);
 
+			/*==================================
+			=            Art Period            =
+			==================================*/
+
+			/**
+			*
+			* Gets period of artwork, then evaluates it and updates the variable to read "12th century" etc 
+			* Updated variable content is used in data attributes
+			**/
+					
 			// artPeriod as an integer (useful in if statement)
 			var artPeriod = artPiece.dating.period;
-			// console.log(artPeriod);
 
 			// gets art period and converts it to a string
 			var artPeriodString = artPiece.dating.period.toString();
 
 			// gets the last digit of the string 
 			var artPeriodLastDigit = artPeriodString.charAt(1);
-
-			// console.log("artPeriod = " + artPeriod + "artPeriodString = " + artPeriodString + " artPeriodLastDigit = " + artPeriodLastDigit);
 
 			if (artPeriodLastDigit === "4" || artPeriodLastDigit === "5" || artPeriodLastDigit === "6" || artPeriodLastDigit === "7" || artPeriodLastDigit === "8" || artPeriodLastDigit === "9") {
 				artPeriod = artPeriodString + "th Century";
@@ -220,13 +238,18 @@ artApp.displayPieces = function(pieces) {
 			} else if (artPeriodLastDigit === "0") {
 				artPeriod = artPeriodString + "th Century"; // accounts for 10, 20, 30, etc
 			}
-
-
-
+					
+			/*-----  End of Art Period  ------*/
 
 			/*================================================================
 			=            Variables: Image Metadata + HTML content            =
-			================================================================*/	
+			================================================================*/
+
+			/**
+			*
+			* art...Content variables are used to append data below each artwork - each one uses data from the art... variables created above
+			*
+			**/
 
 			var artLinkTitleContent = "<h3><a target='_blank' title='View item in the Rijksmuseum collection' href=" + artLink + ">" + "<span class='title' data-title='" + artTitle + "'>" + artTitle + " " + "</span><span class='fa fa-external-link'></span></a></h3>";
 			var artDateContent = artOpenLiSpan + "Date: </span><span data-date='" + artDate + "'>" + artDate + artCloseLiSpan;
@@ -310,15 +333,13 @@ artApp.displayPieces = function(pieces) {
 			setTimeout(function(){
 			    $("a.backToTop").show();
 			    $("button.moreArt").show();
-			},2500); // waits 2.5 seconds before loading
+			},3500); // waits 2.5 seconds before loading
 
 			} // end success function
 		}); // end ajax function
 		
 
 		$("img.lazy").lazyload();
-
-
 
 } // end for loop
 
@@ -330,10 +351,10 @@ artApp.displayPieces = function(pieces) {
 $(document).ready(function(){
 	artApp.init(); // runs init function on document is ready
 
-	artApp.initMore(); // gets more pieces for load more button
-
 	// artApp.init:
 
 	// calls ALL of the code above! 
+
+	artApp.initMore(); // gets more pieces for load more button 
 
 });
