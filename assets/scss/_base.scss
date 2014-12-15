@@ -86,17 +86,16 @@ ul.searchArt li {
   margin-bottom:15px;
 }
 
-.searchAndFilter, header {
-	max-width:80%;
-	margin:auto;
-	display:block;
-	text-align:center;
-}
 
 .searchAndFilter:after {
   content: "";
   display: table;
   clear: both;
+}
+
+.searchAndFilter {
+	max-width:900px;
+	margin:0 auto;
 }
 
 /*===========================================
@@ -167,10 +166,12 @@ cursor: auto;
 =            Layout            =
 ==============================*/
 
+
 header {
-  max-width: 80%;
-  margin: auto;
-  display: block;
+	max-width:80%;
+	margin:auto;
+	display:block;
+	text-align:center;
 }
 
 span {
