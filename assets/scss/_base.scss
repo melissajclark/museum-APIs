@@ -1,168 +1,39 @@
+// ==================================
+// =            Typography            =
+// ==================================*/
+
 body {
-	font-family: "abril-text",sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	max-width:100%;
-	padding:1em;
-	font-size:17px;
-	background:rgba(45, 47, 42, 0.23);
+  font-family: "abril-text",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  max-width: 100%;
+  padding: 1em;
+  line-height: 1.6;
+  font-size: 17px;
+  background: rgba(178, 178, 178, 0.23);
+  max-width:100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "abril-text",sans-serif;
-	font-weight: 600;
+  font-family: "abril-text",sans-serif;
+  font-weight: 600;
+  color: rgba(40, 74, 136, 0.94);
+  letter-spacing: 1.5px;
+  
+}
+
+h2 {
+  font-size: 25px;
 }
 
 h1 {
-	font-size:30px;
-	font-style: italic;
+  font-size: 38px;
+  font-style: italic;
 }
 
 h3 {
-	font-size:24px;
-}
-
-
-a {
-	&:hover{
-		color:black;
-	}
-	&.readmore-js-toggle {
-		border-bottom: none;
-		font-weight:strong;
-		font-size: 1.1em;
-		line-height: 1.3em;
-		margin: 0.5em 0 0.5em 0;
-	}
-}
-
-.container { // Sets basic sizing of content
-	max-width:100%;
-	margin: 0 auto;
-}
-
-footer, button.moreArt {
-	text-align:center;
-	margin: 0 auto;
-}
-
-span.fieldType {
-	font-weight:bold;
-}
-
-span {
-	display:inline;
-}
-
-fieldset {
-	border:none;
-	background:#ffff;
-}
-
-fieldset.artSearch {
-	float:left;
-}
-
-header, .info {
-	text-align:center;
-}
-
-.searchAndFilter, header {
-	max-width:80%;
-	margin:auto;
-	display:block;
-}
-
-.searchAndFilter:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-legend {
-	font-weight:bold;
-}
-
-/* Read More JS */
-
-.readmore-js-toggle, .readmore-js-section {
-  display: block;
-  width: 100%;
-}
-.readmore-js-section {
-  overflow: hidden;
-}
-
-
-.artworkModule { /*section for each artwork + data */
-	padding:0.75em;
-	border: 2px double darkgrey;
-	border-radius:4px;
-	margin:0.5em;
-	max-width:30%;
-	max-height:10%;
-	display:inline-block;
-	vertical-align:top;
-	background:white;
-	@media screen and (max-width:1700px){
-	 	// max-width:20%;
-	 	margin:1.5em;
-	 	max-width:28%;
-		max-height:15%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
-	 }
-	 @media screen and (max-width:1400px){
-	 	margin:1em;
-	 	max-width:23%;
-		max-height:15%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
-	 }
-	 @media screen and (max-width:1100px){
-	 	margin:0.75em;
-	 	max-width:37%;
-		max-height:15%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
-	 }
-	 @media screen and (max-width:700px){
-	 	margin:1em;
-	 	max-width:95%;
-	 	max-height:50%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
-	 }
-}
-
-#artwork img {
-  max-width:99%;
-  height:auto;
-  max-height:20%;
-  margin: 0 auto;
-  padding: 1em 0em 1em 0em;
-  display:inline-block;
-  vertical-align: middle;
-	 @media screen and (max-width:800px){
-	 	max-width:100%;
-	 	max-height:50%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
-	 }
-	  @media screen and (max-width:500px){
-	 	// max-width:20%;
-	 	max-width:100%;
-	 	max-height:50%;
-	 	height:auto;
-	 	display:inline-block;
-	 	vertical-align:top;
-	 }
-
+  font-size: 22px;
+  letter-spacing:0.5px;
 }
 
 ul.artFields { /* Removes all padding from ul section*/
@@ -174,3 +45,220 @@ list-style-type: none;
 -webkit-margin-end: 0px;
 -webkit-padding-start: 0px;
 }
+
+
+/*-----  End of Typography  ------*/
+
+
+/*====================================
+=            Link Styling            =
+====================================*/
+
+a {
+  color: #111;
+  text-decoration:none;
+  border-bottom: 2px solid rgb(158, 72, 121);
+}
+
+a:hover {
+  color: rgb(158, 72, 121);
+}
+
+a.artImageLink {
+  border-bottom:none;
+}
+
+a.artImageLink:hover {
+  opacity: 0.5;
+}
+
+/*-----  End of Link Styling  ------*/
+
+/*===============================================
+=            Search & Filter Section            =
+===============================================*/
+
+ul.searchArt li {
+  list-style-type:none;
+  display:inline-block;
+  line-height:1.5;
+  padding: 0px 10px 0px 10px;
+  margin-bottom:15px;
+}
+
+
+.searchAndFilter:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.searchAndFilter {
+	max-width:900px;
+	margin:0 auto;
+}
+
+.filtrifyFields {
+	height:50px;
+	// padding:10px;
+}
+
+/*===========================================
+=            My Filtrify Styling            =
+===========================================*/
+// #filtrifyPlaceHolder {
+//   /*float: right;*/
+//   line-height: 2;
+//   text-transform: capitalize;
+//   margin: 1em 1em 1em 3em;
+//   max-width: 800px;
+//   margin: 0 auto;
+//   padding-bottom: 1em;
+// }
+
+
+
+/*-----  End of Search & Filter Section  ------*/
+
+
+
+/*====================================
+=            Form Styling            =
+====================================*/
+
+span.fieldType {
+	font-weight:bold;
+}
+
+legend {
+	font-weight:bold;
+}
+
+fieldset {
+	border:none;
+}
+
+footer, button.moreArt {
+	text-align:center;
+	margin: 0 auto;
+}
+
+input[type="text"] {
+-webkit-appearance: textfield;
+padding: 10px 50px 10px 5px;
+text-align:left;
+background-color: white;
+border: 2px inset;
+border-image-source: initial;
+border-image-slice: initial;
+border-image-width: initial;
+border-image-outset: initial;
+border-image-repeat: initial;
+-webkit-rtl-ordering: logical;
+-webkit-user-select: text;
+cursor: auto;
+}
+
+::-webkit-input-placeholder {
+   text-align:left;
+   font-size: 12px;
+}
+
+/*-----  End of Form Styling  ------*/
+
+
+/*==============================
+=            Layout            =
+==============================*/
+
+
+header {
+	max-width:80%;
+	margin:auto;
+	display:block;
+	text-align:center;
+}
+
+span {
+	display:inline;
+}
+
+.container { // Sets basic sizing of content
+	max-width:75%;
+	margin: 0 auto;
+	@media screen and (max-width:800px){
+		max-width:100%;
+	}
+}
+
+header, .info {
+	text-align:center;
+}
+
+.artworkModule { /*section for each artwork + data */
+	padding: 0.75em;
+	border: 2px double darkgrey;
+	border-radius: 4px;
+	margin: 1em;
+	max-width: 18%;
+	max-height: 10%;
+	display: inline-block;
+	vertical-align: top;
+	background: white;
+		@media screen and (max-width:1700px){
+		max-width: 23%;
+		max-height: 15%;
+		height: auto;
+		display: inline-block;
+		vertical-align: top;
+		 }
+		 @media screen and (max-width:1400px){
+		 max-width: 23%;
+		 max-height: 15%;
+		 height: auto;
+		 display: inline-block;
+		 vertical-align: top;
+		 }
+		 @media screen and (max-width:1100px){
+		max-width: 40%;
+		max-height: 15%;
+		height: auto;
+		display: inline-block;
+		vertical-align: top;
+		 }
+		 @media screen and (max-width:700px){
+		max-width: 100%;
+		max-height: 50%;
+		height: auto;
+		display: inline-block;
+		vertical-align: top;
+		 }
+}
+
+#artwork img {
+    max-width: 99%;
+    height: auto;
+    max-height: 20%;
+  /*   margin: 0 auto; */
+    padding: 1em 1em 1em 0em;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration:none;
+	 @media screen and (max-width:800px){
+	 	max-width: 100%;
+	 	max-height: 50%;
+	 	height: auto;
+	 	display: inline-block;
+	 	vertical-align: top;
+	 }
+	  @media screen and (max-width:500px){
+	 	max-width: 100%;
+	 	max-height: 50%;
+	 	height: auto;
+	 	display: inline-block;
+	 	vertical-align: top;
+	 }
+
+}
+
+/*-----  End of Layout  ------ */

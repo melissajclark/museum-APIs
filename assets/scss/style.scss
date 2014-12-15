@@ -32,9 +32,10 @@
 // =            Gridforms            =
 // =================================*/
 
-// @import "gridforms"; // creates grid-like form experience
+@import "gridforms"; // creates grid-like form experience
 // /*-----  End of Gridforms  ------*/
 
+@import "chosen";
 
 /*===================================
 =            Animate.css            =
@@ -51,18 +52,6 @@
 // @import "filtrifyZR";
 
 /*-----  End of Filtrify Default CSS  ------*/
-
-/*===========================================
-=            My Filtrify Styling            =
-===========================================*/
-
-#filtrifyPlaceHolder {
-	float:right;
-	line-height:2;
-	text-transform:capitalize;
-	margin:1em 1em 1em 3em;
-}
-/*-----  End of My Filtrify Styling  ------*/
 
 
 /*================================================
