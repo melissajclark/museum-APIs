@@ -18,12 +18,6 @@ artApp.init = function() { // init = everything for starting up the app
 		artApp.getPieces(artApp.searchFieldQuery); // calls art piece function and passes content in search field
 		$("#artwork").empty(); // clears artwork before adding new pieces
 
-		$("#sortType").on("change", function(){
-			var selectedType = (this).val();
-			var userSelectedOption = $(this).find(":selected").text();
-			console.log(userSelectedOption);
-		});
-
 	}); // end of artSearch event function
 
 	// gets value of search and updates "searching for" text for user
@@ -33,9 +27,19 @@ artApp.init = function() { // init = everything for starting up the app
 		$("h3.searchContent").remove(); // removes original search field name
 		$("legend").html("<h3 class='searchContent'>" + "Searching for: " + "&nbsp;" + "</h3>"); // adds h3 for new content
 		$("h3.searchContent").append('"' + searchContent + '"'); // appends user's search term
+
+		$("#sortOptions").append(
+			"<option value='"+ artApp.sort[0] +"'>Relevance</option>" + 
+			"<option value='"+ artApp.sort[1] + "'>Object Type</option>" +
+			"<option value='"+ artApp.sort[2] + "'>Chronologic</option>" +
+			"<option value='"+ artApp.sort[3] + "'>Achronologic</option>" +
+			"<option value='"+ artApp.sort[4] + "'>Artist</option>" +
+			"<option value='"+ artApp.sort[5] + "'>Artist Desc</option>"
+
+			);
+
+
 	});
-
-
 
 	/* Hides Elements on Page Load */
 	$("a.backToTop").hide(); // hides back to top link in footer
