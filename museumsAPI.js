@@ -12,14 +12,29 @@ artApp.sortChoice = "";
 
 artApp.init = function() { // init = everything for starting up the app
 
-	$("#sortOptions").append(
-		"<option value='"+ artApp.sort[0] +"'>Relevance</option>" + 
-		"<option value='"+ artApp.sort[1] + "'>Object Type</option>" +
-		"<option value='"+ artApp.sort[2] + "'>Chronologic</option>" +
-		"<option value='"+ artApp.sort[3] + "'>Achronologic</option>" +
-		"<option value='"+ artApp.sort[4] + "'>Artist</option>" +
-		"<option value='"+ artApp.sort[5] + "'>Artist Desc</option>"
-	);
+	/**
+	*
+	* Hides Footer Links on Page Load & Appends sort Options to Select Menu
+	*
+	**/
+
+		$("a.backToTop").hide(); // hides back to top link in footer
+		$("button.moreArt").hide();
+
+		$("#sortOptions").append(
+			"<option value='"+ artApp.sort[0] +"'>Relevance</option>" + 
+			"<option value='"+ artApp.sort[1] + "'>Object Type</option>" +
+			"<option value='"+ artApp.sort[2] + "'>Chronologic</option>" +
+			"<option value='"+ artApp.sort[3] + "'>Achronologic</option>" +
+			"<option value='"+ artApp.sort[4] + "'>Artist</option>" +
+			"<option value='"+ artApp.sort[5] + "'>Artist Desc</option>"
+		);
+
+	/**
+	*
+	* Passes user's search field input as query + hides artwork if a new search occurs
+	*
+	**/
 
 	$("fieldset.artSearch").on("submit",function(event){
 		event.preventDefault(); // prevents form from refreshing
@@ -29,24 +44,29 @@ artApp.init = function() { // init = everything for starting up the app
 
 	}); // end of artSearch event function
 
-	$('#sortOptions').on("change", function(){
-	  artApp.sortChoice = $(this).find(':selected').val();
-	  console.log("SortChoice: " + artApp.sortChoice);
-	});
+	/**
+	*
+	* Updates search info with user's search term
+	*
+	**/
 
+		$("fieldset.artSearch input[name='searchField']").on("change",function(){
+			var searchContent = $(this).val();
+			$("h3.searchContent").remove(); // removes original search field name
+			$("legend").html("<h3 class='searchContent'>" + "Searching for: " + "&nbsp;" + "</h3>"); // adds h3 for new content
+			$("h3.searchContent").append('"' + searchContent + '"'); // appends user's search term
+		});
 
-	// gets value of search and updates "searching for" text for user
-	$("fieldset.artSearch input[name='searchField']").on("change",function(){
-
-		var searchContent = $(this).val();
-		$("h3.searchContent").remove(); // removes original search field name
-		$("legend").html("<h3 class='searchContent'>" + "Searching for: " + "&nbsp;" + "</h3>"); // adds h3 for new content
-		$("h3.searchContent").append('"' + searchContent + '"'); // appends user's search term
-	});
-
-	/* Hides Elements on Page Load */
-	$("a.backToTop").hide(); // hides back to top link in footer
-	$("button.moreArt").hide();
+	/**
+	*
+	* Updates search sorting based on user's input
+	*
+	**/
+		
+		$('#sortOptions').on("change", function(){
+		  artApp.sortChoice = $(this).find(':selected').val();
+		  artApp.sort = artApp.sortChoice;
+		});
 
 }; // end of artApp.init
 
@@ -54,15 +74,19 @@ artApp.init = function() { // init = everything for starting up the app
 =            ArtApp init More            =
 ========================================*/
 
-// gets more art!
-artApp.initMore = function() {
-	$("button.moreArt").on("click",function(event){
-		event.preventDefault(); // prevents form from refreshing
-		artApp.pages++; // adds 1 to number of page results
-		artApp.getPieces(artApp.searchFieldQuery); // calls art piece function and passes content in search field
-	}); // end of artSearch event function
-};
+/**
+*
+* Loads more art when user hits "Load More"
+*
+**/
 
+	artApp.initMore = function() {
+		$("button.moreArt").on("click",function(event){
+			event.preventDefault(); // prevents form from refreshing
+			artApp.pages++; // adds 1 to number of page results
+			artApp.getPieces(artApp.searchFieldQuery); // calls art piece function and passes content in search field
+		}); // end of artSearch event function
+	};
 
 /*-----  End of ArtApp init More  ------*/
 
