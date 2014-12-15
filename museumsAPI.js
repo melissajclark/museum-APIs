@@ -373,10 +373,15 @@ artApp.displayPieces = function(pieces) {
 
 			$("h3.filtrifyInfo").show();
 
+
+
 			// filtrify appends the data about each artwork so users can filter by artist, location, etc
 			$.filtrify("artwork", "filtrifyPlaceHolder", {
 		    	block : ["data-title", "data-museum"],
 		    });
+
+		    $("ul.ft-menu").attr("data-row-span", 10);
+		    $("ul.ft-menu li.ft-field").attr("data-field-span", 2);
 
 			/* Inserts buttons at bottom of page after images load */
 			setTimeout(function(){
