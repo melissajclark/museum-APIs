@@ -59,7 +59,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 			imgonly: true,
 			culture: "en",
 			q: query,
-			s: artApp.sort[0], 
+			s: artApp.sort[0],  // default: [0] = relevance
 		},
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
