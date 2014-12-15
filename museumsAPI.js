@@ -78,7 +78,7 @@ artApp.init = function() { // init = everything for starting up the app
 		$("fieldset.artSearch input[name='searchField']").on("change",function(){
 			var searchContent = $(this).val();
 			$("h3.searchContent").remove(); // removes original search field name
-			$("legend").html("<h3 class='searchContent'>" + "Searching for: " + "&nbsp;" + "</h3>"); // adds h3 for new content
+			$("label.searchLabel").html("<h3 class='searchContent'>" + "Searching for: " + "&nbsp;" + "</h3>"); // adds h3 for new content
 			$("h3.searchContent").append('"' + searchContent + '"'); // appends user's search term
 		});
 
