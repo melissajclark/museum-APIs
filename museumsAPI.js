@@ -4,7 +4,7 @@ artApp.searchFieldQuery = "";
 artApp.pages = 1;
 artApp.RMkey = "lnJ7Bd6c"; // rijksmuseum
 artApp.thumbSize = 500;
-artApp.sort = [relevance, objecttype, chronologic, achronologic, artist, artistdesc];
+artApp.sort = ["relevance", "objecttype", "chronologic", "achronologic", "artist", "artistdesc"];
 
 /*===================================
 =            Artapp.init            =
@@ -59,7 +59,7 @@ artApp.getPieces = function(query) { // create a method to go and grab the artwo
 			imgonly: true,
 			culture: "en",
 			q: query,
-			s: artApp.sort, 
+			s: artApp.sort[3], 
 		},
 		dataType : "jsonp",
 		success: function(result) { // another word for success = callback
