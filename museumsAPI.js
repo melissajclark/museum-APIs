@@ -10,17 +10,19 @@ artApp.sort = ["relevance", "objecttype", "chronologic", "achronologic", "artist
 =            Artapp.init            =
 ===================================*/
 
-artApp.init = function() {
-// init = everything for starting up the app
+artApp.init = function() { // init = everything for starting up the app
+
 	$("fieldset.artSearch").on("submit",function(event){
 		event.preventDefault(); // prevents form from refreshing
 		artApp.searchFieldQuery = $("fieldset.artSearch input[name='searchField']").val();
 		artApp.getPieces(artApp.searchFieldQuery); // calls art piece function and passes content in search field
 		$("#artwork").empty(); // clears artwork before adding new pieces
+
 	}); // end of artSearch event function
 
 	// gets value of search and updates "searching for" text for user
 	$("fieldset.artSearch input[name='searchField']").on("change",function(){
+
 		var searchContent = $(this).val();
 		$("h3.searchContent").remove(); // removes original search field name
 		$("legend").html("<h3 class='searchContent'>" + "Searching for: " + "&nbsp;" + "</h3>"); // adds h3 for new content
@@ -30,7 +32,13 @@ artApp.init = function() {
 	/* Hides Elements on Page Load */
 	$("a.backToTop").hide(); // hides back to top link in footer
 	$("button.moreArt").hide();
-};
+
+}; 
+/*-----  End of Artapp.init  ------*/
+
+/*========================================
+=            ArtApp init More            =
+========================================*/
 
 // gets more art!
 artApp.initMore = function() {
@@ -40,7 +48,10 @@ artApp.initMore = function() {
 		artApp.getPieces(artApp.searchFieldQuery); // calls art piece function and passes content in search field
 	}); // end of artSearch event function
 };
-/*-----  End of Artapp.init  ------*/
+
+
+/*-----  End of ArtApp init More  ------*/
+
 
 /*==================================
 =            Get Pieces            =
