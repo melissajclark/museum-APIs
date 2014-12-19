@@ -46,40 +46,31 @@
 			<fieldset class="artSearch"> 
 				<form class="grid-form">
 
-				<section data-row-span="8">
-					<h3 class="searchContent" data-field-span="1">Search the Art</h3>
-				      <label for="search" class="searchLabel" data-field-span="2">
-				      	<input type="text" name="searchField" id="searchForm" placeholder="search" required/>
-				      </label>		
-							
-		        	<label for="sortOptions" data-field-span="2">
-		        		<h3>Sort by:</h3>
+				<section data-row-span="10">
 
-			    		<select name="sort" id="sortOptions" required>
-						<!-- Select Options created with jquery -->
-			    		</select>
+					<label for="search" class="searchLabel">
+						<span class="searchContent" data-field-span="2">Search:</span>
+				      		<input type="text" name="searchField" id="searchForm" placeholder="search" data-field-span="2" required/>
+				      </label>
+					
+		        	<label for="sortOptions">
+		        		<span data-field-span="2">Sort by:</span>
+				    		<select name="sort" id="sortOptions" data-field-span="2" required>
+							<!-- Select Options created with jquery -->
+				    		</select>
 		        	</label>
 
-		        	<label for="itemsPerPage" data-field-span="2">
-		        		<h3>Items per page:</h3>
-
-			    		<select name="items" id="itemsPerPage" required>
-						<!-- Select Options created with jquery -->
-			    		</select>
+		        	<label for="sortOptions">
+		        		<span data-field-span="2">Items per page:</span>
+				    		<select name="items" id="itemsPerPage" data-field-span="2" required>
+							<!-- Select Options created with jquery -->
+				    		</select>
 		        	</label>
-	        	
-	        	</section> <!-- #end of data row set #1-->
 
-	        	<section data-row-span="8">
+					<button type="submit" data-field-span="2" class="btn btn-default btn-sm" placeholder="search"/>Submit!</button>
 
-		        	<button type="submit" data-row-span="1" style="margin-top:20px; max-width:600px; margin: auto; display:block;" class="btn btn-default btn-lg" placeholder="search"/>Submit!</button>
-				
-				</section>
+				</section><!--  End Grid Form Data Rows -->
 
-	        	<section data-row-span="8">
-				<p> </p>
-
-				</section>
 
 				 <section id="filtrifyPlaceHolder">
 
@@ -87,11 +78,8 @@
 
 				</section><!--Filtrify -->
 				
-
 				</form>
 			</fieldset>
-
-
 
 	</section><!-- End of Search & Filter Section -->
 
