@@ -46,27 +46,34 @@
 			<fieldset class="artSearch"> 
 				<form class="grid-form">
 
-				<section data-row-span="4">
-					<label for="search" class="searchLabel">
-						<span class="searchContent" data-field-span="1">Search:</span>
-				      		<input type="text" name="searchField" id="searchForm" placeholder="search" data-field-span="1" required/>
+				<section data-row-span="16">
+
+					<label for="search" class="searchLabel" data-field-span="4">Search:
+
+				      		<input type="text" name="searchField" id="searchForm" placeholder="search" required/>
+				      		
 				      </label>
 					
-		        	<label for="sortOptions">
-		        		<span data-field-span="2">Sort by:</span>
-				    		<select name="sort" id="sortOptions" data-field-span="2" required>
+		        	<label for="sortOptions" data-field-span="4"> Sort by:
+
+				    		<select name="sort" id="sortOptions" required>
+
 							<!-- Select Options created with jquery -->
+
 				    		</select>
 		        	</label>
 
-		        	<label for="sortOptions">
-		        		<span data-field-span="2">Items per page:</span>
-				    		<select name="items" id="itemsPerPage" data-field-span="2" required>
+		        	<label for="sortOptions" data-field-span="4">Items per page:
+
+				    		<select name="items" id="itemsPerPage" required>
+
 							<!-- Select Options created with jquery -->
+
 				    		</select>
+
 		        	</label>
 
-					<button type="submit" data-field-span="2" class="btn btn-default btn-sm" placeholder="search"/>Submit!</button>
+					<button type="submit" data-field-span="6" class="btn btn-default btn-lg" placeholder="search"/>Submit!</button>
 
 				</section><!--  End Grid Form Data Rows -->
 
