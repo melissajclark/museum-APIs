@@ -201,7 +201,7 @@ artApp.displayPieces = function(pieces) {
 			=            Variables: Image Metadata            =
 			=================================================*/
 			
-			var img = "<a class='artImageLink' href='" + artPiece.webImage.url + "'data-featherlight='image'><img class='artImage lazy artImageLink' data-original='" + artPiece.webImage.url + "'" + "src='" + artPiece.webImage.url + "'></a>";
+			var img = "<a class='artImageLink' href='" + artPiece.webImage.url + "><img class='artImage lazy artImageLink' data-original='" + artPiece.webImage.url + "'" + "src='" + artPiece.webImage.url + "'></a>";
 			var artLink = "https://www.rijksmuseum.nl/en/collection/" + artPiece.objectNumber;
 			var artLocation = artPiece.productionPlaces[0];
 			var artTitle = artPiece.title;
