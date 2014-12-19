@@ -32,6 +32,10 @@ h3 {
   letter-spacing: 0.5px;
 }
 
+h3.filtrifyInfo {
+  text-align: center;
+}
+
 ul.artFields {
   /* Removes all padding from ul section*/
   display: block;
@@ -63,6 +67,12 @@ a.artImageLink {
 
 a.artImageLink:hover {
   opacity: 0.5;
+}
+
+.grid-form label {
+  font-weight: 700;
+  color: rgba(40, 74, 136, 0.94);
+  margin: 0px 10px 0px 10px;
 }
 
 /*-----  End of Link Styling  ------*/
@@ -685,6 +695,7 @@ input[type="button"].btn-block {
 ================================== */
 /* ! Source:https://github.com/kumailht/gridforms */
 .grid-form [data-row-span] {
+  border-bottom: 1px solid #333333;
   width: 100%;
   zoom: 1;
 }
@@ -710,11 +721,13 @@ input[type="button"].btn-block {
 
 @media only screen and (min-width: 0) and (max-width: 700px) {
   .grid-form [data-row-span] [data-field-span] {
+    border-bottom: 1px solid #333333;
     width: 100% !important;
   }
 }
 @media only screen and (min-width: 700px) {
   .grid-form [data-row-span] [data-field-span] {
+    border-right: 1px solid #333333;
     display: block;
   }
 }
@@ -723,6 +736,7 @@ input[type="button"].btn-block {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 10px;
+  color: #333333;
   display: block;
   margin-bottom: 4px;
 }
