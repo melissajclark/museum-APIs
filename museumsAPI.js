@@ -78,7 +78,7 @@ artApp.init = function() { // init = everything for starting up the app
 		$("fieldset.artSearch input[name='searchField']").on("change",function(){
 			var searchContent = $(this).val();
 			$("span.searchContent").empty(); // removes original search field name
-			$("label.searchLabel").before("<span class='searchInfo' data-field-span='1'>" + "Searching for: " + "&nbsp;" + '"' + searchContent + '"' + "</span>"); //
+			$("label.searchLabel").before("<span class='searchInfo' data-field-span='1'>" + "Searching for: " + "&nbsp;" + '"' + searchContent + '"' + "</span>");
 		});
 
 
