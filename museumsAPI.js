@@ -33,10 +33,10 @@ artApp.init = function() { // init = everything for starting up the app
 		$("#sortOptions").append(
 			"<option value='"+ artApp.sort[0] +"'>Relevance</option>" + 
 			"<option value='"+ artApp.sort[1] + "'>Object Type</option>" +
-			"<option value='"+ artApp.sort[2] + "'>Chronologic</option>" +
-			"<option value='"+ artApp.sort[3] + "'>Achronologic</option>" +
-			"<option value='"+ artApp.sort[4] + "'>Artist</option>" +
-			"<option value='"+ artApp.sort[5] + "'>Artist Desc</option>"
+			"<option value='"+ artApp.sort[2] + "'>Old to New</option>" +
+			"<option value='"+ artApp.sort[3] + "'>New to Old</option>" +
+			"<option value='"+ artApp.sort[4] + "'>Artist A - Z</option>" +
+			"<option value='"+ artApp.sort[5] + "'>Artist Z - A</option>"
 		);
 
 
