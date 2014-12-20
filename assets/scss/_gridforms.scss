@@ -5,9 +5,9 @@
 
 
 // .grid-form *, .grid-form *:before, .grid-form *:after {
-// 	-webkit-box-sizing: border-box;
-// 	-moz-box-sizing: border-box;
-// 	box-sizing: border-box;
+// 	-webkit-box-sizing: // border-box;
+// 	-moz-box-sizing: // border-box;
+// 	box-sizing: // border-box;
 // }
 // .grid-form input[type="text"], .grid-form input[type="email"], .grid-form input[type="number"], .grid-form input[type="password"], .grid-form input[type="search"], .grid-form input[type="tel"], .grid-form input[type="url"], .grid-form input[type="color"], .grid-form input[type="date"], .grid-form input[type="datetime"], .grid-form input[type="datetime-local"], .grid-form input[type="month"], .grid-form input[type="time"], .grid-form input[type="week"], .grid-form textarea, .grid-form select {
 // 	font-size: 18px;
@@ -16,7 +16,7 @@
 // 	width: 100%;
 // }
 // .grid-form input[type="text"], .grid-form input[type="email"], .grid-form input[type="number"], .grid-form input[type="password"], .grid-form input[type="search"], .grid-form input[type="tel"], .grid-form input[type="url"], .grid-form input[type="color"], .grid-form input[type="date"], .grid-form input[type="datetime"], .grid-form input[type="datetime-local"], .grid-form input[type="month"], .grid-form input[type="time"], .grid-form input[type="week"], .grid-form textarea {
-// 	border: 0;
+// 	// border: 0;
 // 	background: transparent;
 // }
 // .grid-form input[type="text"]::-webkit-input-placeholder, .grid-form input[type="email"]::-webkit-input-placeholder, .grid-form input[type="number"]::-webkit-input-placeholder, .grid-form input[type="password"]::-webkit-input-placeholder, .grid-form input[type="search"]::-webkit-input-placeholder, .grid-form input[type="tel"]::-webkit-input-placeholder, .grid-form input[type="url"]::-webkit-input-placeholder, .grid-form input[type="color"]::-webkit-input-placeholder, .grid-form input[type="date"]::-webkit-input-placeholder, .grid-form input[type="datetime"]::-webkit-input-placeholder, .grid-form input[type="datetime-local"]::-webkit-input-placeholder, .grid-form input[type="month"]::-webkit-input-placeholder, .grid-form input[type="time"]::-webkit-input-placeholder, .grid-form input[type="week"]::-webkit-input-placeholder, .grid-form textarea::-webkit-input-placeholder {
@@ -31,13 +31,13 @@
 // 	outline: none;
 // }
 // .grid-form fieldset {
-// 	border: none;
+// 	// border: none;
 // 	padding: 0;
 // 	margin: 0;
 // }
 // .grid-form fieldset legend {
-// 	border: none;
-// 	border-bottom: 4px solid #404040;
+// 	// border: none;
+// 	// border-bottom: 4px solid #404040;
 // 	color: #404040;
 // 	font-size: 18px;
 // 	font-weight: bold;
@@ -46,16 +46,16 @@
 // 	width: 100%;
 // }
 // .grid-form fieldset fieldset legend {
-// 	border-bottom: 2px solid #404040;
+// 	// border-bottom: 2px solid #404040;
 // 	font-weight: normal;
 // }
 // .grid-form fieldset fieldset fieldset legend {
-// 	border-bottom: 1px solid #404040;
+// 	// border-bottom: 1px solid #404040;
 // 	font-weight: normal;
 // 	font-size: 15px;
 // }
 .grid-form [data-row-span] {
-	border-bottom: 1px solid #333333;
+	// // border-bottom: 1px solid #333333;
 	width: 100%;
 	zoom: 1;
 }
@@ -68,7 +68,7 @@
 }
 @media only screen and (min-width:0) and (max-width:700px) {
 	.grid-form [data-row-span] {
-		border-bottom: none;
+		// border-bottom: none;
 	}
 }
 .grid-form [data-row-span] [data-field-span] {
@@ -77,13 +77,13 @@
 }
 @media only screen and (min-width:0) and (max-width:700px) {
 	.grid-form [data-row-span] [data-field-span] {
-		border-bottom: 1px solid #333333;
+		// // border-bottom: 1px solid #333333;
 		width: 100% !important;
 	}
 }
 @media only screen and (min-width:700px) {
 	.grid-form [data-row-span] [data-field-span] {
-		border-right: 1px solid #333333;
+		// border-right: 1px solid #333333;
 		display: block;
 	}
 }
@@ -100,7 +100,7 @@
 	cursor: text;
 }
 .grid-form [data-row-span] [data-field-span]:last-child {
-	border-right: none;
+	// border-right: none;
 }
 .grid-form [data-row-span] [data-field-span].focus {
 	// background: #fffad4;
